@@ -260,14 +260,14 @@ export default function CreatorsSection() {
         </div>
 
         {/* Central Diagram */}
-        <div className="relative w-full max-w-5xl">
+        <div className="relative w-full   max-w-5xl">
           {/* Semi-circular segments */}
           <div className="relative flex justify-center">
             <Image
               src="/images/creatorSectionCenter.png"
               alt="Creators Ecosystem"
               width={1200}
-              height={300}
+              height={700}
               className="w-full max-w-[120%] sm:max-w-[100%] md:max-w-[90%] mx-auto object-contain"
             />
           </div>
