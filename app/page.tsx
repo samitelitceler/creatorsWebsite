@@ -266,9 +266,9 @@ export default function CreatorsSection() {
             <Image
               src="/images/creatorSectionCenter.png"
               alt="Creators Ecosystem"
-              width={900}
+              width={1200}
               height={300}
-              className="w-full max-w-[90%] sm:max-w-[80%] md:max-w-[70%] mx-auto object-contain"
+              className="w-full max-w-[120%] sm:max-w-[100%] md:max-w-[90%] mx-auto object-contain"
             />
           </div>
 
