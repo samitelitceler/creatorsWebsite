@@ -313,6 +313,8 @@ export default function CreatorsSection() {
       {/* Ecosystem Section */}
       <section id="about" className="relative w-full md:min-h-screen py-10 md:py-20 px-4 flex items-center justify-center">
         {/* Smiley Emoji */}
+
+        
         <div className="absolute top-4 left-4 sm:top-10 sm:left-10">
           <Image
             src="/images/smileyIcon.svg"
