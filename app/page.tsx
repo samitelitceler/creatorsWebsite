@@ -4,6 +4,7 @@ import Image from "next/image";
 import Navbar from "../components/navbar/Navbar";
 import localFont from 'next/font/local'
 import { Poppins } from 'next/font/google'
+import { motion } from "framer-motion";
 import { Instagram, Twitter, Youtube, Linkedin } from 'lucide-react';
 
 const neueMachina = localFont({
@@ -106,7 +107,42 @@ export default function CreatorsSection() {
       name: "Joyalukkas",
       logo: "/images/joyalukkas.png",
       bgColor: "#8B1D3D"
-    }
+    },
+    {
+      name: "Meesho",
+      logo: "/images/meesho.png",
+      bgColor: "#2D0A31"
+    },
+    {
+      name: "Federal Bank",
+      logo: "/images/fedralBank.png",
+      bgColor: "#FFFFFF"
+    },
+    {
+      name: "Myntra",
+      logo: "/images/myntra.png",
+      bgColor: "#E95FA5"
+    },
+    {
+      name: "ACT Fibernet",
+      logo: "/images/act.png",
+      bgColor: "#FFFFFF"
+    },
+    {
+      name: "Joyalukkas",
+      logo: "/images/joyalukkas.png",
+      bgColor: "#8B1D3D"
+    },
+    {
+      name: "Meesho",
+      logo: "/images/meesho.png",
+      bgColor: "#2D0A31"
+    },
+    {
+      name: "Federal Bank",
+      logo: "/images/fedralBank.png",
+      bgColor: "#FFFFFF"
+    },
   ];
 
   const platforms = [
@@ -157,7 +193,36 @@ export default function CreatorsSection() {
     {
       name: "Tamada Media",
       logo: "/images/tamada.png"
+    },
+    {
+      name: "Amada Media",
+      logo: "/images/amada.png"
+    },
+    {
+      name: "Chai Bisket",
+      logo: "/images/chai.png"
+    },
+    {
+      name: "Aha",
+      logo: "/images/aha.png"
+    },
+    {
+      name: "Silly Monks",
+      logo: "/images/sillyMonks.png"
+    },
+    {
+      name: "Tamada Media",
+      logo: "/images/tamada.png"
+    },
+    {
+      name: "Amada Media",
+      logo: "/images/amada.png"
+    },
+    {
+      name: "Chai Bisket",
+      logo: "/images/chai.png"
     }
+
   ];
 
   useEffect(() => {
@@ -215,11 +280,10 @@ export default function CreatorsSection() {
         </div>
       </section>
 
-      {/* Tilted Banner Section */}
-      <div className="relative w-full overflow-hidden bg-black py-6 md:py-12">
+      <div className="relative w-full overflow-hidden bg-black py-12">
         {/* Top tilted line */}
         <div
-          className="absolute w-[200%] sm:w-[150%] md:w-[120%] transform -rotate-3 left-[-50%] sm:left-[-25%] right-0"
+          className="absolute w-[300%] transform -rotate-3 left-[-100%] right-0"
           style={{
             background: 'linear-gradient(90deg, transparent 0%, transparent 35%, #ffffff 35%, #ffffff 65%, transparent 65%, transparent 100%)',
             height: '2px',
@@ -230,7 +294,7 @@ export default function CreatorsSection() {
         />
         {/* Bottom tilted line */}
         <div
-          className="absolute w-[200%] sm:w-[150%] md:w-[120%] transform -rotate-3 left-[-50%] sm:left-[-25%] right-0"
+          className="absolute w-[300%] transform -rotate-3 left-[-100%] right-0"
           style={{
             background: 'linear-gradient(90deg, transparent 0%, transparent 35%, #ffffff 35%, #ffffff 65%, transparent 65%, transparent 100%)',
             height: '2px',
@@ -240,7 +304,7 @@ export default function CreatorsSection() {
           }}
         />
         {/* Tilted text */}
-        <div className={`${neueMachina.className} text-white text-xl sm:text-2xl md:text-4xl font-bold tracking-wider text-center transform -rotate-3 px-4`}>
+        <div className={`${neueMachina.className} text-white text-sm md:text-lg lg:text-2xl font-clash-display font-bold tracking-wider text-center transform -rotate-3`}>
           Connect - Collaborate - Create * Connect - Collaborate - Create *
         </div>
       </div>
@@ -251,7 +315,7 @@ export default function CreatorsSection() {
         {/* Smiley Emoji */}
         <div className="absolute top-4 left-4 sm:top-10 sm:left-10">
           <Image
-            src="/images/smileIcon.png"
+            src="/images/smileyIcon.svg"
             alt="Smiley Face"
             width={40}
             height={40}
@@ -585,7 +649,7 @@ export default function CreatorsSection() {
 
 
       {/* Join Creator Family Section */}
-      <section className="w-full py-20 px-4 bg-black">
+      <section className="w-full py-20 px-4 bg-black overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-center mb-10 md:mb-16`}>
@@ -614,23 +678,32 @@ export default function CreatorsSection() {
             </h2>
 
             {/* Clients Logo Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8 items-center">
-              {clientsDetails.map((client, index) => (
-                <div
-                  key={index}
-                  className="rounded-2xl flex items-center justify-center min-h-[100px] sm:min-h-[120px] md:min-h-[140px] p-4"
-                  style={{ backgroundColor: client.bgColor }}
-                >
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    width={150}
-                    height={150}
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-              ))}
+
+            <div className="relative w-full flex items-center">
+              <motion.div
+                className="flex space-x-5 md:space-x-20 min-w-max"
+                animate={{ x: ["0%", "-30%"] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 30,
+                  ease: "linear",
+                }}
+              >
+
+
+                {clientsDetails.map((client, index) => (
+                  <div key={index} className="p-4 sm:p-6 flex items-center justify-center">
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="h-16 md:h-20 w-32 object-contain "
+                    />
+                  </div>
+                ))}
+
+              </motion.div>
             </div>
+
           </div>
         </div>
       </section>
@@ -643,7 +716,7 @@ export default function CreatorsSection() {
           <div className="w-full h-[10px] bg-[#FFC057] mb-12 sm:mb-20"></div>
 
           {/* Platforms Section */}
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 sm:gap-8 mb-12 sm:mb-20">
+          <div className="flex flex-col md:flex-row items-start md:items-center md:py-12 gap-6 sm:gap-8 mb-12 sm:mb-20">
             <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-white whitespace-nowrap`}>
               4+ Platforms
             </h2>
@@ -700,7 +773,7 @@ export default function CreatorsSection() {
       {/* Our Collaborations Section */}
       <section
         id="collaborations"
-        className="w-full bg-black py-20 px-4"
+        className="w-full bg-black py-20 px-4 overflow-hidden"
         style={{
           backgroundImage: 'url("/images/bgCollaborate.svg.png")',
           backgroundRepeat: 'repeat',
@@ -715,18 +788,29 @@ export default function CreatorsSection() {
           </h2>
 
           {/* Collaboration Logos Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 items-center">
-            {collaborations.map((collab, index) => (
-              <div key={index} className="p-4 sm:p-6 flex items-center justify-center">
-                <Image
-                  src={collab.logo}
-                  alt={collab.name}
-                  width={200}
-                  height={80}
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-            ))}
+          <div className="relative w-full flex items-center">
+            <motion.div
+              className="flex space-x-5 md:space-x-20 min-w-max"
+              animate={{ x: ["0%", "-30%"] }}
+              transition={{
+                repeat: Infinity,
+                duration: 30,
+                ease: "linear",
+              }}
+            >
+
+
+              {collaborations.map((collab, index) => (
+                <div key={index} className="p-4 sm:p-6 flex items-center justify-center">
+                  <img
+                    src={collab.logo}
+                    alt={collab.name}
+                    className="h-16 md:h-20 w-32 object-contain mx-4"
+                  />
+                </div>
+              ))}
+
+            </motion.div>
           </div>
 
           {/* Divider */}
@@ -769,9 +853,9 @@ export default function CreatorsSection() {
       {/* Footer Section */}
       <footer className="w-full bg-[#1E1E1E] text-white">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto py-16 sm:py-20 px-4">
+        <div className="max-w-7xl mx-auto py-2 px-4">
           {/* Logo and Navigation */}
-          <div className="flex flex-col items-center sm:items-start mb-12 sm:mb-16">
+          <div className="flex flex-col mt-4 items-center sm:items-start mb-2 sm:mb-4">
             <Image
               src="/images/creatorsLogo.png"
               alt="Creators Logo"
