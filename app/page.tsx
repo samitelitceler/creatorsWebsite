@@ -6,6 +6,7 @@ import localFont from 'next/font/local'
 import { Poppins } from 'next/font/google'
 import { motion } from "framer-motion";
 import { Instagram, Twitter, Youtube, Linkedin } from 'lucide-react';
+import ScrollAnimation from "../components/ScrollAnimation";
 
 const neueMachina = localFont({
   src: '../public/fonts/NeueMachina-InktrapUltrabold.otf'
@@ -79,7 +80,31 @@ export default function CreatorsSection() {
       title: "Scene-Stealer",
       image: "/images/creator4.png",
       bgColor: "#6DDBEB"
-    }
+    },
+    {
+      name: "Deepthi Sunaina",
+      title: "The Showstopper",
+      image: "/images/creator1.png",
+      bgColor: "#E95FA5"
+    },
+    {
+      name: "Shanmukh Jaswanth",
+      title: "Master of Disguise",
+      image: "/images/creator2.png",
+      bgColor: "#F2944D"
+    },
+    {
+      name: "Alekhya Harika",
+      title: "Emotional Powerhouse",
+      image: "/images/creator3.png",
+      bgColor: "#A880E7"
+    },
+    {
+      name: "Pranavi Manukonda",
+      title: "Scene-Stealer",
+      image: "/images/creator4.png",
+      bgColor: "#6DDBEB"
+    },
   ];
 
   const clientsDetails = [
@@ -233,7 +258,7 @@ export default function CreatorsSection() {
       roi: 100
     };
 
-    const duration = 2000; // 2 seconds duration
+    const duration = 5000; // 2 seconds duration
     const steps = 50; // number of steps
     const interval = duration / steps;
 
@@ -261,24 +286,35 @@ export default function CreatorsSection() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className={`${neueMachina.className} flex flex-col md:flex-row items-center justify-between px-2 py-12 max-w-7xl mx-auto`}>
-        <div className="w-full md:w-1/2">
-          <h1 className="text-4xl md:text-6xl  mb-6 leading-tight">
-            Revolutionize your Marketing Campaign with{" "}
-            <span className="text-yellow-400">Creators</span>.
-          </h1>
-
-        </div>
-        <div className="w-full md:w-1/2 mt-10 md:mt-0">
-          <Image
-            src="/images/creatorHomeImage.png"
-            alt="Creators Workspace Illustration"
-            width={700}
-            height={500}
-            className="object-contain"
-          />
-        </div>
-      </section>
+      <ScrollAnimation>
+        <section className={`${neueMachina.className} flex flex-col md:flex-row items-center justify-between px-2 py-12 max-w-7xl mx-auto`}>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="w-full md:w-1/2"
+          >
+            <h1 className="text-4xl md:text-6xl mb-6 leading-tight">
+              Revolutionize your Marketing Campaign with{" "}
+              <span className="text-yellow-400">Creators</span>.
+            </h1>
+          </motion.div>
+          <motion.div
+            className="w-full md:w-1/2 mt-10 md:mt-0"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Image
+              src="/images/creatorHomeImage.png"
+              alt="Creators Workspace Illustration"
+              width={700}
+              height={500}
+              className="object-contain"
+            />
+          </motion.div>
+        </section>
+      </ScrollAnimation>
 
       <div className="relative w-full overflow-hidden bg-black py-12">
         {/* Top tilted line */}
@@ -304,181 +340,232 @@ export default function CreatorsSection() {
           }}
         />
         {/* Tilted text */}
-        <div className={`${neueMachina.className} text-white text-sm md:text-lg lg:text-2xl font-clash-display font-bold tracking-wider text-center transform -rotate-3`}>
-          Connect - Collaborate - Create * Connect - Collaborate - Create *
+        <div className={`${neueMachina.className} text-white text-sm md:text-lg lg:text-2xl font-clash-display font-bold tracking-wider text-center transform -rotate-3 overflow-hidden`}>
+          <div className="whitespace-nowrap animate-scroll">
+            Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create *
+          </div>
         </div>
       </div>
 
 
       {/* Ecosystem Section */}
-      <section id="about" className="relative w-full md:min-h-screen py-10 md:py-20 px-4 flex items-center justify-center">
-        {/* Smiley Emoji */}
-
-        
-        <div className="absolute top-4 left-4 sm:top-10 sm:left-10">
-          <Image
-            src="/images/smileyIcon.svg"
-            alt="Smiley Face"
-            width={40}
-            height={40}
-            className="w-10 h-10 md:w-[160px] md:h-[160px]"
-          />
-        </div>
-
-        {/* Central Diagram */}
-        <div className="relative w-full   max-w-5xl">
-          {/* Semi-circular segments */}
-          <div className="relative flex justify-center">
+      <ScrollAnimation>
+        <section id="about" className="relative w-full md:min-h-screen py-10 md:py-20 px-4 flex items-center justify-center">
+          {/* Smiley Emoji with floating animation */}
+          <motion.div 
+            className="absolute top-4 left-4 sm:top-10 sm:left-10"
+            animate={{ 
+              y: [0, -10, 0],
+              rotate: [-5, 5, -5]
+            }}
+            transition={{ 
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
             <Image
-              src="/images/creatorSectionCenter.png"
-              alt="Creators Ecosystem"
-              width={1200}
-              height={700}
-              className="w-full max-w-[120%] sm:max-w-[100%] md:max-w-[90%] mx-auto object-contain"
+              src="/images/smileyIcon.svg"
+              alt="Smiley Face"
+              width={40}
+              height={40}
+              className="w-10 h-10 md:w-[160px] md:h-[160px]"
             />
-          </div>
+          </motion.div>
 
-          {/* Decorative Stars */}
-          <div className="absolute bottom-4 right-4 sm:bottom-10 sm:right-10">
-            <Image
-              src="/images/starIcon.png"
-              alt="Decorative Stars"
-              width={50}
-              height={50}
-              className="sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px]"
-            />
+          {/* Central Diagram */}
+          <div className="relative w-full max-w-5xl">
+            {/* Semi-circular segments with scale and rotate animation */}
+            <motion.div 
+              className="relative flex justify-center"
+              initial={{ scale: 0.8, opacity: 0, rotate: -180 }}
+              whileInView={{ 
+                scale: 1, 
+                opacity: 1, 
+                rotate: 0 
+              }}
+              viewport={{ once: true }}
+              transition={{ 
+                duration: 1,
+                ease: "easeOut",
+                rotate: {
+                  duration: 0.8,
+                  ease: [0.2, 0.65, 0.3, 0.9] // Custom spring-like easing
+                }
+              }}
+            >
+              <Image
+                src="/images/creatorSectionCenter.png"
+                alt="Creators Ecosystem"
+                width={1200}
+                height={700}
+                className="w-full max-w-[120%] sm:max-w-[100%] md:max-w-[90%] mx-auto object-contain"
+              />
+            </motion.div>
+
+            {/* Decorative Stars with floating and shine animation */}
+            <motion.div 
+              className="absolute bottom-4 right-4 sm:bottom-10 sm:right-10"
+              animate={{ 
+                y: [0, -15, 0],
+                scale: [1, 1.1, 1],
+                rotate: [0, 15, 0]
+              }}
+              transition={{ 
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <motion.div
+                animate={{
+                  opacity: [1, 0.7, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <Image
+                  src="/images/starIcon.png"
+                  alt="Decorative Stars"
+                  width={50}
+                  height={50}
+                  className="sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px]"
+                />
+              </motion.div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
       {/* Stats Section */}
-      <section className="w-full py-10 px-4">
-        <div className="mx-auto max-w-7xl">
-          {/* Title */}
-          <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-5xl text-center mb-8 sm:mb-12 leading-tight`}>
-            We help brands Connect better to their audience with{" "}
-            <span className="text-yellow-400">Creator</span> Culture
-          </h2>
+      <ScrollAnimation>
+        <section className="w-full py-10 px-4">
+          <div className="mx-auto max-w-7xl">
+            {/* Title */}
+            <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-5xl text-center mb-8 sm:mb-12 leading-tight`}>
+              We help brands Connect better to their audience with{" "}
+              <span className="text-yellow-400">Creator</span> Culture
+            </h2>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {/* Brands */}
-            <div className="text-center p-4 sm:p-6 flex flex-col justify-center items-center rounded-lg" style={{ backgroundColor: '#A881E7' }}>
-              <div className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl mb-1 sm:mb-2`}>
-                {brands}+
-              </div>
-              <div className={`${poppins.className} text-lg sm:text-xl md:text-2xl`}>Brands</div>
-            </div>
-
-            {/* Campaigns */}
-            <div className="text-center p-4 sm:p-6 flex flex-col justify-center items-center rounded-lg" style={{ backgroundColor: '#EA5FA5' }}>
-              <div className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl mb-1 sm:mb-2`}>
-                {campaigns}+
-              </div>
-              <div className={`${poppins.className} text-lg sm:text-xl md:text-2xl`}>Campaigns</div>
-            </div>
-
-            {/* Creator Community */}
-            <div className="text-center p-4 sm:p-6 flex flex-col justify-center items-center rounded-lg" style={{ backgroundColor: '#F2944D' }}>
-              <div className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl mb-1 sm:mb-2`}>
-                {creators / 1000}k+
-              </div>
-              <div className={`${poppins.className} text-lg sm:text-xl md:text-2xl`}>Creator Community</div>
-            </div>
-
-            {/* ROI */}
-            <div className="text-center p-4 sm:p-6 flex flex-col justify-center items-center rounded-lg" style={{ backgroundColor: '#6DDBEB' }}>
-              <div className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl mb-1 sm:mb-2`}>
-                {roi}%
-              </div>
-              <div className={`${poppins.className} text-lg sm:text-xl md:text-2xl`}>Assured ROI</div>
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { value: brands, label: "Brands", color: "#A881E7" },
+                { value: campaigns, label: "Campaigns", color: "#EA5FA5" },
+                { value: creators / 1000, label: "Creator Community", suffix: "k+", color: "#F2944D" },
+                { value: roi, label: "Assured ROI", suffix: "%", color: "#6DDBEB" }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="text-center p-4 sm:p-6 flex flex-col justify-center items-center rounded-lg"
+                  style={{ backgroundColor: stat.color }}
+                >
+                  <div className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl mb-1 sm:mb-2`}>
+                    {stat.value}{stat.suffix || '+'}
+                  </div>
+                  <div className={`${poppins.className} text-lg sm:text-xl md:text-2xl`}>{stat.label}</div>
+                </motion.div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
 
       {/* Services Section */}
-      <section id="services" className="w-full py-20 px-4 bg-black">
-        <div className="max-w-7xl mx-auto">
-          {/* Heading */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-12 text-center md:text-left">
-            <Image
-              src="/images/rocketSection.png"
-              alt="Paper Plane Icon"
-              width={80}
-              height={80}
-              className="w-16 md:w-24"
-            />
-            <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-white`}>
-              Our Expert Services
-            </h2>
-          </div>
+      <ScrollAnimation>
+        <section id="services" className="w-full py-20 px-4 bg-black">
+          <div className="max-w-7xl mx-auto">
+            {/* Heading */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-12 text-center md:text-left">
+              <Image
+                src="/images/rocketSection.png"
+                alt="Paper Plane Icon"
+                width={80}
+                height={80}
+                className="w-16 md:w-24"
+              />
+              <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-white`}>
+                Our Expert Services
+              </h2>
+            </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Service Cards */}
-            {[
-              {
-                title: "Influencer Marketing",
-                description:
-                  "We help you get the true ROI (return on influencer) through a data-driven selection process and culture-relevant activation.",
-                bgColor: "bg-[#EA5FA5]",
-                imgSrc: "/images/image1.png",
-                imgAlt: "Influencer Marketing",
-              },
-              {
-                title: "UGC Campaigns",
-                description:
-                  "User-Generated Content Campaigns, which are marketing initiatives that rely on content created by a brand's audience rather than the brand itself.",
-                bgColor: "bg-[#F2944D]",
-                imgSrc: "/images/image2.png",
-                imgAlt: "UGC Campaigns",
-              },
-              {
-                title: "Meme Campaigns",
-                description:
-                  "From creating brand new digital IPs to ideating a campaign and getting it executed, we can do anything and we're insanely good at it.",
-                bgColor: "bg-[#A881E7]",
-                imgSrc: "/images/image3.png",
-                imgAlt: "Meme Campaigns",
-              },
-              {
-                title: "Content On Demand",
-                description:
-                  "Source the top content from the top creators in the country. Our team has a network of exceptionally talented content creators.",
-                bgColor: "bg-[#6DDBEB]",
-                imgSrc: "/images/image4.png",
-                imgAlt: "Content On Demand",
-              },
-            ].map((service, index) => (
-              <div
-                key={index}
-                className={`${service.bgColor} rounded-3xl p-6 md:p-8 flex flex-col sm:flex-row items-center gap-6`}
-              >
-                <div className="w-32 sm:w-1/2 flex justify-center">
-                  <Image
-                    src={service.imgSrc}
-                    alt={service.imgAlt}
-                    width={150}
-                    height={150}
-                    className="w-24 sm:w-32 md:w-40"
-                  />
-                </div>
-                <div className="w-full sm:w-1/2 text-center sm:text-left">
-                  <h3 className={`${neueMachina.className} text-2xl md:text-4xl text-white font-bold mb-4`}>
-                    {service.title}
-                  </h3>
-                  <p className="text-black text-sm md:text-base mb-4">{service.description}</p>
-                  <button className="bg-black text-white px-6 py-3 flex items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105">
-                    Enquire Now <span className="text-xl">→</span>
-                  </button>
-                </div>
-              </div>
-            ))}
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Service Cards */}
+              {[
+                {
+                  title: "Influencer Marketing",
+                  description:
+                    "We help you get the true ROI (return on influencer) through a data-driven selection process and culture-relevant activation.",
+                  bgColor: "bg-[#EA5FA5]",
+                  imgSrc: "/images/image1.png",
+                  imgAlt: "Influencer Marketing",
+                },
+                {
+                  title: "UGC Campaigns",
+                  description:
+                    "User-Generated Content Campaigns, which are marketing initiatives that rely on content created by a brand's audience rather than the brand itself.",
+                  bgColor: "bg-[#F2944D]",
+                  imgSrc: "/images/image2.png",
+                  imgAlt: "UGC Campaigns",
+                },
+                {
+                  title: "Meme Campaigns",
+                  description:
+                    "From creating brand new digital IPs to ideating a campaign and getting it executed, we can do anything and we're insanely good at it.",
+                  bgColor: "bg-[#A881E7]",
+                  imgSrc: "/images/image3.png",
+                  imgAlt: "Meme Campaigns",
+                },
+                {
+                  title: "Content On Demand",
+                  description:
+                    "Source the top content from the top creators in the country. Our team has a network of exceptionally talented content creators.",
+                  bgColor: "bg-[#6DDBEB]",
+                  imgSrc: "/images/image4.png",
+                  imgAlt: "Content On Demand",
+                },
+              ].map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`${service.bgColor} rounded-3xl p-6 md:p-8 flex flex-col sm:flex-row items-center gap-6`}
+                >
+                  <div className="w-32 sm:w-1/2 flex justify-center">
+                    <Image
+                      src={service.imgSrc}
+                      alt={service.imgAlt}
+                      width={150}
+                      height={150}
+                      className="w-24 sm:w-32 md:w-40"
+                    />
+                  </div>
+                  <div className="w-full sm:w-1/2 text-center sm:text-left">
+                    <h3 className={`${neueMachina.className} text-2xl md:text-4xl text-white font-bold mb-4`}>
+                      {service.title}
+                    </h3>
+                    <p className="text-black text-sm md:text-base mb-4">{service.description}</p>
+                    <button className="bg-black text-white px-6 py-3 flex items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105">
+                      Enquire Now <span className="text-xl">→</span>
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
 
       {/* Brand Registration Banner */}
@@ -505,149 +592,198 @@ export default function CreatorsSection() {
 
 
       {/* Campaign Spotlight Section */}
-      <section id="campaigns" className="w-full py-20 px-4 bg-black">
-        <div className="max-w-7xl mx-auto">
-          {/* Header with Smiley */}
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8 text-center md:text-left">
-            <h2 className={`${neueMachina.className} text-4xl sm:text-5xl md:text-6xl text-white`}>
-              Campaign Spotlight
-            </h2>
-            <Image
-              src="/images/loveSmily.png"
-              alt="Smiley Emoji"
-              width={80}
-              height={80}
-              className="object-contain"
-            />
-          </div>
-
-          {/* Description Text */}
-          <p className={`${poppins.className} text-white text-center text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-16`}>
-            Celebrate our journey of innovation and collaboration! Explore our past campaigns,
-            each a testament to our commitment to excellence and creativity. Join us as we
-            continue to redefine possibilities together.
-          </p>
-
-          {/* Campaign Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* UpGrad Card - Larger */}
-            <div className="rounded-3xl col-span-1 md:col-span-2">
+      <ScrollAnimation>
+        <section id="campaigns" className="w-full py-20 px-4 bg-black">
+          <div className="max-w-7xl mx-auto">
+            {/* Header with Smiley */}
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8 text-center md:text-left">
+              <h2 className={`${neueMachina.className} text-4xl sm:text-5xl md:text-6xl text-white`}>
+                Campaign Spotlight
+              </h2>
               <Image
-                src="/images/upgradImage.png"
-                alt="UpGrad Campaign"
-                width={800}
-                height={500}
-                className="w-full rounded-2xl"
-                style={{ objectFit: 'contain', height: 'auto' }}
+                src="/images/loveSmily.png"
+                alt="Smiley Emoji"
+                width={80}
+                height={80}
+                className="object-contain"
               />
             </div>
 
-            {/* Amazon and Joyalukkas Cards */}
-            <div className="rounded-3xl flex flex-col gap-6">
-              <div>
+            {/* Description Text */}
+            <p className={`${poppins.className} text-white text-center text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-16`}>
+              Celebrate our journey of innovation and collaboration! Explore our past campaigns,
+              each a testament to our commitment to excellence and creativity. Join us as we
+              continue to redefine possibilities together.
+            </p>
+
+            {/* Campaign Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* UpGrad Card - Larger */}
+              <motion.div
+                className="rounded-3xl col-span-1 md:col-span-2"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
                 <Image
-                  src="/images/amazonImage.png"
-                  alt="Amazon Campaign"
-                  width={400}
-                  height={240}
+                  src="/images/upgradImage.png"
+                  alt="UpGrad Campaign"
+                  width={800}
+                  height={500}
                   className="w-full rounded-2xl"
                   style={{ objectFit: 'contain', height: 'auto' }}
                 />
-              </div>
-              <div>
+              </motion.div>
+
+              {/* Amazon and Joyalukkas Cards */}
+              <motion.div
+                className="rounded-3xl flex flex-col gap-6"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <Image
+                    src="/images/amazonImage.png"
+                    alt="Amazon Campaign"
+                    width={400}
+                    height={240}
+                    className="w-full rounded-2xl"
+                    style={{ objectFit: 'contain', height: 'auto' }}
+                  />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <Image
+                    src="/images/kajolImage.png"
+                    alt="Joyalukkas Campaign"
+                    width={400}
+                    height={240}
+                    className="w-full rounded-2xl"
+                    style={{ objectFit: 'contain', height: 'auto' }}
+                  />
+                </motion.div>
+              </motion.div>
+
+              {/* Myntra Card */}
+              <motion.div
+                className="rounded-3xl h-[331px]"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
                 <Image
-                  src="/images/kajolImage.png"
-                  alt="Joyalukkas Campaign"
-                  width={400}
-                  height={240}
-                  className="w-full rounded-2xl"
-                  style={{ objectFit: 'contain', height: 'auto' }}
+                  src="/images/myntraImage.png"
+                  alt="Myntra Campaign"
+                  width={395}
+                  height={331}
+                  className="w-full h-[331px] rounded-2xl"
+                  style={{ objectFit: 'cover' }}
                 />
-              </div>
-            </div>
+              </motion.div>
 
-            {/* Myntra Card */}
-            <div className="rounded-3xl h-[331px]">
-              <Image
-                src="/images/myntraImage.png"
-                alt="Myntra Campaign"
-                width={395}
-                height={331}
-                className="w-full h-[331px] rounded-2xl"
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-
-            {/* Spotify Card */}
-            <div className="rounded-3xl col-span-1 md:col-span-2 h-[331px]">
-              <Image
-                src="/images/spotifyImage.png"
-                alt="Spotify Campaign"
-                width={800}
-                height={331}
-                className="w-full h-[331px] rounded-2xl"
-                style={{ objectFit: 'cover' }}
-              />
+              {/* Spotify Card */}
+              <motion.div
+                className="rounded-3xl col-span-1 md:col-span-2 h-[331px]"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Image
+                  src="/images/spotifyImage.png"
+                  alt="Spotify Campaign"
+                  width={800}
+                  height={331}
+                  className="w-full h-[331px] rounded-2xl"
+                  style={{ objectFit: 'cover' }}
+                />
+              </motion.div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
 
       {/* Creator Family Section */}
-      <section id="creators" className="w-full py-20 px-4 bg-black">
-        <div className="max-w-7xl mx-auto">
-          {/* Header with Emoji */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12 text-center md:text-left">
-            <Image
-              src="/images/loveSmily.png"
-              alt="Heart Eyes Emoji"
-              width={80}
-              height={80}
-              className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20"
-            />
-            <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-white`}>
-              Our Creator Family
-            </h2>
-          </div>
+      <ScrollAnimation>
+        <section id="creators" className="w-full py-20 px-4 bg-black">
+          <div className="max-w-7xl mx-auto">
+            {/* Header with Emoji */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12 text-center md:text-left">
+              <Image
+                src="/images/loveSmily.png"
+                alt="Heart Eyes Emoji"
+                width={80}
+                height={80}
+                className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20"
+              />
+              <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-white`}>
+                Our Creator Family
+              </h2>
+            </div>
 
-          {/* Creators Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-            {creatorsDetails.map((creator, index) => (
-              <div
-                key={index}
-                className="relative p-6 transition-all duration-300 hover:-translate-y-2"
-                style={{ backgroundColor: creator.bgColor }}
-              >
-                {/* White Card Container */}
-                <div className="relative bg-white p-6 rounded-lg shadow-lg">
-                  {/* Image Container */}
-                  <div className="overflow-hidden rounded-lg" style={{ backgroundColor: creator.bgColor }}>
-                    <Image
-                      src={creator.image}
-                      alt={creator.name}
-                      width={400}
-                      height={400}
-                      className="w-full aspect-square object-cover grayscale"
-                      priority
-                    />
-                  </div>
+            {/* Creators Grid with Animation */}
+            <div className="relative w-full flex items-center">
 
-                  {/* Text Content */}
-                  <div className="mt-6 text-left">
-                    <p className={`${poppins.className} text-base font-medium mb-1`} style={{ color: creator.bgColor }}>
-                      {creator.title}
-                    </p>
-                    <h3 className={`${poppins.className} text-lg font-semibold text-black`}>
-                      {creator.name}
-                    </h3>
+            <motion.div
+              className="flex space-x-5 md:space-x-20 min-w-max"
+              animate={{ x: ["0%", "-30%"] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 30,
+                  ease: "linear",
+                }}
+            >
+              {creatorsDetails.map((creator, index) => (
+                <div
+                  key={index}
+                  className="relative p-6 transition-all duration-300 hover:-translate-y-2"
+                  style={{ backgroundColor: creator.bgColor }}
+                >
+                  {/* White Card Container */}
+                  <div className="relative bg-white p-6 rounded-lg shadow-lg">
+                    {/* Image Container */}
+                    <div className="overflow-hidden rounded-lg" style={{ backgroundColor: creator.bgColor }}>
+                      <Image
+                        src={creator.image}
+                        alt={creator.name}
+                        width={400}
+                        height={400}
+                        className="w-52 aspect-square object-cover grayscale"
+                        priority
+                      />
+                    </div>
+
+                    {/* Text Content */}
+                    <div className="mt-6 text-left">
+                      <p className={`${poppins.className} text-base font-medium mb-1`} style={{ color: creator.bgColor }}>
+                        {creator.title}
+                      </p>
+                      <h3 className={`${poppins.className} text-lg font-semibold text-black`}>
+                        {creator.name}
+                      </h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
 
       {/* Join Creator Family Section */}
@@ -698,7 +834,7 @@ export default function CreatorsSection() {
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className="h-16 md:h-20 w-32 object-contain "
+                      className="w-52 aspect-square object-cover"
                     />
                   </div>
                 ))}
@@ -712,7 +848,7 @@ export default function CreatorsSection() {
 
 
       {/* Platforms and Languages Section */}
-      <section className="w-full bg-black py-20 px-4">
+      <section className="w-full bg-black py-4 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Top Border Line */}
           <div className="w-full h-[10px] bg-[#FFC057] mb-12 sm:mb-20"></div>
