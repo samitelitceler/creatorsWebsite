@@ -200,8 +200,8 @@ export default function CreatorsSection() {
 
   const collaborations = [
     {
-      name: "Amada Media",
-      logo: "/images/amada.png"
+      name: "Tamada Media",
+      logo: "/images/tamada.png"
     },
     {
       name: "Chai Bisket",
@@ -220,10 +220,6 @@ export default function CreatorsSection() {
       logo: "/images/tamada.png"
     },
     {
-      name: "Amada Media",
-      logo: "/images/amada.png"
-    },
-    {
       name: "Chai Bisket",
       logo: "/images/chai.png"
     },
@@ -240,14 +236,17 @@ export default function CreatorsSection() {
       logo: "/images/tamada.png"
     },
     {
-      name: "Amada Media",
-      logo: "/images/amada.png"
-    },
-    {
       name: "Chai Bisket",
       logo: "/images/chai.png"
-    }
-
+    },
+    {
+      name: "Aha",
+      logo: "/images/aha.png"
+    },
+    {
+      name: "Silly Monks",
+      logo: "/images/sillyMonks.png"
+    },
   ];
 
   useEffect(() => {
@@ -341,8 +340,13 @@ export default function CreatorsSection() {
         />
         {/* Tilted text */}
         <div className={`${neueMachina.className} text-white text-sm md:text-lg lg:text-2xl font-clash-display font-bold tracking-wider text-center transform -rotate-3 overflow-hidden`}>
-          <div className="whitespace-nowrap animate-scroll">
-            Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create *
+          <div className="relative flex">
+            <div className="whitespace-nowrap animate-scroll">
+              Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create *
+            </div>
+            <div className="whitespace-nowrap animate-scroll" aria-hidden="true">
+              Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create *
+            </div>
           </div>
         </div>
       </div>
@@ -352,13 +356,13 @@ export default function CreatorsSection() {
       <ScrollAnimation>
         <section id="about" className="relative w-full md:min-h-screen py-10 md:py-20 px-4 flex items-center justify-center">
           {/* Smiley Emoji with floating animation */}
-          <motion.div 
+          <motion.div
             className="absolute top-4 left-4 sm:top-10 sm:left-10"
-            animate={{ 
+            animate={{
               y: [0, -10, 0],
               rotate: [-5, 5, -5]
             }}
-            transition={{ 
+            transition={{
               duration: 4,
               repeat: Infinity,
               ease: "easeInOut"
@@ -376,16 +380,16 @@ export default function CreatorsSection() {
           {/* Central Diagram */}
           <div className="relative w-full max-w-5xl">
             {/* Semi-circular segments with scale and rotate animation */}
-            <motion.div 
+            <motion.div
               className="relative flex justify-center"
               initial={{ scale: 0.8, opacity: 0, rotate: -180 }}
-              whileInView={{ 
-                scale: 1, 
-                opacity: 1, 
-                rotate: 0 
+              whileInView={{
+                scale: 1,
+                opacity: 1,
+                rotate: 0
               }}
               viewport={{ once: true }}
-              transition={{ 
+              transition={{
                 duration: 1,
                 ease: "easeOut",
                 rotate: {
@@ -404,14 +408,14 @@ export default function CreatorsSection() {
             </motion.div>
 
             {/* Decorative Stars with floating and shine animation */}
-            <motion.div 
+            <motion.div
               className="absolute bottom-4 right-4 sm:bottom-10 sm:right-10"
-              animate={{ 
+              animate={{
                 y: [0, -15, 0],
                 scale: [1, 1.1, 1],
                 rotate: [0, 15, 0]
               }}
-              transition={{ 
+              transition={{
                 duration: 3,
                 repeat: Infinity,
                 ease: "easeInOut"
@@ -719,12 +723,12 @@ export default function CreatorsSection() {
 
       {/* Creator Family Section */}
       <ScrollAnimation>
-        <section id="creators" className="w-full py-20 px-4 bg-black">
+        <section id="creators" className="w-full py-20 px-4 bg-black overflow-hidden">
           <div className="max-w-7xl mx-auto">
             {/* Header with Emoji */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12 text-center md:text-left">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12 text-center md:text-left">
               <Image
-                src="/images/loveSmily.png"
+                src="/images/loveEmojiCreators.png"
                 alt="Heart Eyes Emoji"
                 width={80}
                 height={80}
@@ -736,50 +740,48 @@ export default function CreatorsSection() {
             </div>
 
             {/* Creators Grid with Animation */}
-            <div className="relative w-full flex items-center">
-
-            <motion.div
-              className="flex space-x-5 md:space-x-20 min-w-max"
-              animate={{ x: ["0%", "-30%"] }}
+            <div className="relative w-[100vw] left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] overflow-hidden">
+              <motion.div
+                className="flex space-x-5 md:space-x-20 min-w-max"
+                animate={{ x: ["0%", "-30%"] }}
                 transition={{
                   repeat: Infinity,
                   duration: 30,
                   ease: "linear",
                 }}
-            >
-              {creatorsDetails.map((creator, index) => (
-                <div
-                  key={index}
-                  className="relative p-6 transition-all duration-300 hover:-translate-y-2"
-                  style={{ backgroundColor: creator.bgColor }}
-                >
-                  {/* White Card Container */}
-                  <div className="relative bg-white p-6 rounded-lg shadow-lg">
-                    {/* Image Container */}
-                    <div className="overflow-hidden rounded-lg" style={{ backgroundColor: creator.bgColor }}>
-                      <Image
-                        src={creator.image}
-                        alt={creator.name}
-                        width={400}
-                        height={400}
-                        className="w-52 aspect-square object-cover grayscale"
-                        priority
-                      />
-                    </div>
+              >
+                {creatorsDetails.map((creator, index) => (
+                  <div
+                    key={index}
+                    className="relative w-72 p-6 transition-all duration-300 hover:-translate-y-2"
+                    style={{ backgroundColor: creator.bgColor }}
+                  >
+                    {/* White Card Container */}
+                    <div className="relative bg-white p-6 rounded-lg shadow-lg">
+                      {/* Image Container */}
+                      <div className="overflow-hidden rounded-lg" style={{ backgroundColor: creator.bgColor }}>
+                        <img
+                          src={creator.image}
+                          alt={creator.name}
+                          className="grayscale w-80"
+                          width={400}
+                          height={400}
+                        />
+                      </div>
 
-                    {/* Text Content */}
-                    <div className="mt-6 text-left">
-                      <p className={`${poppins.className} text-base font-medium mb-1`} style={{ color: creator.bgColor }}>
-                        {creator.title}
-                      </p>
-                      <h3 className={`${poppins.className} text-lg font-semibold text-black`}>
-                        {creator.name}
-                      </h3>
+                      {/* Text Content */}
+                      <div className="mt-6 text-left">
+                        <p className={`${poppins.className} text-base font-medium mb-1`} style={{ color: creator.bgColor }}>
+                          {creator.title}
+                        </p>
+                        <h3 className={`${poppins.className} text-lg font-semibold text-black`}>
+                          {creator.name}
+                        </h3>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </motion.div>
+                ))}
+              </motion.div>
             </div>
           </div>
         </section>
@@ -936,18 +938,16 @@ export default function CreatorsSection() {
                 ease: "linear",
               }}
             >
-
-
               {collaborations.map((collab, index) => (
                 <div key={index} className="p-4 sm:p-6 flex items-center justify-center">
                   <img
                     src={collab.logo}
                     alt={collab.name}
-                    className="h-16 md:h-20 w-32 object-contain mx-4"
+                    className="h-20 object-contain mx-4"
+                  // style={{ maxHeight: '80px', maxWidth: '80px' }}
                   />
                 </div>
               ))}
-
             </motion.div>
           </div>
 
@@ -973,6 +973,7 @@ export default function CreatorsSection() {
                 <span className={`${neueMachina.className} text-lg sm:text-2xl text-black`}>+91 91908 98768 401</span>
               </a>
             </div>
+
 
             {/* Email */}
             <div className="flex cursor-pointer items-center gap-4 sm:gap-6 bg-[#6DDBEB] rounded-full px-8 sm:px-12 py-4 sm:py-6 w-full md:w-auto hover:opacity-90 transition-all duration-300 text-center">
