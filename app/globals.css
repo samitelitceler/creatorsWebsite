@@ -18,8 +18,8 @@ html {
   
   .animate-scroll {
     display: inline-block;
-    animation: scroll 20s linear infinite;
-    padding-right: 50px;
+    animation: scroll 30s linear infinite; /* Slower scroll */
+    padding-right: 4rem; /* Space between repeats */
   }
   @keyframes fadeInUp {
     from {

@@ -1,5 +1,5 @@
 "use client";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -11,16 +11,16 @@ export default function Navbar() {
   // Disable scrolling when menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = "hidden"; // Prevent scrolling
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"; // Restore scrolling
+      document.body.style.overflow = "auto";
     }
   }, [isMenuOpen]);
 
   // Close menu when clicking outside
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
-      const target = event.target as HTMLElement; // Type assertion
+      const target = event.target as HTMLElement;
       if (target && !target.closest("#mobile-menu") && !target.closest("#menu-icon")) {
         setIsMenuOpen(false);
       }
@@ -31,40 +31,33 @@ export default function Navbar() {
 
   return (
     <div className="relative overflow-hidden">
-      <nav className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+      <nav className="flex items-center justify-between px-4 sm:px-8 md:px-16 lg:px-24 py-4 bg-white shadow-md">
         {/* Logo */}
         <div>
-          <Image src="/images/creatorsLogo.png" alt="Creators Logo" width={200} height={60} />
+          <Image src="/images/creatorsLogo.png" alt="Creators Logo" width={140} height={40} className="w-auto h-10 sm:h-12" />
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 text-black py-4 mr-8">
-          <Link href="/" className="hover:underline">Home</Link>
-          <a href="#about" className="hover:underline">About Us</a>
-          <a href="#campaigns" className="hover:underline">Campaigns</a>
-          <a href="#services" className="hover:underline">Our Services</a>
-          <a href="#creators" className="hover:underline">Creators</a>
-          <a href="#clients" className="hover:underline">Clients</a>
+        <div className="hidden md:flex space-x-4 lg:space-x-8 text-black py-2 mr-2 ml-auto">
+          <Link href="/" className="hover:underline text-base lg:text-xl font-normal">Home</Link>
+          <a href="#about" className="hover:underline text-base lg:text-xl font-normal">About Us</a>
+          <a href="#campaigns" className="hover:underline text-base lg:text-xl font-normal">Campaigns</a>
+          <a href="#services" className="hover:underline text-base lg:text-xl font-normal">Our Services</a>
+          <a href="#creators" className="hover:underline text-base lg:text-xl font-normal">Creators</a>
+          <a href="#clients" className="hover:underline text-base lg:text-xl font-normal">Clients</a>
         </div>
 
         {/* Enquire Button (Desktop) */}
-        <Button className="hidden md:block bg-black cursor-pointer hover:bg-yellow-400 hover:text-black text-white border border-[0.5px] border-black px-6 relative">
-          Enquire Now
-          <Image
-            src="/images/cursorBorderImage.png"
-            alt="Cursor"
-            width={24}
-            height={24}
-            className="absolute -bottom-2 -right-2"
-          />
-        </Button>
+        <button className="hidden md:flex items-center gap-2 rounded-full bg-black text-white border border-black px-4 lg:px-6 py-2 lg:py-3 font-medium transition-all duration-300 cursor-pointer hover:scale-105 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] ml-2">
+          Enquire Now <ArrowRight className="w-5 h-5" />
+        </button>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           {isMenuOpen ? (
-            <X id="menu-icon" onClick={() => setIsMenuOpen(false)} className="cursor-pointer text-black" />
+            <X id="menu-icon" onClick={() => setIsMenuOpen(false)} className="cursor-pointer text-black w-8 h-8" />
           ) : (
-            <Menu id="menu-icon" onClick={() => setIsMenuOpen(true)} className="cursor-pointer text-black" />
+            <Menu id="menu-icon" onClick={() => setIsMenuOpen(true)} className="cursor-pointer text-black w-8 h-8" />
           )}
         </div>
       </nav>
@@ -72,24 +65,25 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-white px-4 text-black flex flex-col items-left space-y-6 py-4 transform ${
+        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-white px-4 text-black flex flex-col items-end space-y-6 py-4 transform ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out z-50`}
       >
-           <div className="flex items-center w-full justify-between px-4">
-          <Image src="/images/creatorsLogo.png" alt="Creators Logo" width={200} height={60} />
-         <X id="menu-icon" onClick={() => setIsMenuOpen(false)} className="cursor-pointer items-end text-black" />
+        <div className="flex items-center w-full justify-between px-2 sm:px-4">
+          <Image src="/images/creatorsLogo.png" alt="Creators Logo" width={140} height={40} className="w-auto h-10 sm:h-12" />
+          <X id="menu-icon" onClick={() => setIsMenuOpen(false)} className="cursor-pointer items-end text-black w-8 h-8" />
         </div>
 
-       
-       
-        <a href="#" className="hover:text-yellow-400 px-4 text-lg">Home</a>
-        <a href="#about" className="hover:text-yellow-400 px-4 text-lg">About Us</a>
-        <a href="#campaigns" className="hover:text-yellow-400 px-4 text-lg">Campaigns</a>
-        <a href="#services" className="hover:text-yellow-400 px-4 text-lg">Our Services</a>
-        <a href="#creators" className="hover:text-yellow-400 px-4 text-lg">Creators</a>
-        <a href="#clients" className="hover:text-yellow-400 px-4 text-lg">Clients</a>
-        <Button className="bg-yellow-400 w-1/2 text-black  px-8 py-2">Enquire Now</Button>
+        <a href="#" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Home</a>
+        <a href="#about" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">About Us</a>
+        <a href="#campaigns" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Campaigns</a>
+        <a href="#services" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Our Services</a>
+        <a href="#creators" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Creators</a>
+        <a href="#clients" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Clients</a>
+        <Button className="flex items-center gap-2 rounded-full bg-black text-white border border-black px-6 py-3 font-medium transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105 w-full sm:w-1/2 mx-auto mt-4">
+          <span>Enquire Now</span>
+          <ArrowRight />
+        </Button>
       </div>
     </div>
   );

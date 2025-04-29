@@ -286,20 +286,48 @@ export default function CreatorsSection() {
 
       {/* Hero Section */}
       <ScrollAnimation>
-        <section className={`${neueMachina.className} flex flex-col md:flex-row items-center justify-between px-2 py-12 max-w-7xl mx-auto`}>
+        <section className={`${neueMachina.className} flex flex-col md:flex-row items-center justify-between py-8 sm:py-12 max-w-7xl mx-auto w-full px-4 sm:px-8`}>
+          {/* Text and star icon */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full md:w-1/2"
+            className="w-full md:w-1/2 flex flex-col items-center md:items-start"
           >
-            <h1 className="text-4xl md:text-6xl mb-6 leading-tight">
-              Revolutionize your Marketing Campaign with{" "}
-              <span className="text-yellow-400">Creators</span>.
-            </h1>
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center md:text-left">
+                Revolutionize your Marketing Campaign with{" "}
+                <span className="text-yellow-400">Creators</span>.
+              </h1>
+              <motion.div
+                animate={{
+                  opacity: [1, 0.7, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="mb-1"
+              >
+                <Image
+                  src="/images/starIcon.png"
+                  alt="Decorative Stars"
+                  width={40}
+                  height={40}
+                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14"
+                />
+              </motion.div>
+            </div>
+
+            <button className="bg-white text-black px-6 py-3 rounded-md cursor-pointer flex items-center justify-center gap-2 text-base sm:text-lg md:text-xl transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105">
+              Explore <span className="text-xl">→</span>
+            </button>
           </motion.div>
+
+          {/* Image on the right (on desktop), below on mobile */}
           <motion.div
-            className="w-full md:w-1/2 mt-10 md:mt-0"
+            className="w-full md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -309,7 +337,8 @@ export default function CreatorsSection() {
               alt="Creators Workspace Illustration"
               width={700}
               height={500}
-              className="object-contain"
+              className="object-contain w-full max-w-[400px] md:max-w-[500px] lg:max-w-[700px]"
+              priority
             />
           </motion.div>
         </section>
@@ -339,7 +368,7 @@ export default function CreatorsSection() {
           }}
         />
         {/* Tilted text */}
-        <div className={`${neueMachina.className} text-white text-sm md:text-lg lg:text-2xl font-clash-display font-bold tracking-wider text-center transform -rotate-3 overflow-hidden`}>
+        <div className={`${neueMachina.className} text-white text-2xl md:text-4xl lg:text-5xl font-clash-display font-bold tracking-wider text-center transform -rotate-3 overflow-hidden py-4`}>
           <div className="relative flex">
             <div className="whitespace-nowrap animate-scroll">
               Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create *
@@ -354,7 +383,7 @@ export default function CreatorsSection() {
 
       {/* Ecosystem Section */}
       <ScrollAnimation>
-        <section id="about" className="relative w-full md:min-h-screen py-10 md:py-20 px-4 flex items-center justify-center">
+        <section id="about" className="relative w-full md:min-h-screen py-10 md:py-12 px-4 flex items-center justify-center">
           {/* Smiley Emoji with floating animation */}
           <motion.div
             className="absolute top-4 left-4 sm:top-10 sm:left-10"
@@ -485,7 +514,7 @@ export default function CreatorsSection() {
 
       {/* Services Section */}
       <ScrollAnimation>
-        <section id="services" className="w-full py-20 px-4 bg-black">
+        <section id="services" className="w-full py-12 px-4 bg-black">
           <div className="max-w-7xl mx-auto">
             {/* Heading */}
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-12 text-center md:text-left">
@@ -723,7 +752,7 @@ export default function CreatorsSection() {
 
       {/* Creator Family Section */}
       <ScrollAnimation>
-        <section id="creators" className="w-full py-20 px-4 bg-black overflow-hidden">
+        <section id="creators" className="w-full py-12 px-4 bg-black overflow-hidden">
           <div className="max-w-7xl mx-auto">
             {/* Header with Emoji */}
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12 text-center md:text-left">
@@ -738,6 +767,11 @@ export default function CreatorsSection() {
                 Our Creator Family
               </h2>
             </div>
+
+            <p className="text-white text-center md:text-center text-base sm:text-lg max-w-2xl mx-auto mt-2 mb-8">
+              Meet the vibrant creators who inspire, entertain, and connect with millions everyday.
+              Together, we celebrate creativity and the power of authentic storytelling.
+            </p>
 
             {/* Creators Grid with Animation */}
             <div className="relative w-[100vw] left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] overflow-hidden">
@@ -789,7 +823,7 @@ export default function CreatorsSection() {
 
 
       {/* Join Creator Family Section */}
-      <section className="w-full py-20 px-4 bg-black overflow-hidden">
+      <section className="w-full py-12 px-4 bg-black overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-center mb-10 md:mb-16`}>
@@ -856,13 +890,13 @@ export default function CreatorsSection() {
           <div className="w-full h-[10px] bg-[#FFC057] mb-12 sm:mb-20"></div>
 
           {/* Platforms Section */}
-          <div className="flex flex-col md:flex-row items-start md:items-center md:py-12 gap-6 sm:gap-8 mb-12 sm:mb-20">
+          <div className="flex flex-col md:flex-row items-center md:items-center md:py-12 gap-6 sm:gap-8 mb-12 sm:mb-20">
             <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-white whitespace-nowrap`}>
               4+ Platforms
             </h2>
 
             {/* Platform Icons */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 md:flex items-center gap-6 sm:gap-8">
+            <div className="grid grid-cols-4 md:flex items-center gap-6 sm:gap-8">
               {platforms.map((platform, index) => (
                 <div key={index} className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
                   <Image
@@ -889,7 +923,7 @@ export default function CreatorsSection() {
           </div>
 
           {/* Languages Section */}
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 sm:gap-8 text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8 text-center md:text-left">
             <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-white whitespace-nowrap`}>
               6+ Languages
             </h2>
@@ -910,10 +944,10 @@ export default function CreatorsSection() {
         </div>
       </section>
 
-      {/* Our Collaborations Section */}
+      {/* Let's Connect Section */}
       <section
         id="collaborations"
-        className="w-full bg-black py-20 px-4 overflow-hidden"
+        className="w-full bg-black py-12 px-4 overflow-hidden"
         style={{
           backgroundImage: 'url("/images/bgCollaborate.svg.png")',
           backgroundRepeat: 'repeat',
@@ -957,32 +991,60 @@ export default function CreatorsSection() {
 
         {/* Let's Connect Section */}
         <div className="max-w-7xl mx-auto mt-24 sm:mt-32 mb-24 sm:mb-32">
-          <h2 className={`${neueMachina.className} text-4xl sm:text-5xl md:text-6xl text-center mb-12 sm:mb-24`}>
+          <h2 className={`${neueMachina.className} text-4xl sm:text-5xl md:text-6xl text-center mb-4 sm:mb-6`}>
             Let&apos;s Connect
           </h2>
+          {/* Subheading */}
+          <p className="text-center text-lg sm:text-xl text-white/80 mb-12">
+            Reach out to us through any of the following ways!
+          </p>
 
           {/* Contact Information */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-12">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 min-w-0 overflow-x-auto w-full">
             {/* Phone Number */}
-            <div className="flex cursor-pointer items-center gap-4 sm:gap-6 bg-[#6DDBEB] rounded-full px-8 sm:px-12 py-4 sm:py-6 w-full md:w-auto hover:opacity-90 transition-all duration-300 text-center">
+            <div className="w-full md:flex-1 flex cursor-pointer items-center justify-center gap-3 bg-[#6DDBEB] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 hover:opacity-90 transition-all duration-300 text-center">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M20 10.999H22C22 5.869 18.127 2 13 2V4C17.024 4 20 6.975 20 10.999Z" fill="black" />
                 <path d="M13 8C15.103 8 17 9.897 17 12H19C19 8.795 16.206 6 13 6V8ZM16.422 13.443C16.2298 13.2683 15.9773 13.1752 15.7178 13.1832C15.4582 13.1912 15.212 13.2998 15.031 13.486L12.638 15.947C12.062 15.837 10.904 15.476 9.71198 14.287C8.51998 13.094 8.15898 11.933 8.05198 11.361L10.511 8.96698C10.6975 8.78612 10.8062 8.53982 10.8142 8.28007C10.8222 8.02032 10.7289 7.76773 10.554 7.57598L6.85898 3.51298C6.68402 3.32165 6.44086 3.20265 6.18113 3.18133C5.92139 3.16001 5.66263 3.23829 5.45798 3.40098L3.29798 5.28698C3.12509 5.46051 3.0222 5.69145 3.00798 5.93598C2.99198 6.18698 2.70698 12.108 7.29898 16.702C11.305 20.707 16.323 21 17.705 21C17.907 21 18.031 20.994 18.064 20.992C18.3085 20.9783 18.5393 20.8747 18.712 20.701L20.598 18.541C20.7608 18.3362 20.8391 18.0772 20.8177 17.8173C20.7963 17.5574 20.6771 17.3142 20.485 17.139L16.422 13.443Z" fill="black" />
               </svg>
-              <a href="tel:+919190898768401">
-                <span className={`${neueMachina.className} text-lg sm:text-2xl text-black`}>+91 91908 98768 401</span>
+              <a href="tel:+919190898768401" className="whitespace-nowrap">
+                <span className={`${neueMachina.className} text-base sm:text-lg md:text-xl text-black font-bold`}>
+                  +91 91908 98768 401
+                </span>
               </a>
             </div>
 
+            {/* WhatsApp Button */}
+            <a
+              href="https://wa.me/919190898768401"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:flex-1 flex items-center justify-center gap-3 bg-[#25D366] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 hover:opacity-90 transition-all duration-300 text-black font-semibold text-center"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.989.583 3.838 1.583 5.393L2 22l4.707-1.561A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.657 0-3.216-.506-4.5-1.367l-.32-.21-2.8.927.927-2.8-.21-.32A7.963 7.963 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm4.29-5.709c-.197-.099-1.17-.578-1.351-.644-.181-.066-.313-.099-.444.099-.13.197-.508.644-.623.777-.115.132-.23.148-.427.05-.197-.099-.832-.307-1.586-.98-.587-.523-.983-1.17-1.099-1.367-.115-.197-.012-.303.087-.401.089-.088.197-.23.296-.345.099-.115.132-.197.197-.329.066-.132.033-.247-.016-.346-.049-.099-.444-1.073-.608-1.47-.16-.384-.323-.332-.444-.338-.115-.006-.247-.007-.38-.007-.132 0-.346.049-.527.247-.181.197-.693.678-.693 1.654 0 .976.71 1.92.81 2.053.099.132 1.397 2.137 3.393 2.914.475.164.844.262 1.133.336.476.121.91.104 1.253.063.382-.045 1.17-.478 1.336-.94.165-.462.165-.857.115-.94-.049-.082-.18-.132-.377-.23z" fill="#fff"/>
+              </svg>
+              <span className={`${neueMachina.className} text-base sm:text-lg md:text-xl`}>WhatsApp</span>
+            </a>
 
             {/* Email */}
-            <div className="flex cursor-pointer items-center gap-4 sm:gap-6 bg-[#6DDBEB] rounded-full px-8 sm:px-12 py-4 sm:py-6 w-full md:w-auto hover:opacity-90 transition-all duration-300 text-center">
+            <div className="w-full md:flex-1 flex cursor-pointer items-center justify-center gap-3 bg-[#6DDBEB] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 hover:opacity-90 transition-all duration-300 text-center">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="black" />
               </svg>
-              <a href="mailto:Brands@affix.com">
-                <span className={`${neueMachina.className} text-lg sm:text-2xl text-black`}>Brands@affix.com</span>
+              <a href="mailto:Brands@affix.com" className="whitespace-nowrap">
+                <span className={`${neueMachina.className} text-base sm:text-lg md:text-xl text-black font-bold`}>
+                  Brands@affix.com
+                </span>
               </a>
+            </div>
+
+            {/* Location */}
+            <div className="w-full md:flex-1 flex items-center justify-center gap-3 bg-[#6DDBEB] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 text-black font-semibold text-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="black"/>
+              </svg>
+              <span className={`${neueMachina.className} text-base sm:text-lg md:text-xl`}>Hyderabad</span>
             </div>
           </div>
         </div>
