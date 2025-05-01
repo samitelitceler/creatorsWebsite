@@ -320,9 +320,9 @@ export default function CreatorsSection() {
               </motion.div>
             </div>
 
-            <button className="bg-white text-black px-6 py-3 rounded-md cursor-pointer flex items-center justify-center gap-2 text-base sm:text-lg md:text-xl transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105">
-              Explore <span className="text-xl">→</span>
-            </button>
+            <button className="bg-white text-black px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105">
+                      Explore <span className="text-xl">→</span>
+                    </button>
           </motion.div>
 
           {/* Image on the right (on desktop), below on mobile */}
@@ -589,7 +589,7 @@ export default function CreatorsSection() {
                       {service.title}
                     </h3>
                     <p className="text-black text-sm md:text-base mb-4">{service.description}</p>
-                    <button className="bg-black text-white px-6 py-3 flex items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105">
+                    <button className="bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105">
                       Enquire Now <span className="text-xl">→</span>
                     </button>
                   </div>
@@ -962,7 +962,8 @@ export default function CreatorsSection() {
           </h2>
 
           {/* Collaboration Logos Grid */}
-          <div className="relative w-full flex items-center">
+          {/* Collaboration Logos Grid */}
+          <div className="relative w-full flex items-center overflow-hidden">
             <motion.div
               className="flex space-x-5 md:space-x-20 min-w-max"
               animate={{ x: ["0%", "-30%"] }}
@@ -973,17 +974,20 @@ export default function CreatorsSection() {
               }}
             >
               {collaborations.map((collab, index) => (
-                <div key={index} className="p-4 sm:p-6 flex items-center justify-center">
+                <div
+                  key={index}
+                  className="p-4 sm:p-6 flex items-center justify-center w-[200px] h-[200px]"
+                >
                   <img
                     src={collab.logo}
                     alt={collab.name}
-                    className="h-20 object-contain mx-4"
-                  // style={{ maxHeight: '80px', maxWidth: '80px' }}
+                    className="w-full h-full object-contain"
                   />
                 </div>
               ))}
             </motion.div>
           </div>
+
 
           {/* Divider */}
           <div id="contact" className="w-full h-[10px] bg-[#FFC057] mt-16 sm:mt-20"></div>
@@ -1022,7 +1026,7 @@ export default function CreatorsSection() {
               className="w-full md:flex-1 flex items-center justify-center gap-3 bg-[#25D366] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 hover:opacity-90 transition-all duration-300 text-black font-semibold text-center"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.989.583 3.838 1.583 5.393L2 22l4.707-1.561A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.657 0-3.216-.506-4.5-1.367l-.32-.21-2.8.927.927-2.8-.21-.32A7.963 7.963 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm4.29-5.709c-.197-.099-1.17-.578-1.351-.644-.181-.066-.313-.099-.444.099-.13.197-.508.644-.623.777-.115.132-.23.148-.427.05-.197-.099-.832-.307-1.586-.98-.587-.523-.983-1.17-1.099-1.367-.115-.197-.012-.303.087-.401.089-.088.197-.23.296-.345.099-.115.132-.197.197-.329.066-.132.033-.247-.016-.346-.049-.099-.444-1.073-.608-1.47-.16-.384-.323-.332-.444-.338-.115-.006-.247-.007-.38-.007-.132 0-.346.049-.527.247-.181.197-.693.678-.693 1.654 0 .976.71 1.92.81 2.053.099.132 1.397 2.137 3.393 2.914.475.164.844.262 1.133.336.476.121.91.104 1.253.063.382-.045 1.17-.478 1.336-.94.165-.462.165-.857.115-.94-.049-.082-.18-.132-.377-.23z" fill="#fff"/>
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.989.583 3.838 1.583 5.393L2 22l4.707-1.561A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.657 0-3.216-.506-4.5-1.367l-.32-.21-2.8.927.927-2.8-.21-.32A7.963 7.963 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm4.29-5.709c-.197-.099-1.17-.578-1.351-.644-.181-.066-.313-.099-.444.099-.13.197-.508.644-.623.777-.115.132-.23.148-.427.05-.197-.099-.832-.307-1.586-.98-.587-.523-.983-1.17-1.099-1.367-.115-.197-.012-.303.087-.401.089-.088.197-.23.296-.345.099-.115.132-.197.197-.329.066-.132.033-.247-.016-.346-.049-.099-.444-1.073-.608-1.47-.16-.384-.323-.332-.444-.338-.115-.006-.247-.007-.38-.007-.132 0-.346.049-.527.247-.181.197-.693.678-.693 1.654 0 .976.71 1.92.81 2.053.099.132 1.397 2.137 3.393 2.914.475.164.844.262 1.133.336.476.121.91.104 1.253.063.382-.045 1.17-.478 1.336-.94.165-.462.165-.857.115-.94-.049-.082-.18-.132-.377-.23z" fill="#fff" />
               </svg>
               <span className={`${neueMachina.className} text-base sm:text-lg md:text-xl`}>WhatsApp</span>
             </a>
@@ -1042,7 +1046,7 @@ export default function CreatorsSection() {
             {/* Location */}
             <div className="w-full md:flex-1 flex items-center justify-center gap-3 bg-[#6DDBEB] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 text-black font-semibold text-center">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="black"/>
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="black" />
               </svg>
               <span className={`${neueMachina.className} text-base sm:text-lg md:text-xl`}>Hyderabad</span>
             </div>
