@@ -347,7 +347,7 @@ export default function CreatorsSection() {
       <div className="relative w-full overflow-hidden bg-black py-12">
         {/* Top tilted line */}
         <div
-          className="absolute w-[300%] transform -rotate-3 left-[-100%] right-0"
+          className="absolute w-[400%] transform -rotate-3 left-[-150%] right-0"
           style={{
             background: 'linear-gradient(90deg, transparent 0%, transparent 35%, #ffffff 35%, #ffffff 65%, transparent 65%, transparent 100%)',
             height: '2px',
@@ -358,7 +358,7 @@ export default function CreatorsSection() {
         />
         {/* Bottom tilted line */}
         <div
-          className="absolute w-[300%] transform -rotate-3 left-[-100%] right-0"
+          className="absolute w-[400%] transform -rotate-3 left-[-150%] right-0"
           style={{
             background: 'linear-gradient(90deg, transparent 0%, transparent 35%, #ffffff 35%, #ffffff 65%, transparent 65%, transparent 100%)',
             height: '2px',
