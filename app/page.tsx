@@ -5,7 +5,10 @@ import Navbar from "../components/navbar/Navbar";
 import localFont from 'next/font/local'
 import { Poppins } from 'next/font/google'
 import { motion } from "framer-motion";
-import { Instagram, Twitter, Youtube, Linkedin } from 'lucide-react';
+import {
+  Instagram, Twitter, Youtube, Linkedin,
+  Heart, MessageCircle, Send, Bookmark, EllipsisVertical, ArrowRight
+} from 'lucide-react';
 import ScrollAnimation from "../components/ScrollAnimation";
 
 const neueMachina = localFont({
@@ -13,7 +16,7 @@ const neueMachina = localFont({
 });
 
 const poppins = Poppins({
-  weight: '400',
+  weight: ['400', '700'],
   subsets: ['latin'],
 })
 
@@ -35,77 +38,48 @@ export default function CreatorsSection() {
   const creatorsDetails = [
     {
       name: "Deepthi Sunaina",
-      title: "The Showstopper",
-      image: "/images/creator1.png",
-      bgColor: "#E95FA5"
+      image: "/images/deepthi.png",
+      bgColor: "#FF4D9D",
     },
     {
       name: "Shanmukh Jaswanth",
-      title: "Master of Disguise",
-      image: "/images/creator2.png",
-      bgColor: "#F2944D"
+      image: "/images/shanmukh.png",
+      bgColor: "#FFAA4D",
     },
     {
-      name: "Alekhya Harika",
-      title: "Emotional Powerhouse",
-      image: "/images/creator3.png",
-      bgColor: "#A880E7"
+      name: "Alekya Harika",
+      image: "/images/alekya.png",
+      bgColor: "#8E60FF",
     },
     {
       name: "Pranavi Manukonda",
-      title: "Scene-Stealer",
-      image: "/images/creator4.png",
-      bgColor: "#6DDBEB"
+      image: "/images/pranavi.png",
+      bgColor: "#6EDCFF",
     },
     {
       name: "Deepthi Sunaina",
-      title: "The Showstopper",
-      image: "/images/creator1.png",
-      bgColor: "#E95FA5"
+      image: "/images/deepthi.png",
+      bgColor: "#FF4D9D",
     },
     {
       name: "Shanmukh Jaswanth",
-      title: "Master of Disguise",
-      image: "/images/creator2.png",
-      bgColor: "#F2944D"
+      image: "/images/shanmukh.png",
+      bgColor: "#FFAA4D",
     },
     {
-      name: "Alekhya Harika",
-      title: "Emotional Powerhouse",
-      image: "/images/creator3.png",
-      bgColor: "#A880E7"
+      name: "Alekya Harika",
+      image: "/images/alekya.png",
+      bgColor: "#8E60FF",
     },
     {
       name: "Pranavi Manukonda",
-      title: "Scene-Stealer",
-      image: "/images/creator4.png",
-      bgColor: "#6DDBEB"
+      image: "/images/pranavi.png",
+      bgColor: "#6EDCFF",
     },
-    {
-      name: "Deepthi Sunaina",
-      title: "The Showstopper",
-      image: "/images/creator1.png",
-      bgColor: "#E95FA5"
-    },
-    {
-      name: "Shanmukh Jaswanth",
-      title: "Master of Disguise",
-      image: "/images/creator2.png",
-      bgColor: "#F2944D"
-    },
-    {
-      name: "Alekhya Harika",
-      title: "Emotional Powerhouse",
-      image: "/images/creator3.png",
-      bgColor: "#A880E7"
-    },
-    {
-      name: "Pranavi Manukonda",
-      title: "Scene-Stealer",
-      image: "/images/creator4.png",
-      bgColor: "#6DDBEB"
-    },
+
+    // ...repeat or more
   ];
+
 
   const clientsDetails = [
     {
@@ -320,9 +294,9 @@ export default function CreatorsSection() {
               </motion.div>
             </div>
 
-            <button className="bg-white text-black px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105">
-                      Explore <span className="text-xl">→</span>
-                    </button>
+            <button className="ml-4 flex items-center gap-2 h-10 px-5 rounded-md bg-black text-white text-sm font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap">
+              Explore Now<ArrowRight className="w-4 h-4" />
+            </button>
           </motion.div>
 
           {/* Image on the right (on desktop), below on mobile */}
@@ -774,49 +748,58 @@ export default function CreatorsSection() {
             </p>
 
             {/* Creators Grid with Animation */}
-            <div className="relative w-[100vw] left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] overflow-hidden">
-              <motion.div
-                className="flex space-x-5 md:space-x-20 min-w-max"
-                animate={{ x: ["0%", "-30%"] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 30,
-                  ease: "linear",
-                }}
-              >
-                {creatorsDetails.map((creator, index) => (
-                  <div
-                    key={index}
-                    className="relative w-72 p-6 transition-all duration-300 hover:-translate-y-2"
-                    style={{ backgroundColor: creator.bgColor }}
-                  >
-                    {/* White Card Container */}
-                    <div className="relative bg-white p-6 rounded-lg shadow-lg">
-                      {/* Image Container */}
-                      <div className="overflow-hidden rounded-lg" style={{ backgroundColor: creator.bgColor }}>
-                        <img
-                          src={creator.image}
-                          alt={creator.name}
-                          className="grayscale w-80"
-                          width={400}
-                          height={400}
-                        />
-                      </div>
-
-                      {/* Text Content */}
-                      <div className="mt-6 text-left">
-                        <p className={`${poppins.className} text-base font-medium mb-1`} style={{ color: creator.bgColor }}>
-                          {creator.title}
-                        </p>
-                        <h3 className={`${poppins.className} text-lg font-semibold text-black`}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+              {creatorsDetails.map((creator, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-sm p-4"
+                  style={{ backgroundColor: creator.bgColor }}
+                >
+                  <div className="bg-white rounded-xl overflow-hidden">
+                    {/* Header */}
+                    <div className="flex items-center justify-between px-4 py-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8">
+                          <Image
+                            src={creator.image}
+                            alt={creator.name}
+                            width={32}
+                            height={32}
+                            className="rounded-full object-cover w-full h-full"
+                          />
+                        </div>
+                        <span className="font-semibold text-sm flex text-black items-center gap-1">
                           {creator.name}
-                        </h3>
+                         <img src="/images/verified.svg" alt="" />
+                        </span>
                       </div>
+                      <EllipsisVertical className="w-5 h-5 text-gray-500" />
+                    </div>
+
+                    {/* Main Post Image */}
+                    <Image
+                      src={creator.image}
+                      alt={creator.name}
+                      width={400}
+                      height={400}
+                      className="w-full aspect-square object-cover"
+                    />
+
+                    {/* Footer Icons */}
+                    <div className="flex items-center justify-between px-4 py-3">
+                      <div className="flex items-center gap-4 text-red-500">
+                        <Heart className="w-6 h-6" />
+                        <MessageCircle className="w-6 h-6 text-gray-700" />
+                        <Send className="w-6 h-6 text-gray-700" />
+                      </div>
+                      <Bookmark className="w-6 h-6 text-gray-700" />
                     </div>
                   </div>
-                ))}
-              </motion.div>
+                </div>
+              ))}
             </div>
+
+
           </div>
         </section>
       </ScrollAnimation>
@@ -826,24 +809,7 @@ export default function CreatorsSection() {
       <section className="w-full py-12 px-4 bg-black overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-center mb-10 md:mb-16`}>
-            Join our <span className="text-yellow-400">Creator</span> family
-          </h2>
-
-          {/* Register Button */}
-          <div className="flex justify-center mb-20 md:mb-32">
-            <button
-              className="text-white cursor-pointer rounded-full px-8 py-3 text-lg sm:px-12 sm:py-4 text-xl flex items-center gap-4 group hover:opacity-90 transition-all duration-300"
-              style={{ background: 'linear-gradient(90deg, #FF4F70 0%, #EA90A1 100%)' }}
-            >
-              <span className={`${neueMachina.className} text-lg sm:text-2xl`}>Register Here</span>
-              <div className="bg-white rounded-full p-3 group-hover:translate-x-1 transition-transform duration-300">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="#FF4F70" />
-                </svg>
-              </div>
-            </button>
-          </div>
+        
 
           {/* Our Clients Section */}
           <div id="clients">
@@ -995,7 +961,7 @@ export default function CreatorsSection() {
 
         {/* Let's Connect Section */}
         <div className="max-w-7xl mx-auto mt-24 sm:mt-32 mb-24 sm:mb-32">
-          <h2 className={`${neueMachina.className} text-4xl sm:text-5xl md:text-6xl text-center mb-4 sm:mb-6`}>
+          <h2 className={`${poppins.className} font-bold text-4xl sm:text-5xl md:text-6xl text-center mb-4 sm:mb-6`}>
             Let&apos;s Connect
           </h2>
           {/* Subheading */}
@@ -1007,13 +973,26 @@ export default function CreatorsSection() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 min-w-0 overflow-x-auto w-full">
             {/* Phone Number */}
             <div className="w-full md:flex-1 flex cursor-pointer items-center justify-center gap-3 bg-[#6DDBEB] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 hover:opacity-90 transition-all duration-300 text-center">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                 <path d="M20 10.999H22C22 5.869 18.127 2 13 2V4C17.024 4 20 6.975 20 10.999Z" fill="black" />
                 <path d="M13 8C15.103 8 17 9.897 17 12H19C19 8.795 16.206 6 13 6V8ZM16.422 13.443C16.2298 13.2683 15.9773 13.1752 15.7178 13.1832C15.4582 13.1912 15.212 13.2998 15.031 13.486L12.638 15.947C12.062 15.837 10.904 15.476 9.71198 14.287C8.51998 13.094 8.15898 11.933 8.05198 11.361L10.511 8.96698C10.6975 8.78612 10.8062 8.53982 10.8142 8.28007C10.8222 8.02032 10.7289 7.76773 10.554 7.57598L6.85898 3.51298C6.68402 3.32165 6.44086 3.20265 6.18113 3.18133C5.92139 3.16001 5.66263 3.23829 5.45798 3.40098L3.29798 5.28698C3.12509 5.46051 3.0222 5.69145 3.00798 5.93598C2.99198 6.18698 2.70698 12.108 7.29898 16.702C11.305 20.707 16.323 21 17.705 21C17.907 21 18.031 20.994 18.064 20.992C18.3085 20.9783 18.5393 20.8747 18.712 20.701L20.598 18.541C20.7608 18.3362 20.8391 18.0772 20.8177 17.8173C20.7963 17.5574 20.6771 17.3142 20.485 17.139L16.422 13.443Z" fill="black" />
               </svg>
               <a href="tel:+919190898768401" className="whitespace-nowrap">
-                <span className={`${neueMachina.className} text-base sm:text-lg md:text-xl text-black font-bold`}>
+                <span className={`${poppins.className} text-base sm:text-lg md:text-xl text-black font-bold`}>
                   +91 91908 98768 401
+                </span>
+              </a>
+            </div>
+
+
+            {/* Email */}
+            <div className="w-full md:flex-1 flex cursor-pointer items-center justify-center gap-3 bg-[#6DDBEB] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 hover:opacity-90 transition-all duration-300 text-center">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="black" />
+              </svg>
+              <a href="mailto:Brands@affix.com" className="whitespace-nowrap">
+                <span className={`${poppins.className} text-base sm:text-lg md:text-xl text-black font-bold`}>
+                  Brands@affix.com
                 </span>
               </a>
             </div>
@@ -1023,35 +1002,34 @@ export default function CreatorsSection() {
               href="https://wa.me/919190898768401"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full md:flex-1 flex items-center justify-center gap-3 bg-[#25D366] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 hover:opacity-90 transition-all duration-300 text-black font-semibold text-center"
+              className="w-full md:flex-1 flex items-center justify-center gap-3 bg-[#25D366] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 hover:opacity-90 transition-all duration-300 text-black font-bold text-center"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                 <path d="M12 2C6.477 2 2 6.477 2 12c0 1.989.583 3.838 1.583 5.393L2 22l4.707-1.561A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.657 0-3.216-.506-4.5-1.367l-.32-.21-2.8.927.927-2.8-.21-.32A7.963 7.963 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm4.29-5.709c-.197-.099-1.17-.578-1.351-.644-.181-.066-.313-.099-.444.099-.13.197-.508.644-.623.777-.115.132-.23.148-.427.05-.197-.099-.832-.307-1.586-.98-.587-.523-.983-1.17-1.099-1.367-.115-.197-.012-.303.087-.401.089-.088.197-.23.296-.345.099-.115.132-.197.197-.329.066-.132.033-.247-.016-.346-.049-.099-.444-1.073-.608-1.47-.16-.384-.323-.332-.444-.338-.115-.006-.247-.007-.38-.007-.132 0-.346.049-.527.247-.181.197-.693.678-.693 1.654 0 .976.71 1.92.81 2.053.099.132 1.397 2.137 3.393 2.914.475.164.844.262 1.133.336.476.121.91.104 1.253.063.382-.045 1.17-.478 1.336-.94.165-.462.165-.857.115-.94-.049-.082-.18-.132-.377-.23z" fill="#fff" />
               </svg>
-              <span className={`${neueMachina.className} text-base sm:text-lg md:text-xl`}>WhatsApp</span>
+              <span className={`${poppins.className} text-base sm:text-lg md:text-xl font-bold`}>WhatsApp</span>
             </a>
-
-            {/* Email */}
-            <div className="w-full md:flex-1 flex cursor-pointer items-center justify-center gap-3 bg-[#6DDBEB] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 hover:opacity-90 transition-all duration-300 text-center">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="black" />
-              </svg>
-              <a href="mailto:Brands@affix.com" className="whitespace-nowrap">
-                <span className={`${neueMachina.className} text-base sm:text-lg md:text-xl text-black font-bold`}>
-                  Brands@affix.com
-                </span>
-              </a>
-            </div>
-
-            {/* Location */}
-            <div className="w-full md:flex-1 flex items-center justify-center gap-3 bg-[#6DDBEB] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 text-black font-semibold text-center">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="black" />
-              </svg>
-              <span className={`${neueMachina.className} text-base sm:text-lg md:text-xl`}>Hyderabad</span>
-            </div>
+            
           </div>
         </div>
+        <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-center mb-10 md:mb-16`}>
+            Join our <span className="text-yellow-400">Creator</span> family
+          </h2>
+
+          {/* Register Button */}
+          <div className="flex justify-center mb-20 md:mb-32">
+            <button
+              className="text-white cursor-pointer rounded-full px-8 py-3 text-lg sm:px-12 sm:py-4 text-xl flex items-center gap-4 group hover:opacity-90 transition-all duration-300"
+              style={{ background: 'linear-gradient(90deg, #FF4F70 0%, #EA90A1 100%)' }}
+            >
+              <span className={`${neueMachina.className} text-lg sm:text-2xl`}>Register Here</span>
+              <div className="bg-white rounded-full p-3 group-hover:translate-x-1 transition-transform duration-300">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="#FF4F70" />
+                </svg>
+              </div>
+            </button>
+          </div>
       </section>
 
 
