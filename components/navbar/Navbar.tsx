@@ -4,6 +4,11 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import localFont from 'next/font/local'
+
+const neueMachina = localFont({
+  src: '../../public/fonts/NeueMachina-InktrapUltrabold.otf'
+});
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,15 +54,15 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           {/* Desktop Nav Links + Button (shown only on large screens) */}
-          <div className="hidden lg:flex items-center space-x-4 text-black whitespace-nowrap ml-auto">
-            <Link href="/" className="text-sm md:text-lg font-normal hover:underline">Home</Link>
-            <a href="#about" className="text-sm md:text-lg font-normal hover:underline">About Us</a>
-            <a href="#campaigns" className="text-sm md:text-lg font-normal hover:underline">Campaigns</a>
-            <a href="#services" className="text-sm md:text-lg font-normal hover:underline">Our Services</a>
-            <a href="#creators" className="text-sm md:text-lg font-normal hover:underline">Creators</a>
-            <a href="#clients" className="text-sm md:text-lg font-normal hover:underline">Clients</a>
+          <div className="hidden lg:flex items-center space-x-8 text-black whitespace-nowrap ml-auto">
+            <Link href="/" className="text-sm md:text-md font-normal hover:underline">Home</Link>
+            <a href="#about" className="text-sm md:text-md font-normal hover:underline">About Us</a>
+            <a href="#campaigns" className="text-sm md:text-md font-normal hover:underline">Campaigns</a>
+            <a href="#services" className="text-sm md:text-md font-normal hover:underline">Our Services</a>
+            <a href="#creators" className="text-sm md:text-md font-normal hover:underline">Creators</a>
+            <a href="#clients" className="text-sm md:text-md font-normal hover:underline">Clients</a>
 
-            <button className="ml-4 flex items-center gap-2 h-10 px-5 rounded-md bg-black text-white text-sm font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap">
+            <button className={`${neueMachina.className} ml-4 flex items-center gap-2 h-10 px-5 rounded-md bg-black text-white text-sm font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
               Enquire Now <ArrowRight className="w-4 h-4" />
             </button>
           </div>

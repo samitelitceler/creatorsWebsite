@@ -20,13 +20,6 @@ const poppins = Poppins({
   subsets: ['latin'],
 })
 
-const scrollToSection = (sectionId: string) => (e: React.MouseEvent) => {
-  e.preventDefault();
-  const section = document.getElementById(sectionId);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
-};
 
 export default function CreatorsSection() {
   const [brands, setBrands] = useState(0);
@@ -108,38 +101,63 @@ export default function CreatorsSection() {
       bgColor: "#8B1D3D"
     },
     {
-      name: "Meesho",
-      logo: "/images/meesho.png",
+      name: "UpGrad",
+      logo: "/images/upgrad.png",
       bgColor: "#2D0A31"
     },
     {
-      name: "Federal Bank",
-      logo: "/images/fedralBank.png",
+      name: "Physics Wallah",
+      logo: "/images/PW.jpg",
       bgColor: "#FFFFFF"
     },
     {
-      name: "Myntra",
-      logo: "/images/myntra.png",
-      bgColor: "#E95FA5"
-    },
-    {
-      name: "ACT Fibernet",
-      logo: "/images/act.png",
+      name: "Domino's",
+      logo: "/images/dominonew.jpg",
       bgColor: "#FFFFFF"
     },
     {
-      name: "Joyalukkas",
-      logo: "/images/joyalukkas.png",
-      bgColor: "#8B1D3D"
+      name: "GradRight",  
+      logo: "/images/gradright2.png",
+      bgColor: "#FFFFFF"
     },
     {
-      name: "Meesho",
-      logo: "/images/meesho.png",
-      bgColor: "#2D0A31"
+      name: "KFC",
+      logo: "/images/kfc.png",
+      bgColor: "#FFFFFF"
     },
     {
-      name: "Federal Bank",
-      logo: "/images/fedralBank.png",
+      name: "Amazon",
+      logo: "/images/amazonnewlogo.jpg",
+      bgColor: "#FFFFFF"
+    },
+    {
+      name: "NxtWave",
+      logo: "/images/nxtwave.jpg",
+      bgColor: "#FFFFFF"
+    },
+    {
+      name: "KnowledgeHut",
+      logo: "/images/knowledgehut.jpg",
+      bgColor: "#FFFFFF"
+    },
+    {
+      name: "Pocket FM",
+      logo: "/images/pocketfm.webp",
+      bgColor: "#FFFFFF"
+    },
+    {
+      name: "Technopaint",
+      logo: "/images/technopaint.png",
+      bgColor: "#FFFFFF"
+    },
+    {
+      name: "Jio",
+      logo: "/images/jio.jpg",
+      bgColor: "#FFFFFF"
+    },
+    {
+      name: "Hotstar",
+      logo: "/images/hotstar.avif",
       bgColor: "#FFFFFF"
     },
   ];
@@ -260,7 +278,7 @@ export default function CreatorsSection() {
 
       {/* Hero Section */}
       <ScrollAnimation>
-        <section className={`${neueMachina.className} flex flex-col md:flex-row items-center justify-between py-8 sm:py-12 max-w-7xl mx-auto w-full px-4 sm:px-8`}>
+        <section className={ `flex flex-col md:flex-row items-center justify-between py-8 sm:py-12 max-w-7xl mx-auto w-full px-4 sm:px-8`}>
           {/* Text and star icon */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -268,8 +286,8 @@ export default function CreatorsSection() {
             transition={{ duration: 0.5 }}
             className="w-full md:w-1/2 flex flex-col items-center md:items-start"
           >
-            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center md:text-left">
+            <div className={`${neueMachina.className} flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6`}>
+              <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center md:text-left">
                 Revolutionize your Marketing Campaign with{" "}
                 <span className="text-yellow-400">Creators</span>.
               </h1>
@@ -294,7 +312,7 @@ export default function CreatorsSection() {
               </motion.div>
             </div>
 
-            <button className="ml-4 flex items-center gap-2 h-10 px-5 rounded-md bg-black text-white text-sm font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap">
+            <button className={`${neueMachina.className} ml-4 flex items-center gap-2 h-10 px-5 rounded-md bg-black text-white text-sm font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
               Explore Now<ArrowRight className="w-4 h-4" />
             </button>
           </motion.div>
@@ -342,13 +360,13 @@ export default function CreatorsSection() {
           }}
         />
         {/* Tilted text */}
-        <div className={`${neueMachina.className} text-white text-2xl md:text-4xl lg:text-5xl font-clash-display font-bold tracking-wider text-center transform -rotate-3 overflow-hidden py-4`}>
+        <div className={`${neueMachina.className} text-white text-xl md:text-3xl lg:text-4xl font-clash-display font-bold tracking-wider text-center transform -rotate-3 overflow-hidden py-4`}>
           <div className="relative flex">
             <div className="whitespace-nowrap animate-scroll">
-              Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create *
+              Connect - Collaborate - Create &nbsp;&nbsp; * &nbsp;&nbsp;  Connect - Collaborate - Create &nbsp;&nbsp; * &nbsp;&nbsp;  Connect - Collaborate - Create &nbsp;&nbsp; * &nbsp;&nbsp;  Connect - Collaborate - Create &nbsp;&nbsp; *
             </div>
             <div className="whitespace-nowrap animate-scroll" aria-hidden="true">
-              Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create * Connect - Collaborate - Create *
+              Connect - Collaborate - Create &nbsp;&nbsp; * &nbsp;&nbsp;  Connect - Collaborate - Create &nbsp;&nbsp; * &nbsp;&nbsp;  Connect - Collaborate - Create &nbsp;&nbsp; * &nbsp;&nbsp;  Connect - Collaborate - Create &nbsp;&nbsp; *
             </div>
           </div>
         </div>
@@ -452,7 +470,7 @@ export default function CreatorsSection() {
         <section className="w-full py-10 px-4">
           <div className="mx-auto max-w-7xl">
             {/* Title */}
-            <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-5xl text-center mb-8 sm:mb-12 leading-tight`}>
+            <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-12 leading-tight`}>
               We help brands Connect better to their audience with{" "}
               <span className="text-yellow-400">Creator</span> Culture
             </h2>
@@ -474,7 +492,7 @@ export default function CreatorsSection() {
                   className="text-center p-4 sm:p-6 flex flex-col justify-center items-center rounded-lg"
                   style={{ backgroundColor: stat.color }}
                 >
-                  <div className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl mb-1 sm:mb-2`}>
+                  <div className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl mb-1 sm:mb-2`}>
                     {stat.value}{stat.suffix || '+'}
                   </div>
                   <div className={`${poppins.className} text-lg sm:text-xl md:text-2xl`}>{stat.label}</div>
@@ -497,9 +515,9 @@ export default function CreatorsSection() {
                 alt="Paper Plane Icon"
                 width={80}
                 height={80}
-                className="w-16 md:w-24"
+                className="w-12 md:w-20"
               />
-              <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-white`}>
+              <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-white`}>
                 Our Expert Services
               </h2>
             </div>
@@ -562,8 +580,8 @@ export default function CreatorsSection() {
                     <h3 className={`${neueMachina.className} text-2xl md:text-4xl text-white font-bold mb-4`}>
                       {service.title}
                     </h3>
-                    <p className="text-black text-sm md:text-base mb-4">{service.description}</p>
-                    <button className="bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105">
+                    <p className="text-black text-sm font-normal md:text-base mb-4">{service.description}</p>
+                    <button className={`${neueMachina.className} bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105`}>
                       Enquire Now <span className="text-xl">→</span>
                     </button>
                   </div>
@@ -579,7 +597,7 @@ export default function CreatorsSection() {
       <section className="w-full py-16 bg-[#F2944D]">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 text-center md:text-left">
           {/* Heading */}
-          <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-white`}>
+          <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-white`}>
             Do you have a Brand?
           </h2>
 
@@ -603,8 +621,8 @@ export default function CreatorsSection() {
         <section id="campaigns" className="w-full py-20 px-4 bg-black">
           <div className="max-w-7xl mx-auto">
             {/* Header with Smiley */}
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8 text-center md:text-left">
-              <h2 className={`${neueMachina.className} text-4xl sm:text-5xl md:text-6xl text-white`}>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-4 text-center md:text-left">
+              <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-5xl text-white`}>
                 Campaign Spotlight
               </h2>
               <Image
@@ -617,7 +635,7 @@ export default function CreatorsSection() {
             </div>
 
             {/* Description Text */}
-            <p className={`${poppins.className} text-white text-center text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto mb-16`}>
+            <p className={`${poppins.className} text-white text-center text-md sm:text-lg md:text-xl max-w-4xl mx-auto mb-16`}>
               Celebrate our journey of innovation and collaboration! Explore our past campaigns,
               each a testament to our commitment to excellence and creativity. Join us as we
               continue to redefine possibilities together.
@@ -729,7 +747,7 @@ export default function CreatorsSection() {
         <section id="creators" className="w-full py-12 px-4 bg-black overflow-hidden">
           <div className="max-w-7xl mx-auto">
             {/* Header with Emoji */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12 text-center md:text-left">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-4 text-center md:text-left">
               <Image
                 src="/images/loveEmojiCreators.png"
                 alt="Heart Eyes Emoji"
@@ -737,12 +755,12 @@ export default function CreatorsSection() {
                 height={80}
                 className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20"
               />
-              <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-white`}>
+              <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-5xl  text-white`}>
                 Our Creator Family
               </h2>
             </div>
 
-            <p className="text-white text-center md:text-center text-base sm:text-lg max-w-2xl mx-auto mt-2 mb-8">
+            <p className="text-white text-center md:text-center text-base text-md sm:text-lg md:text-xl max-w-2xl mx-auto  mb-8">
               Meet the vibrant creators who inspire, entertain, and connect with millions everyday.
               Together, we celebrate creativity and the power of authentic storytelling.
             </p>
@@ -813,7 +831,7 @@ export default function CreatorsSection() {
 
           {/* Our Clients Section */}
           <div id="clients">
-            <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-center mb-10 md:mb-16`}>
+            <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-center mb-10 md:mb-16`}>
               Our Clients
             </h2>
 
@@ -821,7 +839,7 @@ export default function CreatorsSection() {
 
             <div className="relative w-full flex items-center">
               <motion.div
-                className="flex space-x-5 md:space-x-20 min-w-max"
+                className="flex space-x-5 md:space-x-10 min-w-max"
                 animate={{ x: ["0%", "-30%"] }}
                 transition={{
                   repeat: Infinity,
@@ -836,7 +854,7 @@ export default function CreatorsSection() {
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className="w-52 aspect-square object-cover"
+                      className="w-36 aspect-square object-cover rounded-2xl"
                     />
                   </div>
                 ))}
@@ -857,19 +875,19 @@ export default function CreatorsSection() {
 
           {/* Platforms Section */}
           <div className="flex flex-col md:flex-row items-center md:items-center md:py-12 gap-6 sm:gap-8 mb-12 sm:mb-20">
-            <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-white whitespace-nowrap`}>
+            <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-white whitespace-nowrap`}>
               4+ Platforms
             </h2>
 
             {/* Platform Icons */}
             <div className="grid grid-cols-4 md:flex items-center gap-6 sm:gap-8">
               {platforms.map((platform, index) => (
-                <div key={index} className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
+                <div key={index} className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
                   <Image
                     src={platform.icon}
                     alt={platform.name}
-                    width={64}
-                    height={64}
+                    width={56}
+                    height={56}
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -890,14 +908,14 @@ export default function CreatorsSection() {
 
           {/* Languages Section */}
           <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8 text-center md:text-left">
-            <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-white whitespace-nowrap`}>
+            <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-white whitespace-nowrap`}>
               6+ Languages
             </h2>
 
             {/* Languages List */}
             <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-4">
               {languages.map((language, index) => (
-                <span key={index} className={`${neueMachina.className} text-lg sm:text-xl`}>
+                <span key={index} className={`${neueMachina.className} text-md sm:text-lg`}>
                   {index > 0 && <span className="text-[#FFB800] mx-2">|</span>}
                   {language}
                 </span>
@@ -923,7 +941,7 @@ export default function CreatorsSection() {
       >
         <div className="max-w-7xl mx-auto">
           {/* Title */}
-          <h2 className={`${neueMachina.className} text-4xl sm:text-5xl md:text-6xl text-center mb-12 sm:mb-16`}>
+          <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-5xl text-center mb-12 sm:mb-8`}>
             Our Collaborations
           </h2>
 
@@ -931,7 +949,7 @@ export default function CreatorsSection() {
           {/* Collaboration Logos Grid */}
           <div className="relative w-full flex items-center overflow-hidden">
             <motion.div
-              className="flex space-x-5 md:space-x-20 min-w-max"
+              className="flex space-x-5 md:space-x-10 min-w-max"
               animate={{ x: ["0%", "-30%"] }}
               transition={{
                 repeat: Infinity,
@@ -961,7 +979,7 @@ export default function CreatorsSection() {
 
         {/* Let's Connect Section */}
         <div className="max-w-7xl mx-auto mt-24 sm:mt-32 mb-24 sm:mb-32">
-          <h2 className={`${poppins.className} font-bold text-4xl sm:text-5xl md:text-6xl text-center mb-4 sm:mb-6`}>
+          <h2 className={`${neueMachina.className} font-bold text-3xl sm:text-4xl md:text-5xl text-center mb-4 sm:mb-6`}>
             Let&apos;s Connect
           </h2>
           {/* Subheading */}
@@ -1035,85 +1053,75 @@ export default function CreatorsSection() {
 
       {/* Footer Section */}
       <footer className="w-full bg-[#1E1E1E] text-white">
-        {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto py-2 px-4">
-          {/* Logo and Navigation */}
-          <div className="flex flex-col mt-4 items-center sm:items-start mb-2 sm:mb-4">
+        <div className="max-w-7xl mx-auto py-12 px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
+          {/* Logo, Socials, Contact */}
+          <div>
             <Image
               src="/images/creatorsLogo.png"
               alt="Creators Logo"
-              width={200}
-              height={60}
-              className="mb-8 sm:mb-12"
+              width={180}
+              height={54}
+              className="mb-6"
             />
-
-            {/* Company Section */}
-            <div className="text-center sm:text-left space-y-6 sm:space-y-8">
-              <h3 className={`${neueMachina.className} text-2xl sm:text-3xl`}>
-                Company
-              </h3>
-              <nav className={`${poppins.className} flex flex-col items-center sm:items-start space-y-3 sm:space-y-4`}>
-                {[
-                  { id: "about", label: "About Us" },
-                  { id: "services", label: "Our Expert Services" },
-                  { id: "campaigns", label: "Campaign Spotlight" },
-                  { id: "creators", label: "Our Creator Family" },
-                  { id: "clients", label: "Our Clients" },
-                  { id: "collaborations", label: "Our Collaborations" },
-                  { id: "contact", label: "Contact Us" },
-                ].map((item, index) => (
-                  <a
-                    key={index}
-                    href={`#${item.id}`}
-                    className="text-white/80 hover:text-white transition-colors"
-                    onClick={scrollToSection(item.id)}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </nav>
+            <div className="flex items-center gap-4 mb-6">
+              <a href="#" className="hover:opacity-80"><Instagram /></a>
+              <a href="#" className="hover:opacity-80"><Twitter /></a>
+              <a href="#" className="hover:opacity-80"><Youtube /></a>
+              <a href="#" className="hover:opacity-80"><Linkedin /></a>
             </div>
+            <div className="space-y-2 text-sm text-white/80 mt-6">
+              <div className="flex items-center gap-2">
+                <svg width="18" height="18" fill="none"><path d="M2 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4Zm2 0 6 5 6-5" stroke="#fff" strokeWidth="1.5"/></svg>
+                Brands@affix.com
+              </div>
+              <div className="flex items-center gap-2">
+                <svg width="18" height="18" fill="none"><circle cx="9" cy="9" r="7" stroke="#fff" strokeWidth="1.5"/><path d="M9 6v3l2 2" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                +91 9089 768 401
+              </div>
+              <div className="flex items-start gap-2">
+                <svg width="18" height="18" fill="none"><path d="M9 17c-4-4-7-6.5-7-10A7 7 0 0 1 16 7c0 3.5-3 6-7 10Z" stroke="#fff" strokeWidth="1.5"/><circle cx="9" cy="7" r="2" stroke="#fff" strokeWidth="1.5"/></svg>
+                <span>
+                  Hyderabad, Telangana, India
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className={`${neueMachina.className} text-xl mb-4`}>Company</h3>
+            <nav className={`${poppins.className} flex flex-col space-y-3`}>
+              <a href="#about" className="hover:text-yellow-400 transition-colors">About Us</a>
+              <a href="#contact" className="hover:text-yellow-400 transition-colors">Contact Us</a>
+            </nav>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className={`${neueMachina.className} text-xl mb-4`}>Services</h3>
+            <nav className={`${poppins.className} flex flex-col space-y-3`}>
+              <a href="#services" className="hover:text-yellow-400 transition-colors">Our Expert Services</a>
+              <a href="#campaigns" className="hover:text-yellow-400 transition-colors">Campaign Spotlight</a>
+              <a href="#creators" className="hover:text-yellow-400 transition-colors">Our Creator Family</a>
+              <a href="#clients" className="hover:text-yellow-400 transition-colors">Our Clients</a>
+              <a href="#collaborations" className="hover:text-yellow-400 transition-colors">Our Collaborations</a>
+            </nav>
+          </div>
+
+          {/* Policies */}
+          <div>
+            <h3 className={`${neueMachina.className} text-xl mb-4`}>Policies</h3>
+            <nav className={`${poppins.className} flex flex-col space-y-3`}>
+              <a href="#" className="hover:text-yellow-400 transition-colors">Privacy Policy</a>
+              {/* Add more policy links if needed */}
+            </nav>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="w-full bg-[#FFB800] py-4">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 text-center md:text-left">
-              {/* Copyright and Privacy */}
-              <div className="flex flex-col md:flex-row gap-2 sm:gap-4">
-                <span className={`${poppins.className} text-black text-sm sm:text-base`}>
-                  Copyright © 2024 Elitceler Technologies Ltd.
-                </span>
-                <a href="#" className={`${poppins.className} text-black text-sm sm:text-base hover:opacity-80`}>
-                  Privacy Policy
-                </a>
-              </div>
-
-              {/* Contact Info */}
-              <div className="flex flex-col md:flex-row gap-2 sm:gap-4">
-                <span className={`${poppins.className} text-black text-sm sm:text-base`}>
-                  Email: Brands@affix.com
-                </span>
-                <span className={`${poppins.className} text-black text-sm sm:text-base`}>
-                  Phone: +91 9089 768 401
-                </span>
-              </div>
-
-              {/* Social Icons */}
-              <div className="flex items-center gap-4 sm:gap-6">
-                {[
-                  { Icon: Instagram, link: "#" },
-                  { Icon: Twitter, link: "#" },
-                  { Icon: Youtube, link: "#" },
-                  { Icon: Linkedin, link: "#" },
-                ].map(({ Icon, link }, index) => (
-                  <a key={index} href={link} className="hover:opacity-80 text-black transition-opacity">
-                    <Icon />
-                  </a>
-                ))}
-              </div>
-            </div>
+          <div className="max-w-7xl mx-auto px-4 flex justify-center items-center text-black text-sm text-center">
+            <span className={`${poppins.className}`}>Copyright © 2024 Brands@affix.com</span>
           </div>
         </div>
       </footer>
