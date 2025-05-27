@@ -260,7 +260,7 @@ export default function CreatorsSection() {
 
       {/* Hero Section */}
       <ScrollAnimation>
-        <section className="flex flex-col md:flex-row items-center justify-center py-8 sm:py-24 w-full px-4 sm:px-8 bg-black">
+        <section className="flex flex-col md:flex-row items-center justify-center py-8 sm:py-24 w-full px-4 sm:px-12 bg-black relative z-10">
           {/* Left: Text */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -269,13 +269,13 @@ export default function CreatorsSection() {
             className="w-full md:w-1/2 flex flex-col justify-center items-start"
           >
             <div className={`${neueMachina.className} mb-6`}>
-              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-left">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-left">
                 Revolutionize your <br />
                 Marketing Campaign <br />
                 with <span className="text-yellow-400">Creators</span>.
               </h1>
             </div>
-            <button className={`${neueMachina.className} mt-6 cursor-pointer flex items-center gap-2 h-12 px-7 rounded-md bg-black text-white text-lg font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
+            <button className={`${neueMachina.className} mt-6 flex items-center gap-2 h-12 px-7 rounded-md bg-black text-white text-lg font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
               Explore Now<ArrowRight className="w-5 h-5" />
             </button>
           </motion.div>
@@ -289,46 +289,46 @@ export default function CreatorsSection() {
             <Image
               src="/images/sign.svg"
               alt="Creators Workspace Illustration"
-              width={1200}
-              height={900}
-              className="object-contain w-full h-auto"
+              width={2000}
+              height={1200}
+              className="object-contain w-full h-auto mt-8"
               priority
             />
           </motion.div>
         </section>
       </ScrollAnimation>
 
-      <div className="relative w-full overflow-hidden bg-black py-12">
+      <div className="relative w-full overflow-hidden bg-black -mt-16 z-20 h-28 flex items-center">
         {/* Top tilted line */}
         <div
-          className="absolute w-[400%] transform -rotate-3 left-[-150%] right-0"
+          className="absolute w-[400%] transform -rotate-1 left-[-150%] right-0"
           style={{
             background: 'linear-gradient(90deg, transparent 0%, transparent 35%, #ffffff 35%, #ffffff 65%, transparent 65%, transparent 100%)',
-            height: '2px',
-            top: '30%',
+            height: '1px',
+            top: '15%',
             zIndex: 1,
             animation: 'slideLeft 20s linear infinite'
           }}
         />
         {/* Bottom tilted line */}
         <div
-          className="absolute w-[400%] transform -rotate-3 left-[-150%] right-0"
+          className="absolute w-[400%] transform -rotate-1 left-[-150%] right-0"
           style={{
             background: 'linear-gradient(90deg, transparent 0%, transparent 35%, #ffffff 35%, #ffffff 65%, transparent 65%, transparent 100%)',
-            height: '2px',
-            top: '70%',
+            height: '1px',
+            top: '85%',
             zIndex: 1,
             animation: 'slideLeft 20s linear infinite'
           }}
         />
         {/* Tilted text */}
-        <div className={`${neueMachina.className} text-white text-xl md:text-3xl lg:text-4xl font-clash-display font-bold tracking-wider text-center transform -rotate-3 overflow-hidden py-4`}>
-          <div className="relative flex">
+        <div className={`${neueMachina.className} text-white text-xl md:text-3xl lg:text-4xl font-clash-display font-bold tracking-wider text-center transform -rotate-1 overflow-hidden w-full`}>
+          <div className="relative flex justify-center">
             <div className="whitespace-nowrap animate-scroll">
-              Connect - Collaborate - Create &nbsp;&nbsp; * &nbsp;&nbsp;  Connect - Collaborate - Create &nbsp;&nbsp; * &nbsp;&nbsp;  Connect - Collaborate - Create &nbsp;&nbsp; * &nbsp;&nbsp;  Connect - Collaborate - Create &nbsp;&nbsp; *
+              Connect – Collaborate – Create &nbsp;&nbsp; * &nbsp;&nbsp; Connect – Collaborate – Create &nbsp;&nbsp; * &nbsp;&nbsp; Connect – Collaborate – Create &nbsp;&nbsp; * &nbsp;&nbsp; Connect – Collaborate – Create &nbsp;&nbsp; *
             </div>
             <div className="whitespace-nowrap animate-scroll" aria-hidden="true">
-              Connect - Collaborate - Create &nbsp;&nbsp; * &nbsp;&nbsp;  Connect - Collaborate - Create &nbsp;&nbsp; * &nbsp;&nbsp;  Connect - Collaborate - Create &nbsp;&nbsp; * &nbsp;&nbsp;  Connect - Collaborate - Create &nbsp;&nbsp; *
+              Connect – Collaborate – Create &nbsp;&nbsp; * &nbsp;&nbsp; Connect – Collaborate – Create &nbsp;&nbsp; * &nbsp;&nbsp; Connect – Collaborate – Create &nbsp;&nbsp; * &nbsp;&nbsp; Connect – Collaborate – Create &nbsp;&nbsp; *
             </div>
           </div>
         </div>
@@ -337,7 +337,7 @@ export default function CreatorsSection() {
 
       {/* Ecosystem Section */}
       <ScrollAnimation>
-        <section id="about" className="relative w-full md:min-h-screen py-10 md:py-12 px-4 flex items-center justify-center">
+        <section id="about" className="relative w-full md:min-h-screen py-10 md:py-24 mt-24 px-4 flex items-center justify-center">
           {/* Smiley Emoji with floating animation */}
           <motion.div
             className="absolute top-4 left-4 sm:top-10 sm:left-10"
@@ -543,7 +543,7 @@ export default function CreatorsSection() {
                       {service.title}
                     </h3>
                     <p className="text-black text-sm font-normal md:text-base mb-4">{service.description}</p>
-                    <button className={`${neueMachina.className} cursor-pointer bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105`}>
+                    <button className={`${neueMachina.className} bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105`}>
                       Enquire Now <span className="text-xl">→</span>
                     </button>
                   </div>

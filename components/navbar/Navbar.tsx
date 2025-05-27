@@ -82,23 +82,38 @@ export default function Navbar() {
 
         </nav>
 
+        {/* Mobile Menu Overlay */}
+        {isMenuOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300" onClick={() => setIsMenuOpen(false)} />
+        )}
+
         {/* Mobile Menu */}
         <div
           id="mobile-menu"
-          className={`lg:hidden fixed top-0 left-0 w-full h-screen bg-white px-4 text-black flex flex-col items-end space-y-6 py-4 transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out z-50`}
+          className={`lg:hidden fixed top-0 right-0 w-11/12 max-w-xs h-screen bg-white rounded-l-3xl shadow-2xl px-6 text-black flex flex-col items-end space-y-6 py-6 transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 ease-in-out z-50`}
         >
-          <div className="flex items-center w-full justify-between px-2 sm:px-4">
+          {/* Close Button */}
+          <button onClick={() => setIsMenuOpen(false)} className="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 rounded-full p-2 shadow-md transition-colors">
+            <X className="w-7 h-7 text-black" />
+          </button>
+
+          {/* Logo */}
+          <div className="flex items-center w-full justify-center mb-8 mt-2">
             <Image src="/images/creatorsLogo.png" alt="Creators Logo" width={140} height={40} className="w-auto h-10 sm:h-12" />
-            <X id="menu-icon" onClick={() => setIsMenuOpen(false)} className="cursor-pointer items-end text-black w-8 h-8" />
           </div>
 
-          <a href="#" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Home</a>
-          <a href="#about" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">About Us</a>
-          <a href="#services" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Our Services</a>
-          <a href="#campaigns" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Campaigns</a>
-          <a href="#creators" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Creators</a>
-          <a href="#clients" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Clients</a>
-          <Button className="flex items-center gap-2 rounded-full bg-black text-white border border-black px-6 py-3 font-medium transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105 w-full sm:w-1/2 mx-auto mt-4">
+          {/* Nav Links */}
+          <nav className="flex flex-col w-full gap-4 mt-4">
+            <a href="#" className="hover:text-yellow-400 px-4 py-3 text-lg sm:text-xl rounded-lg transition-colors font-semibold hover:bg-yellow-50 active:bg-yellow-100">Home</a>
+            <a href="#about" className="hover:text-yellow-400 px-4 py-3 text-lg sm:text-xl rounded-lg transition-colors font-semibold hover:bg-yellow-50 active:bg-yellow-100">About Us</a>
+            <a href="#services" className="hover:text-yellow-400 px-4 py-3 text-lg sm:text-xl rounded-lg transition-colors font-semibold hover:bg-yellow-50 active:bg-yellow-100">Our Services</a>
+            <a href="#campaigns" className="hover:text-yellow-400 px-4 py-3 text-lg sm:text-xl rounded-lg transition-colors font-semibold hover:bg-yellow-50 active:bg-yellow-100">Campaigns</a>
+            <a href="#creators" className="hover:text-yellow-400 px-4 py-3 text-lg sm:text-xl rounded-lg transition-colors font-semibold hover:bg-yellow-50 active:bg-yellow-100">Creators</a>
+            <a href="#clients" className="hover:text-yellow-400 px-4 py-3 text-lg sm:text-xl rounded-lg transition-colors font-semibold hover:bg-yellow-50 active:bg-yellow-100">Clients</a>
+          </nav>
+
+          {/* CTA Button */}
+          <Button className="flex items-center gap-2 rounded-full bg-black text-white border border-black px-8 py-4 font-bold text-lg transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105 w-full mt-8 shadow-lg">
             <span>Enquire Now</span>
             <ArrowRight />
           </Button>
