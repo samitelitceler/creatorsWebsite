@@ -260,58 +260,38 @@ export default function CreatorsSection() {
 
       {/* Hero Section */}
       <ScrollAnimation>
-        <section className={`flex flex-col md:flex-row items-center justify-between py-8 sm:py-12 max-w-7xl mx-auto w-full px-4 sm:px-8`}>
-          {/* Text and star icon */}
+        <section className="flex flex-col md:flex-row items-center justify-center py-8 sm:py-24 w-full px-4 sm:px-8 bg-black">
+          {/* Left: Text */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full md:w-1/2 flex flex-col items-center md:items-start"
+            className="w-full md:w-1/2 flex flex-col justify-center items-start"
           >
-            <div className={`${neueMachina.className} flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6`}>
-              <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center md:text-left">
-                Revolutionize your Marketing Campaign with{" "}
-                <span className="text-yellow-400">Creators</span>.
+            <div className={`${neueMachina.className} mb-6`}>
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-left">
+                Revolutionize your <br />
+                Marketing Campaign <br />
+                with <span className="text-yellow-400">Creators</span>.
               </h1>
-              <motion.div
-                animate={{
-                  opacity: [1, 0.7, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="mb-1"
-              >
-                <Image
-                  src="/images/starIcon.png"
-                  alt="Decorative Stars"
-                  width={40}
-                  height={40}
-                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14"
-                />
-              </motion.div>
             </div>
-
-            <button className={`${neueMachina.className} ml-4 flex items-center gap-2 h-10 px-5 rounded-md bg-black text-white text-sm font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
-              Explore Now<ArrowRight className="w-4 h-4" />
+            <button className={`${neueMachina.className} mt-6 cursor-pointer flex items-center gap-2 h-12 px-7 rounded-md bg-black text-white text-lg font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
+              Explore Now<ArrowRight className="w-5 h-5" />
             </button>
           </motion.div>
-
-          {/* Image on the right (on desktop), below on mobile */}
+          {/* Right: Illustration */}
           <motion.div
-            className="w-full md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0"
+            className="w-full md:w-1/2 flex justify-center items-center"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
             <Image
-              src="/images/creatorHomeImage.png"
+              src="/images/sign.svg"
               alt="Creators Workspace Illustration"
-              width={700}
-              height={500}
-              className="object-contain w-full max-w-[400px] md:max-w-[500px] lg:max-w-[700px]"
+              width={1200}
+              height={900}
+              className="object-contain w-full h-auto"
               priority
             />
           </motion.div>
@@ -563,7 +543,7 @@ export default function CreatorsSection() {
                       {service.title}
                     </h3>
                     <p className="text-black text-sm font-normal md:text-base mb-4">{service.description}</p>
-                    <button className={`${neueMachina.className} bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105`}>
+                    <button className={`${neueMachina.className} cursor-pointer bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105`}>
                       Enquire Now <span className="text-xl">→</span>
                     </button>
                   </div>

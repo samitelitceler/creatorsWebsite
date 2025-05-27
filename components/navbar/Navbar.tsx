@@ -57,12 +57,12 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-8 text-black whitespace-nowrap ml-auto">
             <Link href="/" className="text-sm md:text-md font-normal hover:underline">Home</Link>
             <a href="#about" className="text-sm md:text-md font-normal hover:underline">About Us</a>
-            <a href="#campaigns" className="text-sm md:text-md font-normal hover:underline">Campaigns</a>
             <a href="#services" className="text-sm md:text-md font-normal hover:underline">Our Services</a>
+            <a href="#campaigns" className="text-sm md:text-md font-normal hover:underline">Campaigns</a>
             <a href="#creators" className="text-sm md:text-md font-normal hover:underline">Creators</a>
             <a href="#clients" className="text-sm md:text-md font-normal hover:underline">Clients</a>
 
-            <button className={`${neueMachina.className} ml-4 flex items-center gap-2 h-10 px-5 rounded-md bg-black text-white text-sm font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
+            <button className={`${neueMachina.className} ml-4 cursor-pointer flex items-center gap-2 h-10 px-5 rounded-md bg-black text-white text-sm font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
               Enquire Now <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -94,8 +94,8 @@ export default function Navbar() {
 
           <a href="#" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Home</a>
           <a href="#about" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">About Us</a>
-          <a href="#campaigns" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Campaigns</a>
           <a href="#services" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Our Services</a>
+          <a href="#campaigns" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Campaigns</a>
           <a href="#creators" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Creators</a>
           <a href="#clients" className="hover:text-yellow-400 px-4 text-lg sm:text-xl">Clients</a>
           <Button className="flex items-center gap-2 rounded-full bg-black text-white border border-black px-6 py-3 font-medium transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105 w-full sm:w-1/2 mx-auto mt-4">
