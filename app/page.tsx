@@ -6,10 +6,10 @@ import localFont from 'next/font/local'
 import { Poppins } from 'next/font/google'
 import { motion } from "framer-motion";
 import {
-  Instagram, Twitter, Youtube, Linkedin,
-  Heart, MessageCircle, Send, Bookmark, EllipsisVertical, ArrowRight
+  Instagram, Twitter, Youtube, Linkedin, ArrowRight
 } from 'lucide-react';
 import ScrollAnimation from "../components/ScrollAnimation";
+import React from "react";
 
 const neueMachina = localFont({
   src: '../public/fonts/NeueMachina-InktrapUltrabold.otf'
@@ -26,51 +26,60 @@ export default function CreatorsSection() {
   const [campaigns, setCampaigns] = useState(0);
   const [creators, setCreators] = useState(0);
   const [roi, setRoi] = useState(0);
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
 
   const creatorsDetails = [
     {
-      name: "Deepthi Sunaina",
-      image: "/images/deepthi.png",
-      bgColor: "#FF4D9D",
-    },
-    {
-      name: "Shanmukh Jaswanth",
-      image: "/images/shanmukh.png",
-      bgColor: "#FFAA4D",
-    },
-    {
       name: "Alekya Harika",
-      image: "/images/alekya.png",
-      bgColor: "#8E60FF",
+      image: "/images/image3creator.png",
+      bgColor: "#8446E7",
+      hoverBg: "/images/image2hover.png",
     },
     {
       name: "Pranavi Manukonda",
-      image: "/images/pranavi.png",
-      bgColor: "#6EDCFF",
-    },
-    {
-      name: "Deepthi Sunaina",
-      image: "/images/deepthi.png",
-      bgColor: "#FF4D9D",
-    },
-    {
-      name: "Shanmukh Jaswanth",
-      image: "/images/shanmukh.png",
-      bgColor: "#FFAA4D",
+      image: "/images/image4creator.png",
+      bgColor: "#DD5A37",
+      hoverBg: "/images/hoverImage.png",
     },
     {
       name: "Alekya Harika",
-      image: "/images/alekya.png",
-      bgColor: "#8E60FF",
+      image: "/images/image3creator.png",
+      bgColor: "#CD0369",
+      hoverBg: "/images/image4hover.png",
     },
     {
       name: "Pranavi Manukonda",
-      image: "/images/pranavi.png",
-      bgColor: "#6EDCFF",
+      image: "/images/image4creator.png",
+      bgColor: "#0BA8BF",
+      hoverBg: "/images/image3hover.png",
     },
-
-    // ...repeat or more
+    {
+      name: "Alekya Harika",
+      image: "/images/image3creator.png",
+      bgColor: "#8446E7",
+      hoverBg: "/images/image2hover.png",
+    },
+    {
+      name: "Pranavi Manukonda",
+      image: "/images/image4creator.png",
+      bgColor: "#DD5A37",
+      hoverBg: "/images/hoverImage.png",
+    },
+    {
+      name: "Alekya Harika",
+      image: "/images/image3creator.png",
+      bgColor: "#CD0369",
+      hoverBg: "/images/image4hover.png",
+    },
+    {
+      name: "Pranavi Manukonda",
+      image: "/images/image4creator.png",
+      bgColor: "#0BA8BF",
+      hoverBg: "/images/image3hover.png",
+    },
+   
+    
   ];
 
 
@@ -116,7 +125,7 @@ export default function CreatorsSection() {
       bgColor: "#FFFFFF"
     },
     {
-      name: "GradRight",  
+      name: "GradRight",
       logo: "/images/gradright2.png",
       bgColor: "#FFFFFF"
     },
@@ -162,33 +171,6 @@ export default function CreatorsSection() {
     },
   ];
 
-  const platforms = [
-    {
-      name: "Instagram",
-      icon: "/images/insta.png"
-    },
-    {
-      name: "Twitter",
-      icon: "/images/twitter.png"
-    },
-    {
-      name: "YouTube",
-      icon: "/images/youtube.png"
-    },
-    {
-      name: "LinkedIn",
-      icon: "/images/linkedin.png"
-    }
-  ];
-
-  const languages = [
-    "Hindi",
-    "English",
-    "Kannada",
-    "Tamil",
-    "Malayalam",
-    "Telugu"
-  ];
 
   const collaborations = [
     {
@@ -278,7 +260,7 @@ export default function CreatorsSection() {
 
       {/* Hero Section */}
       <ScrollAnimation>
-        <section className={ `flex flex-col md:flex-row items-center justify-between py-8 sm:py-12 max-w-7xl mx-auto w-full px-4 sm:px-8`}>
+        <section className={`flex flex-col md:flex-row items-center justify-between py-8 sm:py-12 max-w-7xl mx-auto w-full px-4 sm:px-8`}>
           {/* Text and star icon */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -766,56 +748,53 @@ export default function CreatorsSection() {
             </p>
 
             {/* Creators Grid with Animation */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-              {creatorsDetails.map((creator, idx) => (
-                <div
-                  key={idx}
-                  className="rounded-sm p-4"
-                  style={{ backgroundColor: creator.bgColor }}
-                >
-                  <div className="bg-white rounded-xl overflow-hidden">
-                    {/* Header */}
-                    <div className="flex items-center justify-between px-4 py-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8">
-                          <Image
-                            src={creator.image}
-                            alt={creator.name}
-                            width={32}
-                            height={32}
-                            className="rounded-full object-cover w-full h-full"
+            <div className="w-full overflow-x-auto md:overflow-visible">
+              <div className="flex gap-6 md:grid md:grid-cols-4 md:gap-6 md:w-full flex-nowrap w-max md:w-full">
+                {creatorsDetails.map((creator, idx) => {
+                  return (
+                    <div
+                      key={idx}
+                      className="flex flex-col items-center min-w-[260px] md:min-w-0"
+                      onMouseEnter={() => setHoveredIdx(idx)}
+                      onMouseLeave={() => setHoveredIdx(null)}
+                    >
+                      <div className="relative w-full flex justify-center group">
+                        {/* Wavy BG: hidden by default, appears on hover */}
+                        {creator.hoverBg && (
+                          <div
+                            className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 "
+                            style={{
+                              backgroundImage: `url('${creator.hoverBg}')`,
+                              backgroundSize: 'cover',
+                              backgroundPosition: 'center',
+                            }}
                           />
-                        </div>
-                        <span className="font-semibold text-sm flex text-black items-center gap-1">
+                        )}
+                        <Image
+                          src={creator.image}
+                          alt={creator.name}
+                          width={300}
+                          height={400}
+                          className="mx-auto object-contain grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-300 rounded-2xl relative z-10"
+                        />
+                        {/* Name Tag Overlay */}
+                        <div
+                          className={`${poppins.className} absolute left-1/2 -translate-x-1/2 bottom-4 px-6 h-14 rounded-full text-white font-normal text-base shadow-lg transition-all duration-300 group-hover:-translate-y-2 flex items-center justify-center text-center whitespace-nowrap z-20`}
+                          style={
+                            hoveredIdx === idx
+                              ? { backgroundColor: 'black', color: 'white' }
+                              : { backgroundColor: creator.bgColor, color: 'white' }
+                          }
+                        >
                           {creator.name}
-                         <img src="/images/verified.svg" alt="" />
-                        </span>
+                        </div>
                       </div>
-                      <EllipsisVertical className="w-5 h-5 text-gray-500" />
                     </div>
-
-                    {/* Main Post Image */}
-                    <Image
-                      src={creator.image}
-                      alt={creator.name}
-                      width={400}
-                      height={400}
-                      className="w-full aspect-square object-cover"
-                    />
-
-                    {/* Footer Icons */}
-                    <div className="flex items-center justify-between px-4 py-3">
-                      <div className="flex items-center gap-4 text-red-500">
-                        <Heart className="w-6 h-6" />
-                        <MessageCircle className="w-6 h-6 text-gray-700" />
-                        <Send className="w-6 h-6 text-gray-700" />
-                      </div>
-                      <Bookmark className="w-6 h-6 text-gray-700" />
-                    </div>
-                  </div>
-                </div>
-              ))}
+                  );
+                })}
+              </div>
             </div>
+
 
 
           </div>
@@ -823,8 +802,29 @@ export default function CreatorsSection() {
       </ScrollAnimation>
 
 
-      {/* Join Creator Family Section */}
-      <section className="w-full py-12 px-4 bg-black overflow-hidden">
+      <section className="w-full py-16 bg-[#F2944D] mt-10">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 text-center md:text-left">
+          {/* Heading */}
+          <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-white`}>
+            Join our Creator Family
+          </h2>
+
+          {/* Button */}
+          <button className={`${neueMachina.className} bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 text-xl sm:text-3xl flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105`}>
+            Register Here
+            <Image
+              src="/images/cursorImage.png"
+              alt="Cursor"
+              width={40}
+              height={40}
+              className="absolute -bottom-2 -right-2 sm:w-10 sm:h-10 transition-transform duration-300 hover:rotate-12"
+            />
+          </button>
+        </div>
+      </section>
+ 
+       {/* Join Creator Family Section */}
+       <section className="w-full py-12 px-4 bg-black overflow-hidden mt-16">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
         
@@ -850,11 +850,11 @@ export default function CreatorsSection() {
 
 
                 {clientsDetails.map((client, index) => (
-                  <div key={index} className="p-4 sm:p-6 flex items-center justify-center">
+                  <div key={index} className="p-2 sm:p-6 flex items-center justify-center">
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className="w-36 aspect-square object-cover rounded-2xl"
+                      className="w-20 sm:w-28 md:w-36 aspect-square object-cover rounded-2xl"
                     />
                   </div>
                 ))}
@@ -868,88 +868,52 @@ export default function CreatorsSection() {
 
 
       {/* Platforms and Languages Section */}
-      <section className="w-full bg-black py-4 px-4">
-        <div className="max-w-7xl mx-auto">
-          {/* Top Border Line */}
-          <div className="w-full h-[10px] bg-[#FFC057] mb-12 sm:mb-20"></div>
-
-          {/* Platforms Section */}
-          <div className="flex flex-col md:flex-row items-center md:items-center md:py-12 gap-6 sm:gap-8 mb-12 sm:mb-20">
-            <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-white whitespace-nowrap`}>
-              4+ Platforms
+      <section className="w-full bg-black py-10 px-2 sm:py-16 sm:px-4">
+        <div className="w-full h-[6px] bg-[#FFC057] mb-8 sm:mb-12"></div>
+        <div className="max-w-6xl mx-auto flex flex-col items-center">
+          {/* Headings */}
+          <div className="flex flex-col md:flex-row items-center justify-center w-full mb-8 sm:mb-12 gap-2 md:gap-0">
+            <h2 className="font-bold text-white text-2xl xs:text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'neueMachina, sans-serif' }}>
+              4+ Platform
             </h2>
-
-            {/* Platform Icons */}
-            <div className="grid grid-cols-4 md:flex items-center gap-6 sm:gap-8">
-              {platforms.map((platform, index) => (
-                <div key={index} className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
-                  <Image
-                    src={platform.icon}
-                    alt={platform.name}
-                    width={56}
-                    height={56}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Star Icon (Position Adjusted for Smaller Screens) */}
-            <div className="ml-auto hidden md:block">
-              <Image
-                src="/images/starIcon.png"
-                alt="Sparkles"
-                width={100}
-                height={100}
-                className="w-16 h-16 object-contain"
-              />
-            </div>
+            <div className="my-2 md:my-0 md:mx-8 h-px md:h-16 w-16 md:w-px bg-white" />
+            <h2 className="font-bold text-white text-2xl xs:text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'neueMachina, sans-serif' }}>
+              6+ Language
+            </h2>
           </div>
-
-          {/* Languages Section */}
-          <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8 text-center md:text-left">
-            <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-white whitespace-nowrap`}>
-              6+ Languages
-            </h2>
-
-            {/* Languages List */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-4">
-              {languages.map((language, index) => (
-                <span key={index} className={`${neueMachina.className} text-md sm:text-lg`}>
-                  {index > 0 && <span className="text-[#FFB800] mx-2">|</span>}
-                  {language}
+          {/* Platform Icons */}
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-12 mb-8 sm:mb-12">
+            <img src="/images/insta.png" alt="Instagram" className="w-10 h-10 xs:w-12 xs:h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 rounded-lg" />
+            <img src="/images/twitter.png" alt="X" className="w-10 h-10 xs:w-12 xs:h-12 sm:w-16 sm:h-16 md:w-24 md:h-24" />
+            <img src="/images/youtube.png" alt="YouTube" className="w-10 h-10 xs:w-12 xs:h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 rounded-lg" />
+            <img src="/images/linkedin.png" alt="LinkedIn" className="w-10 h-10 xs:w-12 xs:h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 rounded-lg" />
+          </div>
+          {/* Languages */}
+          <div className="flex flex-wrap items-center justify-center gap-y-2">
+            {["Hindi", "English", "Kannada", "Tamil", "Telugu", "Malayalam"].map((lang, idx, arr) => (
+              <React.Fragment key={lang}>
+                <span className="font-bold text-white text-base xs:text-lg sm:text-xl md:text-2xl px-2 sm:px-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  {lang}
                 </span>
-              ))}
-            </div>
+                {idx < arr.length - 1 && (
+                  <span className="h-4 w-px bg-yellow-400 mx-1 sm:mx-3 inline-block align-middle" />
+                )}
+              </React.Fragment>
+            ))}
           </div>
-
-          {/* Bottom Border Line */}
-          <div className="w-full h-[10px] bg-[#FFC057] mt-12 sm:mt-20"></div>
         </div>
+        <div className="w-full h-[6px] bg-[#FFC057] mb-8 mt-8 sm:mb-12 sm:mt-12"></div>
       </section>
-
-      {/* Let's Connect Section */}
-      <section
-        id="collaborations"
-        className="w-full bg-black py-12 px-4 overflow-hidden"
-        style={{
-          backgroundImage: 'url("/images/bgCollaborate.svg.png")',
-          backgroundRepeat: 'repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="max-w-7xl mx-auto">
+      <div className="max-w-8xl mx-auto mb-10 sm:mb-20">
           {/* Title */}
-          <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-5xl text-center mb-12 sm:mb-8`}>
+          <h2 className={`${neueMachina.className} text-2xl sm:text-4xl md:text-5xl text-center mb-8 sm:mb-16`}>
             Our Collaborations
           </h2>
 
           {/* Collaboration Logos Grid */}
-          {/* Collaboration Logos Grid */}
           <div className="relative w-full flex items-center overflow-hidden">
             <motion.div
-              className="flex space-x-5 md:space-x-10 min-w-max"
+              className="flex space-x-4 sm:space-x-10 md:space-x-16 min-w-max"
               animate={{ x: ["0%", "-30%"] }}
               transition={{
                 repeat: Infinity,
@@ -960,7 +924,7 @@ export default function CreatorsSection() {
               {collaborations.map((collab, index) => (
                 <div
                   key={index}
-                  className="p-4 sm:p-6 flex items-center justify-center w-[200px] h-[200px]"
+                  className="p-2 sm:p-6 flex items-center justify-center w-[120px] h-[100px] sm:w-[180px] sm:h-[180px] md:w-[220px] md:h-[260px]"
                 >
                   <img
                     src={collab.logo}
@@ -973,81 +937,76 @@ export default function CreatorsSection() {
           </div>
 
 
-          {/* Divider */}
-          <div id="contact" className="w-full h-[10px] bg-[#FFC057] mt-16 sm:mt-20"></div>
+       
         </div>
-
-        {/* Let's Connect Section */}
-        <div className="max-w-7xl mx-auto mt-24 sm:mt-32 mb-24 sm:mb-32">
-          <h2 className={`${neueMachina.className} font-bold text-3xl sm:text-4xl md:text-5xl text-center mb-4 sm:mb-6`}>
-            Let&apos;s Connect
-          </h2>
-          {/* Subheading */}
-          <p className="text-center text-lg sm:text-xl text-white/80 mb-12">
-            Reach out to us through any of the following ways!
-          </p>
-
-          {/* Contact Information */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 min-w-0 overflow-x-auto w-full">
-            {/* Phone Number */}
-            <div className="w-full md:flex-1 flex cursor-pointer items-center justify-center gap-3 bg-[#6DDBEB] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 hover:opacity-90 transition-all duration-300 text-center">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                <path d="M20 10.999H22C22 5.869 18.127 2 13 2V4C17.024 4 20 6.975 20 10.999Z" fill="black" />
-                <path d="M13 8C15.103 8 17 9.897 17 12H19C19 8.795 16.206 6 13 6V8ZM16.422 13.443C16.2298 13.2683 15.9773 13.1752 15.7178 13.1832C15.4582 13.1912 15.212 13.2998 15.031 13.486L12.638 15.947C12.062 15.837 10.904 15.476 9.71198 14.287C8.51998 13.094 8.15898 11.933 8.05198 11.361L10.511 8.96698C10.6975 8.78612 10.8062 8.53982 10.8142 8.28007C10.8222 8.02032 10.7289 7.76773 10.554 7.57598L6.85898 3.51298C6.68402 3.32165 6.44086 3.20265 6.18113 3.18133C5.92139 3.16001 5.66263 3.23829 5.45798 3.40098L3.29798 5.28698C3.12509 5.46051 3.0222 5.69145 3.00798 5.93598C2.99198 6.18698 2.70698 12.108 7.29898 16.702C11.305 20.707 16.323 21 17.705 21C17.907 21 18.031 20.994 18.064 20.992C18.3085 20.9783 18.5393 20.8747 18.712 20.701L20.598 18.541C20.7608 18.3362 20.8391 18.0772 20.8177 17.8173C20.7963 17.5574 20.6771 17.3142 20.485 17.139L16.422 13.443Z" fill="black" />
-              </svg>
-              <a href="tel:+919190898768401" className="whitespace-nowrap">
-                <span className={`${poppins.className} text-base sm:text-lg md:text-xl text-black font-bold`}>
-                  +91 91908 98768 401
-                </span>
-              </a>
-            </div>
-
-
-            {/* Email */}
-            <div className="w-full md:flex-1 flex cursor-pointer items-center justify-center gap-3 bg-[#6DDBEB] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 hover:opacity-90 transition-all duration-300 text-center">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="black" />
-              </svg>
-              <a href="mailto:Brands@affix.com" className="whitespace-nowrap">
-                <span className={`${poppins.className} text-base sm:text-lg md:text-xl text-black font-bold`}>
-                  Brands@affix.com
-                </span>
-              </a>
-            </div>
-
-            {/* WhatsApp Button */}
-            <a
-              href="https://wa.me/919190898768401"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full md:flex-1 flex items-center justify-center gap-3 bg-[#25D366] rounded-full px-4 sm:px-8 py-3 sm:py-4 min-w-0 hover:opacity-90 transition-all duration-300 text-black font-bold text-center"
-            >
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.989.583 3.838 1.583 5.393L2 22l4.707-1.561A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.657 0-3.216-.506-4.5-1.367l-.32-.21-2.8.927.927-2.8-.21-.32A7.963 7.963 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm4.29-5.709c-.197-.099-1.17-.578-1.351-.644-.181-.066-.313-.099-.444.099-.13.197-.508.644-.623.777-.115.132-.23.148-.427.05-.197-.099-.832-.307-1.586-.98-.587-.523-.983-1.17-1.099-1.367-.115-.197-.012-.303.087-.401.089-.088.197-.23.296-.345.099-.115.132-.197.197-.329.066-.132.033-.247-.016-.346-.049-.099-.444-1.073-.608-1.47-.16-.384-.323-.332-.444-.338-.115-.006-.247-.007-.38-.007-.132 0-.346.049-.527.247-.181.197-.693.678-.693 1.654 0 .976.71 1.92.81 2.053.099.132 1.397 2.137 3.393 2.914.475.164.844.262 1.133.336.476.121.91.104 1.253.063.382-.045 1.17-.478 1.336-.94.165-.462.165-.857.115-.94-.049-.082-.18-.132-.377-.23z" fill="#fff" />
-              </svg>
-              <span className={`${poppins.className} text-base sm:text-lg md:text-xl font-bold`}>WhatsApp</span>
-            </a>
-            
+      <section
+        className="w-full bg-black py-16 px-4 flex flex-col items-center justify-center min-h-[95vh]"
+        style={{
+          backgroundImage: 'url("/images/iconsbgnew.svg")',
+          backgroundRepeat: 'repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <h2 className="text-white font-bold text-4xl md:text-5xl text-center mb-10" style={{ fontFamily: 'Poppins, sans-serif' }}>
+          Let&apos;s Connect
+        </h2>
+        {/* Pills Row 1 */}
+        <div className="flex flex-col md:flex-row gap-4 mb-4 w-full max-w-2xl">
+          {/* Phone */}
+          <div className="flex-1 flex items-center justify-center cursor-pointer gap-3 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#A881E7" }}>
+            <img src="/images/calllogo.svg" alt="call" className="w-8 h-8" />
+            <span className={`${poppins.className} text-center font-bold`}>+9191909768401</span>
+          </div>
+          {/* Email */}
+          <div className="flex-1 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 gap-3 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#EA5FA5" }}>
+            <img src="/images/messagelogo.svg" alt="email" className="w-8 h-8" />
+            <span className={`${poppins.className} text-center font-bold`}>Brands@aafix.com</span>
           </div>
         </div>
-        <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-6xl text-center mb-10 md:mb-16`}>
-            Join our <span className="text-yellow-400">Creator</span> family
-          </h2>
-
-          {/* Register Button */}
-          <div className="flex justify-center mb-20 md:mb-32">
-            <button
-              className="text-white cursor-pointer rounded-full px-8 py-3 text-lg sm:px-12 sm:py-4 text-xl flex items-center gap-4 group hover:opacity-90 transition-all duration-300"
-              style={{ background: 'linear-gradient(90deg, #FF4F70 0%, #EA90A1 100%)' }}
-            >
-              <span className={`${neueMachina.className} text-lg sm:text-2xl`}>Register Here</span>
-              <div className="bg-white rounded-full p-3 group-hover:translate-x-1 transition-transform duration-300">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="#FF4F70" />
-                </svg>
-              </div>
-            </button>
+        {/* Pills Row 2 */}
+        <div className="flex flex-col md:flex-row gap-4 mb-10 w-full max-w-2xl">
+          {/* Location */}
+          <div className="flex-1 flex items-center justify-center cursor-pointer gap-3 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#F2944D" }}>
+            <img src="/images/locationlogo.svg" alt="location" className="w-8 h-8" />
+            <span className={`${poppins.className} text-center font-bold`}>Hyderabad</span>
           </div>
+          {/* WhatsApp */}
+          <div className="flex-1 flex items-center justify-center cursor-pointer gap-3 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#6DDBEB" }}>
+            <img src="/images/whatsapplogo.svg" alt="whatsapp" className="w-8 h-8" />
+            <span className={`${poppins.className} text-center font-bold`}>Whatsapp</span>
+          </div>
+        </div>
+        {/* Gradient Subheading */}
+        <h3 className="text-3xl md:text-5xl font-bold text-center mb-8" style={{
+          background: "linear-gradient(90deg, #6DDBEB 0%, #F86681 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          fontFamily: 'Poppins, sans-serif'
+        }}>
+          Be our <span style={{
+            background: "linear-gradient(90deg, #F86681 0%, #F2944D 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent"
+          }}>Creators family</span>
+        </h3>
+        {/* Big Gradient Pill */}
+        <div className="flex justify-center w-full mt-10">
+          <a
+            href="mailto:hiring@joincreators.in"
+            className="flex items-center gap-4 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-10 py-5 font-bold text-2xl md:text-3xl"
+            style={{
+              background: "linear-gradient(90deg, #FF4F70 0%, #EA90A1 100%)",
+              color: "black",
+              fontFamily: 'Poppins, sans-serif'
+            }}
+          >
+            hiring@joincreators.in
+            <span className="bg-black text-white rounded-full p-3 ml-2 flex items-center justify-center">
+              <svg width="28" height="28" fill="none"><path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="#fff" /></svg>
+            </span>
+          </a>
+        </div>
       </section>
 
 
@@ -1071,15 +1030,15 @@ export default function CreatorsSection() {
             </div>
             <div className="space-y-2 text-sm text-white/80 mt-6">
               <div className="flex items-center gap-2">
-                <svg width="18" height="18" fill="none"><path d="M2 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4Zm2 0 6 5 6-5" stroke="#fff" strokeWidth="1.5"/></svg>
+                <svg width="18" height="18" fill="none"><path d="M2 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4Zm2 0 6 5 6-5" stroke="#fff" strokeWidth="1.5" /></svg>
                 Brands@affix.com
               </div>
               <div className="flex items-center gap-2">
-                <svg width="18" height="18" fill="none"><circle cx="9" cy="9" r="7" stroke="#fff" strokeWidth="1.5"/><path d="M9 6v3l2 2" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                <svg width="18" height="18" fill="none"><circle cx="9" cy="9" r="7" stroke="#fff" strokeWidth="1.5" /><path d="M9 6v3l2 2" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" /></svg>
                 +91 9089 768 401
               </div>
               <div className="flex items-start gap-2">
-                <svg width="18" height="18" fill="none"><path d="M9 17c-4-4-7-6.5-7-10A7 7 0 0 1 16 7c0 3.5-3 6-7 10Z" stroke="#fff" strokeWidth="1.5"/><circle cx="9" cy="7" r="2" stroke="#fff" strokeWidth="1.5"/></svg>
+                <svg width="18" height="18" fill="none"><path d="M9 17c-4-4-7-6.5-7-10A7 7 0 0 1 16 7c0 3.5-3 6-7 10Z" stroke="#fff" strokeWidth="1.5" /><circle cx="9" cy="7" r="2" stroke="#fff" strokeWidth="1.5" /></svg>
                 <span>
                   Hyderabad, Telangana, India
                 </span>
