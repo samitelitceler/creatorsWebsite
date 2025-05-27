@@ -10,6 +10,8 @@ import {
 } from 'lucide-react';
 import ScrollAnimation from "../components/ScrollAnimation";
 import React from "react";
+import Modal from "@/components/Modal";
+import ContactForm from "../components/Contactform";
 
 const neueMachina = localFont({
   src: '../public/fonts/NeueMachina-InktrapUltrabold.otf'
@@ -27,6 +29,7 @@ export default function CreatorsSection() {
   const [creators, setCreators] = useState(0);
   const [roi, setRoi] = useState(0);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [showForm, setShowForm] = useState(false);
 
 
   const creatorsDetails = [
@@ -275,7 +278,7 @@ export default function CreatorsSection() {
                 with <span className="text-yellow-400">Creators</span>.
               </h1>
             </div>
-            <button className={`${neueMachina.className} mt-6 flex items-center gap-2 h-12 px-7 rounded-md bg-black text-white text-lg font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
+            <button onClick={() => setShowForm(true)} className={`${neueMachina.className} mt-6 flex items-center gap-2 h-12 px-7 rounded-md bg-black text-white text-lg font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
               Explore Now<ArrowRight className="w-5 h-5" />
             </button>
           </motion.div>
@@ -337,7 +340,7 @@ export default function CreatorsSection() {
 
       {/* Ecosystem Section */}
       <ScrollAnimation>
-        <section id="about" className="relative w-full md:min-h-screen py-10 md:py-24 mt-24 px-4 flex items-center justify-center">
+        <section id="about" className="relative w-full md:min-h-screen py-10 md:py-12 mt-24 px-4 flex items-center justify-center">
           {/* Smiley Emoji with floating animation */}
           <motion.div
             className="absolute top-4 left-4 sm:top-10 sm:left-10"
@@ -564,7 +567,7 @@ export default function CreatorsSection() {
           </h2>
 
           {/* Button */}
-          <button className={`${neueMachina.className} bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 text-xl sm:text-3xl flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105`}>
+          <button  onClick={() => setShowForm(true)} className={`${neueMachina.className} bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 text-xl sm:text-3xl flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105`}>
             Register Here
             <Image
               src="/images/cursorImage.png"
@@ -790,7 +793,7 @@ export default function CreatorsSection() {
           </h2>
 
           {/* Button */}
-          <button className={`${neueMachina.className} bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 text-xl sm:text-3xl flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105`}>
+          <button  onClick={() => setShowForm(true)} className={`${neueMachina.className} bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 text-xl sm:text-3xl flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105`}>
             Register Here
             <Image
               src="/images/cursorImage.png"
@@ -893,7 +896,7 @@ export default function CreatorsSection() {
           {/* Collaboration Logos Grid */}
           <div className="relative w-full flex items-center overflow-hidden">
             <motion.div
-              className="flex space-x-4 sm:space-x-10 md:space-x-16 min-w-max"
+              className="flex space-x-4 sm:space-x-8 md:space-x-12 min-w-max"
               animate={{ x: ["0%", "-30%"] }}
               transition={{
                 repeat: Infinity,
@@ -904,7 +907,7 @@ export default function CreatorsSection() {
               {collaborations.map((collab, index) => (
                 <div
                   key={index}
-                  className="p-2 sm:p-6 flex items-center justify-center w-[120px] h-[100px] sm:w-[180px] sm:h-[180px] md:w-[220px] md:h-[260px]"
+                  className="p-1 sm:p-2 flex items-center justify-center w-[100px] h-[60px] sm:w-[120px] sm:h-[80px] md:w-[160px] md:h-[100px]"
                 >
                   <img
                     src={collab.logo}
@@ -920,7 +923,7 @@ export default function CreatorsSection() {
        
         </div>
       <section
-        className="w-full bg-black py-16 px-4 flex flex-col items-center justify-center min-h-[95vh]"
+        className="w-full bg-black py-16 px-4 flex flex-col items-center justify-center min-h-[85vh]"
         style={{
           backgroundImage: 'url("/images/iconsbgnew.svg")',
           backgroundRepeat: 'repeat',
@@ -928,7 +931,7 @@ export default function CreatorsSection() {
           backgroundPosition: 'center',
         }}
       >
-        <h2 className="text-white font-bold text-4xl md:text-5xl text-center mb-10" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        <h2 className={`${neueMachina.className} text-white font-bold text-4xl md:text-5xl text-center mb-10`}>
           Let&apos;s Connect
         </h2>
         {/* Pills Row 1 */}
@@ -958,11 +961,11 @@ export default function CreatorsSection() {
           </div>
         </div>
         {/* Gradient Subheading */}
-        <h3 className="text-3xl md:text-5xl font-bold text-center mb-8" style={{
+        <h3 className={`${neueMachina.className} text-3xl md:text-5xl font-bold text-center mb-8`} style={{
           background: "linear-gradient(90deg, #6DDBEB 0%, #F86681 100%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
-          fontFamily: 'Poppins, sans-serif'
+
         }}>
           Be our <span style={{
             background: "linear-gradient(90deg, #F86681 0%, #F2944D 100%)",
@@ -1064,6 +1067,10 @@ export default function CreatorsSection() {
           </div>
         </div>
       </footer>
+
+      <Modal open={showForm} onClose={() => setShowForm(false)}>
+        <ContactForm />
+      </Modal>
 
 
     </div>
