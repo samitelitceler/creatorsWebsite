@@ -13,7 +13,7 @@ export default function ContactForm() {
     e.preventDefault();
     setLoading(true);
     try {
-      await fetch('https://emailform.elitceler.com/form1', {
+      await fetch('https://emailform.elitceler.com/api/v1/form2', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
