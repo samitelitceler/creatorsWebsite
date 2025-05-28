@@ -546,7 +546,7 @@ export default function CreatorsSection() {
                       {service.title}
                     </h3>
                     <p className="text-black text-sm font-normal md:text-base mb-4">{service.description}</p>
-                    <button className={`${neueMachina.className} bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105`}>
+                    <button onClick={() => setShowForm(true)} className={`${neueMachina.className} bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105`}>
                       Enquire Now <span className="text-xl">→</span>
                     </button>
                   </div>
@@ -994,7 +994,7 @@ export default function CreatorsSection() {
 
 
       {/* Footer Section */}
-      <footer className="w-full bg-[#1E1E1E] text-white">
+      <footer className="w-full bg-[#F2944D] text-black">
         <div className="max-w-7xl mx-auto py-12 px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Logo, Socials, Contact */}
           <div>
@@ -1011,18 +1011,18 @@ export default function CreatorsSection() {
               <a href="#" className="hover:opacity-80"><Youtube /></a>
               <a href="#" className="hover:opacity-80"><Linkedin /></a>
             </div>
-            <div className="space-y-2 text-sm text-white/80 mt-6">
-              <div className="flex items-center gap-2">
-                <svg width="18" height="18" fill="none"><path d="M2 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4Zm2 0 6 5 6-5" stroke="#fff" strokeWidth="1.5" /></svg>
-                Brands@affix.com
+            <div className="space-y-2 text-sm text-black/80 mt-6">
+              <div className="flex items-center gap-2 text-black">
+              <img src="/images/messagelogo.svg" alt="email" className="w-4 h-4" />
+              Brands@affix.com
               </div>
               <div className="flex items-center gap-2">
-                <svg width="18" height="18" fill="none"><circle cx="9" cy="9" r="7" stroke="#fff" strokeWidth="1.5" /><path d="M9 6v3l2 2" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" /></svg>
-                +91 9089 768 401
+              <img src="/images/calllogo.svg" alt="call" className="w-4 h-4" />
+              +91 9089 768 401
               </div>
               <div className="flex items-start gap-2">
-                <svg width="18" height="18" fill="none"><path d="M9 17c-4-4-7-6.5-7-10A7 7 0 0 1 16 7c0 3.5-3 6-7 10Z" stroke="#fff" strokeWidth="1.5" /><circle cx="9" cy="7" r="2" stroke="#fff" strokeWidth="1.5" /></svg>
-                <span>
+              <img src="/images/locationlogo.svg" alt="location" className="w-4 h-4" />
+              <span>
                   Hyderabad, Telangana, India
                 </span>
               </div>
