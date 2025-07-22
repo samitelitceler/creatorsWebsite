@@ -281,14 +281,14 @@ export default function CreatorsSection() {
             transition={{ duration: 0.5 }}
             className="w-full md:w-1/2 flex flex-col justify-center items-start"
           >
-            <div className={`${neueMachina.className} mb-6`}>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-left">
+            <div className="mb-6">
+              <h1 className="heading-1 text-left">
                 Revolutionize your <br />
                 Marketing Campaign <br />
                 with <span className="text-yellow-400">Creators</span>.
               </h1>
             </div>
-            <button onClick={handleFormOpen} className={`${neueMachina.className} mt-6 flex items-center gap-2 h-12 px-7 rounded-md bg-black text-white text-lg font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
+            <button onClick={handleFormOpen} className="subheading mt-6 flex items-center gap-2 h-12 px-7 rounded-md bg-black text-white font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap">
               Explore Now<ArrowRight className="w-5 h-5" />
             </button>
           </motion.div>
@@ -335,7 +335,7 @@ export default function CreatorsSection() {
           }}
         />
         {/* Tilted text */}
-        <div className={`${neueMachina.className} text-white text-xl md:text-3xl lg:text-4xl font-clash-display font-bold tracking-wider text-center transform -rotate-1 overflow-hidden w-full`}>
+        <div className="subheading text-white tracking-wider text-center transform -rotate-1 overflow-hidden w-full">
           <div className="relative flex justify-center">
             <div className="whitespace-nowrap animate-scroll">
               Connect – Collaborate – Create &nbsp;&nbsp; * &nbsp;&nbsp; Connect – Collaborate – Create &nbsp;&nbsp; * &nbsp;&nbsp; Connect – Collaborate – Create &nbsp;&nbsp; * &nbsp;&nbsp; Connect – Collaborate – Create &nbsp;&nbsp; *
@@ -445,7 +445,7 @@ export default function CreatorsSection() {
         <section className="w-full py-10 px-4">
           <div className="mx-auto max-w-7xl">
             {/* Title */}
-            <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-12 leading-tight`}>
+            <h2 className="heading-2 text-center mb-8 sm:mb-12">
               We help brands Connect better to their audience with{" "}
               <span className="text-yellow-400">Creator</span> Culture
             </h2>
@@ -467,10 +467,10 @@ export default function CreatorsSection() {
                   className="text-center p-4 sm:p-6 flex flex-col justify-center items-center rounded-lg"
                   style={{ backgroundColor: stat.color }}
                 >
-                  <div className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl mb-1 sm:mb-2`}>
+                  <div className="heading-3 mb-1 sm:mb-2">
                     {stat.value}{stat.suffix || '+'}
                   </div>
-                  <div className={`${poppins.className} text-lg sm:text-xl md:text-2xl`}>{stat.label}</div>
+                  <div className="subheading">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -492,7 +492,7 @@ export default function CreatorsSection() {
                 height={80}
                 className="w-12 md:w-20"
               />
-              <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-white`}>
+              <h2 className="heading-2 text-white">
                 Our Expert Services
               </h2>
             </div>
@@ -552,11 +552,11 @@ export default function CreatorsSection() {
                     />
                   </div>
                   <div className="w-full sm:w-1/2 text-center sm:text-left">
-                    <h3 className={`${neueMachina.className} text-2xl md:text-4xl text-white font-bold mb-4`}>
+                    <h3 className="heading-4 text-white mb-4">
                       {service.title}
                     </h3>
-                    <p className="text-black text-sm font-normal md:text-base mb-4">{service.description}</p>
-                    <button onClick={handleFormOpen} className={`${neueMachina.className} bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105`}>
+                    <p className="body-medium text-black mb-4">{service.description}</p>
+                    <button onClick={handleFormOpen} className="subheading bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105">
                       Enquire Now <span className="text-xl">→</span>
                     </button>
                   </div>
@@ -572,12 +572,12 @@ export default function CreatorsSection() {
       <section className="w-full py-16 bg-[#F2944D]">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 text-center md:text-left">
           {/* Heading */}
-          <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-white`}>
+          <h2 className="heading-2 text-white">
             Do you have a Brand?
           </h2>
 
           {/* Button */}
-          <button  onClick={handleFormOpen} className={`${neueMachina.className} bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 text-xl sm:text-3xl flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105`}>
+          <button  onClick={handleFormOpen} className="subheading bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105">
             Register Here
             <Image
               src="/images/cursorImage.png"
@@ -597,7 +597,7 @@ export default function CreatorsSection() {
           <div className="max-w-7xl mx-auto">
             {/* Header with Smiley */}
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-4 text-center md:text-left">
-              <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-5xl text-white`}>
+              <h2 className="heading-2 text-white">
                 Campaign Spotlight
               </h2>
               <Image
@@ -610,7 +610,7 @@ export default function CreatorsSection() {
             </div>
 
             {/* Description Text */}
-            <p className={`${poppins.className} text-white text-center text-md sm:text-lg md:text-xl max-w-4xl mx-auto mb-16`}>
+            <p className="body-large text-white text-center max-w-4xl mx-auto mb-16">
               Celebrate our journey of innovation and collaboration! Explore our past campaigns,
               each a testament to our commitment to excellence and creativity. Join us as we
               continue to redefine possibilities together.
@@ -730,12 +730,12 @@ export default function CreatorsSection() {
                 height={80}
                 className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20"
               />
-              <h2 className={`${neueMachina.className} text-3xl sm:text-4xl md:text-5xl  text-white`}>
+              <h2 className="heading-2 text-white">
                 Our Creator Family
               </h2>
             </div>
 
-            <p className="text-white text-center md:text-center text-base text-md sm:text-lg md:text-xl max-w-2xl mx-auto  mb-8">
+            <p className="body-large text-white text-center max-w-2xl mx-auto mb-8">
               Meet the vibrant creators who inspire, entertain, and connect with millions everyday.
               Together, we celebrate creativity and the power of authentic storytelling.
             </p>
@@ -799,12 +799,12 @@ export default function CreatorsSection() {
         <section className="w-full py-16 bg-[#F2944D] mt-10">
           <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 text-center md:text-left">
             {/* Heading */}
-            <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-white`}>
+            <h2 className="heading-2 text-white">
               Join our Creator Family
             </h2>
 
             {/* Button */}
-            <button  onClick={() => setShowForm(true)} className={`${neueMachina.className} bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 text-xl sm:text-3xl flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105`}>
+            <button  onClick={() => setShowForm(true)} className="subheading bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105">
               Register Here
               <Image
                 src="/images/cursorImage.png"
@@ -872,11 +872,11 @@ export default function CreatorsSection() {
           <div className="max-w-6xl mx-auto flex flex-col items-center">
             {/* Headings */}
             <div className="flex flex-col md:flex-row items-center justify-center w-full mb-8 sm:mb-12 gap-2 md:gap-0">
-              <h2 className="font-bold text-white text-2xl xs:text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'neueMachina, sans-serif' }}>
+              <h2 className="heading-1 text-white">
                 4+ Platform
               </h2>
               <div className="my-2 md:my-0 md:mx-8 h-px md:h-16 w-16 md:w-px bg-white" />
-              <h2 className="font-bold text-white text-2xl xs:text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'neueMachina, sans-serif' }}>
+              <h2 className="heading-1 text-white">
                 6+ Language
               </h2>
             </div>
@@ -891,7 +891,7 @@ export default function CreatorsSection() {
             <div className="flex flex-wrap items-center justify-center gap-y-2">
               {["Hindi", "English", "Kannada", "Tamil", "Telugu", "Malayalam"].map((lang, idx, arr) => (
                 <React.Fragment key={lang}>
-                  <span className="font-bold text-white text-base xs:text-lg sm:text-xl md:text-2xl px-2 sm:px-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  <span className="subheading text-white px-2 sm:px-4">
                     {lang}
                   </span>
                   {idx < arr.length - 1 && (
@@ -952,7 +952,7 @@ export default function CreatorsSection() {
             backgroundPosition: 'center',
           }}
         >
-          <h2 className={`${neueMachina.className} text-white font-bold text-4xl md:text-5xl text-center mb-10`}>
+          <h2 className="heading-2 text-white text-center mb-10">
             Let&apos;s Connect
           </h2>
           {/* Pills Row 1 */}
@@ -960,12 +960,12 @@ export default function CreatorsSection() {
             {/* Phone */}
             <div className="flex-1 flex items-center justify-center cursor-pointer gap-3 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#A881E7" }}>
               <img src="/images/calllogo.svg" alt="call" className="w-8 h-8" />
-              <span className={`${poppins.className} text-center font-bold`}>+9191909768401</span>
+              <span className="body-medium text-center font-bold">+9191909768401</span>
             </div>
             {/* Email */}
             <div className="flex-1 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 gap-3 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#EA5FA5" }}>
               <img src="/images/messagelogo.svg" alt="email" className="w-8 h-8" />
-              <span className={`${poppins.className} text-center font-bold`}>Brands@aafix.com</span>
+              <span className="body-medium text-center font-bold">Brands@aafix.com</span>
             </div>
           </div>
           {/* Pills Row 2 */}
@@ -973,16 +973,16 @@ export default function CreatorsSection() {
             {/* Location */}
             <div className="flex-1 flex items-center justify-center cursor-pointer gap-3 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#F2944D" }}>
               <img src="/images/locationlogo.svg" alt="location" className="w-8 h-8" />
-              <span className={`${poppins.className} text-center font-bold`}>Hyderabad</span>
+              <span className="body-medium text-center font-bold">Hyderabad</span>
             </div>
             {/* WhatsApp */}
             <div className="flex-1 flex items-center justify-center cursor-pointer gap-3 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#6DDBEB" }}>
               <img src="/images/whatsapplogo.svg" alt="whatsapp" className="w-8 h-8" />
-              <span className={`${poppins.className} text-center font-bold`}>Whatsapp</span>
+              <span className="body-medium text-center font-bold">Whatsapp</span>
             </div>
           </div>
           {/* Gradient Subheading */}
-          <h3 className={`${neueMachina.className} text-xl sm:text-3xl md:text-5xl font-bold text-center mb-8 px-4`} style={{
+          <h3 className="heading-2 text-center mb-8 px-4" style={{
             background: "linear-gradient(90deg, #6DDBEB 0%, #F86681 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
@@ -998,11 +998,10 @@ export default function CreatorsSection() {
           <div className="flex justify-center w-full mt-10 px-4">
             <a
               href="mailto:hiring@joincreators.in"
-              className="flex items-center gap-2 sm:gap-4 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-4 sm:px-10 py-3 sm:py-5 font-bold text-lg sm:text-2xl md:text-3xl break-all sm:break-normal"
+              className="subheading flex items-center gap-2 sm:gap-4 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-4 sm:px-10 py-3 sm:py-5 font-bold break-all sm:break-normal"
               style={{
                 background: "linear-gradient(90deg, #FF4F70 0%, #EA90A1 100%)",
-                color: "black",
-                fontFamily: 'Poppins, sans-serif'
+                color: "black"
               }}
             >
               <span className="hidden sm:inline">hiring@joincreators.in</span>
