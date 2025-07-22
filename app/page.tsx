@@ -288,7 +288,7 @@ export default function CreatorsSection() {
                 with <span className="text-yellow-400">Creators</span>.
               </h1>
             </div>
-            <button onClick={handleFormOpen} className="subheading mt-6 flex items-center gap-2 h-12 px-7 rounded-md bg-black text-white font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap">
+            <button onClick={handleFormOpen} className=" subheading mt-6 flex items-center gap-2 h-12 px-7 rounded-full bg-black text-white font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap">
               Explore Now<ArrowRight className="w-5 h-5" />
             </button>
           </motion.div>
@@ -556,7 +556,7 @@ export default function CreatorsSection() {
                       {service.title}
                     </h3>
                     <p className="body-medium text-black mb-4">{service.description}</p>
-                    <button onClick={handleFormOpen} className="subheading bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105">
+                    <button onClick={handleFormOpen} className="subheading bg-black text-white px-6 py-3 flex rounded-full items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105">
                       Enquire Now <span className="text-xl">→</span>
                     </button>
                   </div>
