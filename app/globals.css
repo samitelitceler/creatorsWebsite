@@ -5,7 +5,7 @@
 /* Typography System - Consistent Font Sizes and Families */
 :root {
   /* Font Families */
-  --font-heading: 'NeueMachina', sans-serif;
+  --font-heading: var(--font-neue-machina), 'NeueMachina', sans-serif;
   --font-body: 'Poppins', sans-serif;
   
   /* Font Sizes - Consistent Scale */
