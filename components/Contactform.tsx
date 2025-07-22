@@ -1,7 +1,7 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { useState } from 'react';
+import { useState, memo, useCallback } from 'react';
 
-export default function ContactForm() {
+const ContactForm = memo(() => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -9,7 +9,7 @@ export default function ContactForm() {
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     try {
@@ -30,7 +30,7 @@ export default function ContactForm() {
       setLoading(false);
       alert('Something went wrong. Please try again.');
     }
-  };
+  }, [firstName, lastName, email, phone, description]);
 
   return (
     <div className="relative flex flex-col gap-6 max-h-[600px] overflow-y-auto py-6 no-scrollbar">
@@ -116,4 +116,8 @@ export default function ContactForm() {
       </div>
     </div>
   );
-}
+});
+
+ContactForm.displayName = 'ContactForm';
+
+export default ContactForm;

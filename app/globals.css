@@ -1,44 +1,94 @@
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: auto; /* Let Lenis handle smooth scrolling */
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  width: 100%;
+}
+
+/* Optimize animations for performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  html, body {
+}
+
+/* Lenis smooth scroll setup */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Optimize scrolling performance */
+.lenis.lenis-smooth * {
+  will-change: auto;
+}
+
+/* Smooth transitions for better performance */
+.lenis.lenis-smooth .scroll-section {
+  will-change: transform;
+}
+
+/* Only hide horizontal overflow on mobile devices */
+@media (max-width: 768px) {
+  .lenis.lenis-smooth {
     overflow-x: hidden;
   }
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+}
+
+/* Basic scroll animation for the marquee text */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  100% {
+    transform: translateX(-50%);
   }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .animate-scroll {
-    display: inline-block;
-    animation: scroll 30s linear infinite; /* Slower scroll */
-    padding-right: 4rem; /* Space between repeats */
-  }
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .animate-fadeInUp {
-    animation: fadeInUp 0.5s ease-out forwards;
-  }
+}
+
+.animate-scroll {
+  display: inline-block;
+  animation: scroll 30s linear infinite;
+  padding-right: 4rem;
+}
+
+/* Hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

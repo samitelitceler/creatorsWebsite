@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, memo } from "react";
 
 interface ScrollAnimationProps {
   children: ReactNode;
   className?: string;
 }
 
-export default function ScrollAnimation({ children, className }: ScrollAnimationProps) {
+const ScrollAnimation = memo(({ children, className }: ScrollAnimationProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -18,4 +18,8 @@ export default function ScrollAnimation({ children, className }: ScrollAnimation
       {children}
     </motion.div>
   );
-}
+});
+
+ScrollAnimation.displayName = 'ScrollAnimation';
+
+export default ScrollAnimation;
