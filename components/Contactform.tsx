@@ -33,7 +33,7 @@ const ContactForm = memo(() => {
   }, [firstName, lastName, email, phone, description]);
 
   return (
-    <div className="relative flex flex-col gap-6 max-h-[600px] overflow-y-auto py-6 no-scrollbar">
+    <div className="relative flex flex-col gap-6 py-6">
       {/* Decorative Circles */}
       <div className="absolute bottom-[-40px] right-[-60px] w-40 h-40 bg-sky-300 rounded-full opacity-80 z-0" />
       <div className="absolute bottom-[-30px] left-[-50px] w-28 h-28 bg-red-400 rounded-full opacity-40 z-0" />
