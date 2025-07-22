@@ -335,7 +335,7 @@ export default function CreatorsSection() {
           }}
         />
         {/* Tilted text */}
-        <div className="subheading text-white tracking-wider text-center transform -rotate-1 overflow-hidden w-full">
+        <div className="heading-3 text-white tracking-wider text-center transform -rotate-1 overflow-hidden w-full">
           <div className="relative flex justify-center">
             <div className="whitespace-nowrap animate-scroll">
               Connect – Collaborate – Create &nbsp;&nbsp; * &nbsp;&nbsp; Connect – Collaborate – Create &nbsp;&nbsp; * &nbsp;&nbsp; Connect – Collaborate – Create &nbsp;&nbsp; * &nbsp;&nbsp; Connect – Collaborate – Create &nbsp;&nbsp; *
@@ -445,7 +445,7 @@ export default function CreatorsSection() {
         <section className="w-full py-10 px-4">
           <div className="mx-auto max-w-7xl">
             {/* Title */}
-            <h2 className="heading-2 text-center mb-8 sm:mb-12">
+            <h2 className="heading-1 text-center mb-8 sm:mb-12">
               We help brands Connect better to their audience with{" "}
               <span className="text-yellow-400">Creator</span> Culture
             </h2>
@@ -492,7 +492,7 @@ export default function CreatorsSection() {
                 height={80}
                 className="w-12 md:w-20"
               />
-              <h2 className="heading-2 text-white">
+              <h2 className="heading-1 text-white">
                 Our Expert Services
               </h2>
             </div>
@@ -572,12 +572,12 @@ export default function CreatorsSection() {
       <section className="w-full py-16 bg-[#F2944D]">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 text-center md:text-left">
           {/* Heading */}
-          <h2 className="heading-2 text-white">
+          <h2 className="heading-1 text-white">
             Do you have a Brand?
           </h2>
 
           {/* Button */}
-          <button  onClick={handleFormOpen} className="subheading bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105">
+          <button  onClick={handleFormOpen} className="rounded-full subheading bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105">
             Register Here
             <Image
               src="/images/cursorImage.png"
@@ -597,7 +597,7 @@ export default function CreatorsSection() {
           <div className="max-w-7xl mx-auto">
             {/* Header with Smiley */}
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-4 text-center md:text-left">
-              <h2 className="heading-2 text-white">
+              <h2 className="heading-1 text-white">
                 Campaign Spotlight
               </h2>
               <Image
@@ -730,7 +730,7 @@ export default function CreatorsSection() {
                 height={80}
                 className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20"
               />
-              <h2 className="heading-2 text-white">
+              <h2 className="heading-1 text-white">
                 Our Creator Family
               </h2>
             </div>
@@ -799,12 +799,12 @@ export default function CreatorsSection() {
         <section className="w-full py-16 bg-[#F2944D] mt-10">
           <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 text-center md:text-left">
             {/* Heading */}
-            <h2 className="heading-2 text-white">
+            <h2 className="heading-1 text-white">
               Join our Creator Family
             </h2>
 
             {/* Button */}
-            <button  onClick={() => setShowForm(true)} className="subheading bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105">
+            <button  onClick={() => setShowForm(true)} className="rounded-full subheading bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105">
               Register Here
               <Image
                 src="/images/cursorImage.png"
@@ -827,7 +827,7 @@ export default function CreatorsSection() {
 
              {/* Our Clients Section */}
              <div id="clients">
-               <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-center mb-10 md:mb-16`}>
+               <h2 className="heading-1 text-center mb-10 md:mb-16">
                  Our Clients
                </h2>
 
@@ -907,7 +907,7 @@ export default function CreatorsSection() {
       <ScrollAnimation>
         <div className="max-w-8xl mx-auto mb-10 sm:mb-20">
             {/* Title */}
-            <h2 className={`${neueMachina.className} text-2xl sm:text-4xl md:text-5xl text-center mb-8 sm:mb-16`}>
+            <h2 className="heading-1 text-center mb-8 sm:mb-16">
               Our Collaborations
             </h2>
 
@@ -982,7 +982,7 @@ export default function CreatorsSection() {
             </div>
           </div>
           {/* Gradient Subheading */}
-          <h3 className="heading-2 text-center mb-8 px-4" style={{
+          <h3 className="heading-1 text-center mb-8 px-4" style={{
             background: "linear-gradient(90deg, #6DDBEB 0%, #F86681 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
@@ -1054,7 +1054,7 @@ export default function CreatorsSection() {
 
             {/* Company */}
             <div>
-              <h3 className={`${neueMachina.className} text-xl mb-4`}>Company</h3>
+              <h3 className="heading-4 text-black mb-4">Company</h3>
               <nav className={`${poppins.className} flex flex-col space-y-3`}>
                 <a href="#about" className="hover:text-yellow-400 transition-colors">About Us</a>
                 <a href="#contact" className="hover:text-yellow-400 transition-colors">Contact Us</a>
@@ -1063,7 +1063,7 @@ export default function CreatorsSection() {
 
             {/* Services */}
             <div>
-              <h3 className={`${neueMachina.className} text-xl mb-4`}>Services</h3>
+              <h3 className="heading-4 text-black mb-4">Services</h3>
               <nav className={`${poppins.className} flex flex-col space-y-3`}>
                 <a href="#services" className="hover:text-yellow-400 transition-colors">Our Expert Services</a>
                 <a href="#campaigns" className="hover:text-yellow-400 transition-colors">Campaign Spotlight</a>
@@ -1075,7 +1075,7 @@ export default function CreatorsSection() {
 
             {/* Policies */}
             <div>
-              <h3 className={`${neueMachina.className} text-xl mb-4`}>Policies</h3>
+              <h3 className="heading-4 text-black mb-4">Policies</h3>
               <nav className={`${poppins.className} flex flex-col space-y-3`}>
                 <a href="#" className="hover:text-yellow-400 transition-colors">Privacy Policy</a>
                 {/* Add more policy links if needed */}
