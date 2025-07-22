@@ -50,11 +50,6 @@ html.lenis {
   pointer-events: none;
 }
 
-/* Prevent horizontal scroll without interfering with Lenis */
-.lenis.lenis-smooth {
-  overflow-x: hidden;
-}
-
 /* Optimize scrolling performance */
 .lenis.lenis-smooth * {
   will-change: auto;
@@ -63,6 +58,13 @@ html.lenis {
 /* Smooth transitions for better performance */
 .lenis.lenis-smooth .scroll-section {
   will-change: transform;
+}
+
+/* Only hide horizontal overflow on mobile devices */
+@media (max-width: 768px) {
+  .lenis.lenis-smooth {
+    overflow-x: hidden;
+  }
 }
 
 /* Basic scroll animation for the marquee text */
