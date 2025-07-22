@@ -785,44 +785,125 @@ export default function CreatorsSection() {
       </ScrollAnimation>
 
 
-      <section className="w-full py-16 bg-[#F2944D] mt-10">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 text-center md:text-left">
-          {/* Heading */}
-          <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-white`}>
-            Join our Creator Family
-          </h2>
-
-          {/* Button */}
-          <button  onClick={() => setShowForm(true)} className={`${neueMachina.className} bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 text-xl sm:text-3xl flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105`}>
-            Register Here
-            <Image
-              src="/images/cursorImage.png"
-              alt="Cursor"
-              width={40}
-              height={40}
-              className="absolute -bottom-2 -right-2 sm:w-10 sm:h-10 transition-transform duration-300 hover:rotate-12"
-            />
-          </button>
-        </div>
-      </section>
- 
-       {/* Join Creator Family Section */}
-       <section className="w-full py-12 px-4 bg-black overflow-hidden mt-16">
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-        
-
-          {/* Our Clients Section */}
-          <div id="clients">
-            <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-center mb-10 md:mb-16`}>
-              Our Clients
+      <ScrollAnimation>
+        <section className="w-full py-16 bg-[#F2944D] mt-10">
+          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 text-center md:text-left">
+            {/* Heading */}
+            <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-white`}>
+              Join our Creator Family
             </h2>
 
-            {/* Clients Logo Grid */}
+            {/* Button */}
+            <button  onClick={() => setShowForm(true)} className={`${neueMachina.className} bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 text-xl sm:text-3xl flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105`}>
+              Register Here
+              <Image
+                src="/images/cursorImage.png"
+                alt="Cursor"
+                width={40}
+                height={40}
+                className="absolute -bottom-2 -right-2 sm:w-10 sm:h-10 transition-transform duration-300 hover:rotate-12"
+              />
+            </button>
+          </div>
+        </section>
+      </ScrollAnimation>
+ 
+       {/* Join Creator Family Section */}
+       <ScrollAnimation>
+         <section className="w-full py-12 px-4 bg-black overflow-hidden mt-16">
+           <div className="max-w-7xl mx-auto">
+             {/* Header */}
+           
 
-            <div className="relative w-full flex items-center">
+             {/* Our Clients Section */}
+             <div id="clients">
+               <h2 className={`${neueMachina.className} text-2xl sm:text-3xl md:text-5xl text-center mb-10 md:mb-16`}>
+                 Our Clients
+               </h2>
+
+               {/* Clients Logo Grid */}
+
+               <div className="relative w-full flex items-center">
+                 <motion.div
+                   className="flex space-x-5 md:space-x-10 min-w-max"
+                   animate={{ x: ["0%", "-30%"] }}
+                   transition={{
+                     repeat: Infinity,
+                     duration: 30,
+                     ease: "linear",
+                   }}
+                 >
+
+
+                   {clientsDetails.map((client, index) => (
+                     <div key={index} className="p-2 sm:p-6 flex items-center justify-center">
+                       <img
+                         src={client.logo}
+                         alt={client.name}
+                         className="w-20 sm:w-28 md:w-36 aspect-square object-cover rounded-2xl"
+                       />
+                     </div>
+                   ))}
+
+                 </motion.div>
+               </div>
+
+             </div>
+           </div>
+         </section>
+       </ScrollAnimation>
+
+
+      {/* Platforms and Languages Section */}
+      <ScrollAnimation>
+        <section className="w-full bg-black py-10 px-2 sm:py-16 sm:px-4">
+          <div className="w-full h-[6px] bg-[#FFC057] mb-8 sm:mb-12"></div>
+          <div className="max-w-6xl mx-auto flex flex-col items-center">
+            {/* Headings */}
+            <div className="flex flex-col md:flex-row items-center justify-center w-full mb-8 sm:mb-12 gap-2 md:gap-0">
+              <h2 className="font-bold text-white text-2xl xs:text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'neueMachina, sans-serif' }}>
+                4+ Platform
+              </h2>
+              <div className="my-2 md:my-0 md:mx-8 h-px md:h-16 w-16 md:w-px bg-white" />
+              <h2 className="font-bold text-white text-2xl xs:text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'neueMachina, sans-serif' }}>
+                6+ Language
+              </h2>
+            </div>
+            {/* Platform Icons */}
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-12 mb-8 sm:mb-12">
+              <img src="/images/insta.png" alt="Instagram" className="w-10 h-10 xs:w-12 xs:h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 rounded-lg" />
+              <img src="/images/twitter.png" alt="X" className="w-10 h-10 xs:w-12 xs:h-12 sm:w-16 sm:h-16 md:w-24 md:h-24" />
+              <img src="/images/youtube.png" alt="YouTube" className="w-10 h-10 xs:w-12 xs:h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 rounded-lg" />
+              <img src="/images/linkedin.png" alt="LinkedIn" className="w-10 h-10 xs:w-12 xs:h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 rounded-lg" />
+            </div>
+            {/* Languages */}
+            <div className="flex flex-wrap items-center justify-center gap-y-2">
+              {["Hindi", "English", "Kannada", "Tamil", "Telugu", "Malayalam"].map((lang, idx, arr) => (
+                <React.Fragment key={lang}>
+                  <span className="font-bold text-white text-base xs:text-lg sm:text-xl md:text-2xl px-2 sm:px-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                    {lang}
+                  </span>
+                  {idx < arr.length - 1 && (
+                    <span className="h-4 w-px bg-yellow-400 mx-1 sm:mx-3 inline-block align-middle" />
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+          <div className="w-full h-[6px] bg-[#FFC057] mb-8 mt-8 sm:mb-12 sm:mt-12"></div>
+        </section>
+      </ScrollAnimation>
+      <ScrollAnimation>
+        <div className="max-w-8xl mx-auto mb-10 sm:mb-20">
+            {/* Title */}
+            <h2 className={`${neueMachina.className} text-2xl sm:text-4xl md:text-5xl text-center mb-8 sm:mb-16`}>
+              Our Collaborations
+            </h2>
+
+            {/* Collaboration Logos Grid */}
+            <div className="relative w-full flex items-center overflow-hidden">
               <motion.div
-                className="flex space-x-5 md:space-x-10 min-w-max"
+                className="flex space-x-4 sm:space-x-8 md:space-x-12 min-w-max"
                 animate={{ x: ["0%", "-30%"] }}
                 transition={{
                   repeat: Infinity,
@@ -830,243 +911,174 @@ export default function CreatorsSection() {
                   ease: "linear",
                 }}
               >
-
-
-                {clientsDetails.map((client, index) => (
-                  <div key={index} className="p-2 sm:p-6 flex items-center justify-center">
+                {collaborations.map((collab, index) => (
+                  <div
+                    key={index}
+                    className="p-1 sm:p-2 flex items-center justify-center w-[100px] h-[60px] sm:w-[120px] sm:h-[80px] md:w-[160px] md:h-[100px]"
+                  >
                     <img
-                      src={client.logo}
-                      alt={client.name}
-                      className="w-20 sm:w-28 md:w-36 aspect-square object-cover rounded-2xl"
+                      src={collab.logo}
+                      alt={collab.name}
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 ))}
-
               </motion.div>
             </div>
 
-          </div>
-        </div>
-      </section>
 
-
-      {/* Platforms and Languages Section */}
-      <section className="w-full bg-black py-10 px-2 sm:py-16 sm:px-4">
-        <div className="w-full h-[6px] bg-[#FFC057] mb-8 sm:mb-12"></div>
-        <div className="max-w-6xl mx-auto flex flex-col items-center">
-          {/* Headings */}
-          <div className="flex flex-col md:flex-row items-center justify-center w-full mb-8 sm:mb-12 gap-2 md:gap-0">
-            <h2 className="font-bold text-white text-2xl xs:text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'neueMachina, sans-serif' }}>
-              4+ Platform
-            </h2>
-            <div className="my-2 md:my-0 md:mx-8 h-px md:h-16 w-16 md:w-px bg-white" />
-            <h2 className="font-bold text-white text-2xl xs:text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'neueMachina, sans-serif' }}>
-              6+ Language
-            </h2>
+         
           </div>
-          {/* Platform Icons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-12 mb-8 sm:mb-12">
-            <img src="/images/insta.png" alt="Instagram" className="w-10 h-10 xs:w-12 xs:h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 rounded-lg" />
-            <img src="/images/twitter.png" alt="X" className="w-10 h-10 xs:w-12 xs:h-12 sm:w-16 sm:h-16 md:w-24 md:h-24" />
-            <img src="/images/youtube.png" alt="YouTube" className="w-10 h-10 xs:w-12 xs:h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 rounded-lg" />
-            <img src="/images/linkedin.png" alt="LinkedIn" className="w-10 h-10 xs:w-12 xs:h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 rounded-lg" />
-          </div>
-          {/* Languages */}
-          <div className="flex flex-wrap items-center justify-center gap-y-2">
-            {["Hindi", "English", "Kannada", "Tamil", "Telugu", "Malayalam"].map((lang, idx, arr) => (
-              <React.Fragment key={lang}>
-                <span className="font-bold text-white text-base xs:text-lg sm:text-xl md:text-2xl px-2 sm:px-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                  {lang}
-                </span>
-                {idx < arr.length - 1 && (
-                  <span className="h-4 w-px bg-yellow-400 mx-1 sm:mx-3 inline-block align-middle" />
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-        <div className="w-full h-[6px] bg-[#FFC057] mb-8 mt-8 sm:mb-12 sm:mt-12"></div>
-      </section>
-      <div className="max-w-8xl mx-auto mb-10 sm:mb-20">
-          {/* Title */}
-          <h2 className={`${neueMachina.className} text-2xl sm:text-4xl md:text-5xl text-center mb-8 sm:mb-16`}>
-            Our Collaborations
+      </ScrollAnimation>
+      <ScrollAnimation>
+        <section
+          className="w-full bg-black py-16 px-4 flex flex-col items-center justify-center min-h-[85vh]"
+          style={{
+            backgroundImage: 'url("/images/iconsbgnew.svg")',
+            backgroundRepeat: 'repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <h2 className={`${neueMachina.className} text-white font-bold text-4xl md:text-5xl text-center mb-10`}>
+            Let&apos;s Connect
           </h2>
+          {/* Pills Row 1 */}
+          <div className="flex flex-col md:flex-row gap-4 mb-4 w-full max-w-2xl">
+            {/* Phone */}
+            <div className="flex-1 flex items-center justify-center cursor-pointer gap-3 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#A881E7" }}>
+              <img src="/images/calllogo.svg" alt="call" className="w-8 h-8" />
+              <span className={`${poppins.className} text-center font-bold`}>+9191909768401</span>
+            </div>
+            {/* Email */}
+            <div className="flex-1 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 gap-3 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#EA5FA5" }}>
+              <img src="/images/messagelogo.svg" alt="email" className="w-8 h-8" />
+              <span className={`${poppins.className} text-center font-bold`}>Brands@aafix.com</span>
+            </div>
+          </div>
+          {/* Pills Row 2 */}
+          <div className="flex flex-col md:flex-row gap-4 mb-10 w-full max-w-2xl">
+            {/* Location */}
+            <div className="flex-1 flex items-center justify-center cursor-pointer gap-3 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#F2944D" }}>
+              <img src="/images/locationlogo.svg" alt="location" className="w-8 h-8" />
+              <span className={`${poppins.className} text-center font-bold`}>Hyderabad</span>
+            </div>
+            {/* WhatsApp */}
+            <div className="flex-1 flex items-center justify-center cursor-pointer gap-3 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#6DDBEB" }}>
+              <img src="/images/whatsapplogo.svg" alt="whatsapp" className="w-8 h-8" />
+              <span className={`${poppins.className} text-center font-bold`}>Whatsapp</span>
+            </div>
+          </div>
+          {/* Gradient Subheading */}
+          <h3 className={`${neueMachina.className} text-3xl md:text-5xl font-bold text-center mb-8`} style={{
+            background: "linear-gradient(90deg, #6DDBEB 0%, #F86681 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
 
-          {/* Collaboration Logos Grid */}
-          <div className="relative w-full flex items-center overflow-hidden">
-            <motion.div
-              className="flex space-x-4 sm:space-x-8 md:space-x-12 min-w-max"
-              animate={{ x: ["0%", "-30%"] }}
-              transition={{
-                repeat: Infinity,
-                duration: 30,
-                ease: "linear",
+          }}>
+            Be our <span style={{
+              background: "linear-gradient(90deg, #F86681 0%, #F2944D 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent"
+            }}>Creators family</span>
+          </h3>
+          {/* Big Gradient Pill */}
+          <div className="flex justify-center w-full mt-10">
+            <a
+              href="mailto:hiring@joincreators.in"
+              className="flex items-center gap-4 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-10 py-5 font-bold text-2xl md:text-3xl"
+              style={{
+                background: "linear-gradient(90deg, #FF4F70 0%, #EA90A1 100%)",
+                color: "black",
+                fontFamily: 'Poppins, sans-serif'
               }}
             >
-              {collaborations.map((collab, index) => (
-                <div
-                  key={index}
-                  className="p-1 sm:p-2 flex items-center justify-center w-[100px] h-[60px] sm:w-[120px] sm:h-[80px] md:w-[160px] md:h-[100px]"
-                >
-                  <img
-                    src={collab.logo}
-                    alt={collab.name}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              ))}
-            </motion.div>
+              hiring@joincreators.in
+              <span className="bg-black text-white rounded-full p-3 ml-2 flex items-center justify-center">
+                <svg width="28" height="28" fill="none"><path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="#fff" /></svg>
+              </span>
+            </a>
           </div>
-
-
-       
-        </div>
-      <section
-        className="w-full bg-black py-16 px-4 flex flex-col items-center justify-center min-h-[85vh]"
-        style={{
-          backgroundImage: 'url("/images/iconsbgnew.svg")',
-          backgroundRepeat: 'repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <h2 className={`${neueMachina.className} text-white font-bold text-4xl md:text-5xl text-center mb-10`}>
-          Let&apos;s Connect
-        </h2>
-        {/* Pills Row 1 */}
-        <div className="flex flex-col md:flex-row gap-4 mb-4 w-full max-w-2xl">
-          {/* Phone */}
-          <div className="flex-1 flex items-center justify-center cursor-pointer gap-3 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#A881E7" }}>
-            <img src="/images/calllogo.svg" alt="call" className="w-8 h-8" />
-            <span className={`${poppins.className} text-center font-bold`}>+9191909768401</span>
-          </div>
-          {/* Email */}
-          <div className="flex-1 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 gap-3 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#EA5FA5" }}>
-            <img src="/images/messagelogo.svg" alt="email" className="w-8 h-8" />
-            <span className={`${poppins.className} text-center font-bold`}>Brands@aafix.com</span>
-          </div>
-        </div>
-        {/* Pills Row 2 */}
-        <div className="flex flex-col md:flex-row gap-4 mb-10 w-full max-w-2xl">
-          {/* Location */}
-          <div className="flex-1 flex items-center justify-center cursor-pointer gap-3 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#F2944D" }}>
-            <img src="/images/locationlogo.svg" alt="location" className="w-8 h-8" />
-            <span className={`${poppins.className} text-center font-bold`}>Hyderabad</span>
-          </div>
-          {/* WhatsApp */}
-          <div className="flex-1 flex items-center justify-center cursor-pointer gap-3 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-6 py-4 font-bold text-lg text-black text-center" style={{ backgroundColor: "#6DDBEB" }}>
-            <img src="/images/whatsapplogo.svg" alt="whatsapp" className="w-8 h-8" />
-            <span className={`${poppins.className} text-center font-bold`}>Whatsapp</span>
-          </div>
-        </div>
-        {/* Gradient Subheading */}
-        <h3 className={`${neueMachina.className} text-3xl md:text-5xl font-bold text-center mb-8`} style={{
-          background: "linear-gradient(90deg, #6DDBEB 0%, #F86681 100%)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-
-        }}>
-          Be our <span style={{
-            background: "linear-gradient(90deg, #F86681 0%, #F2944D 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent"
-          }}>Creators family</span>
-        </h3>
-        {/* Big Gradient Pill */}
-        <div className="flex justify-center w-full mt-10">
-          <a
-            href="mailto:hiring@joincreators.in"
-            className="flex items-center gap-4 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-10 py-5 font-bold text-2xl md:text-3xl"
-            style={{
-              background: "linear-gradient(90deg, #FF4F70 0%, #EA90A1 100%)",
-              color: "black",
-              fontFamily: 'Poppins, sans-serif'
-            }}
-          >
-            hiring@joincreators.in
-            <span className="bg-black text-white rounded-full p-3 ml-2 flex items-center justify-center">
-              <svg width="28" height="28" fill="none"><path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="#fff" /></svg>
-            </span>
-          </a>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
 
       {/* Footer Section */}
-      <footer className="w-full bg-[#F2944D] text-black">
-        <div className="max-w-7xl mx-auto py-12 px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* Logo, Socials, Contact */}
-          <div>
-            <Image
-              src="/images/creatorsLogo.png"
-              alt="Creators Logo"
-              width={180}
-              height={54}
-              className="mb-6"
-            />
-            <div className="flex items-center gap-4 mb-6">
-              <a href="#" className="hover:opacity-80"><Instagram /></a>
-              <a href="#" className="hover:opacity-80"><Twitter /></a>
-              <a href="#" className="hover:opacity-80"><Youtube /></a>
-              <a href="#" className="hover:opacity-80"><Linkedin /></a>
+      <ScrollAnimation>
+        <footer className="w-full bg-[#F2944D] text-black">
+          <div className="max-w-7xl mx-auto py-12 px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
+            {/* Logo, Socials, Contact */}
+            <div>
+              <Image
+                src="/images/creatorsLogo.png"
+                alt="Creators Logo"
+                width={180}
+                height={54}
+                className="mb-6"
+              />
+              <div className="flex items-center gap-4 mb-6">
+                <a href="#" className="hover:opacity-80"><Instagram /></a>
+                <a href="#" className="hover:opacity-80"><Twitter /></a>
+                <a href="#" className="hover:opacity-80"><Youtube /></a>
+                <a href="#" className="hover:opacity-80"><Linkedin /></a>
+              </div>
+              <div className="space-y-2 text-sm text-black/80 mt-6">
+                <div className="flex items-center gap-2 text-black">
+                <img src="/images/messagelogo.svg" alt="email" className="w-4 h-4" />
+                Brands@affix.com
+                </div>
+                <div className="flex items-center gap-2">
+                <img src="/images/calllogo.svg" alt="call" className="w-4 h-4" />
+                +91 9089 768 401
+                </div>
+                <div className="flex items-start gap-2">
+                <img src="/images/locationlogo.svg" alt="location" className="w-4 h-4" />
+                <span>
+                    Hyderabad, Telangana, India
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="space-y-2 text-sm text-black/80 mt-6">
-              <div className="flex items-center gap-2 text-black">
-              <img src="/images/messagelogo.svg" alt="email" className="w-4 h-4" />
-              Brands@affix.com
-              </div>
-              <div className="flex items-center gap-2">
-              <img src="/images/calllogo.svg" alt="call" className="w-4 h-4" />
-              +91 9089 768 401
-              </div>
-              <div className="flex items-start gap-2">
-              <img src="/images/locationlogo.svg" alt="location" className="w-4 h-4" />
-              <span>
-                  Hyderabad, Telangana, India
-                </span>
-              </div>
+
+            {/* Company */}
+            <div>
+              <h3 className={`${neueMachina.className} text-xl mb-4`}>Company</h3>
+              <nav className={`${poppins.className} flex flex-col space-y-3`}>
+                <a href="#about" className="hover:text-yellow-400 transition-colors">About Us</a>
+                <a href="#contact" className="hover:text-yellow-400 transition-colors">Contact Us</a>
+              </nav>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h3 className={`${neueMachina.className} text-xl mb-4`}>Services</h3>
+              <nav className={`${poppins.className} flex flex-col space-y-3`}>
+                <a href="#services" className="hover:text-yellow-400 transition-colors">Our Expert Services</a>
+                <a href="#campaigns" className="hover:text-yellow-400 transition-colors">Campaign Spotlight</a>
+                <a href="#creators" className="hover:text-yellow-400 transition-colors">Our Creator Family</a>
+                <a href="#clients" className="hover:text-yellow-400 transition-colors">Our Clients</a>
+                <a href="#collaborations" className="hover:text-yellow-400 transition-colors">Our Collaborations</a>
+              </nav>
+            </div>
+
+            {/* Policies */}
+            <div>
+              <h3 className={`${neueMachina.className} text-xl mb-4`}>Policies</h3>
+              <nav className={`${poppins.className} flex flex-col space-y-3`}>
+                <a href="#" className="hover:text-yellow-400 transition-colors">Privacy Policy</a>
+                {/* Add more policy links if needed */}
+              </nav>
             </div>
           </div>
 
-          {/* Company */}
-          <div>
-            <h3 className={`${neueMachina.className} text-xl mb-4`}>Company</h3>
-            <nav className={`${poppins.className} flex flex-col space-y-3`}>
-              <a href="#about" className="hover:text-yellow-400 transition-colors">About Us</a>
-              <a href="#contact" className="hover:text-yellow-400 transition-colors">Contact Us</a>
-            </nav>
+          {/* Bottom Bar */}
+          <div className="w-full bg-[#FFB800] py-4">
+            <div className="max-w-7xl mx-auto px-4 flex justify-center items-center text-black text-sm text-center">
+              <span className={`${poppins.className}`}>Copyright © 2024 Brands@affix.com</span>
+            </div>
           </div>
-
-          {/* Services */}
-          <div>
-            <h3 className={`${neueMachina.className} text-xl mb-4`}>Services</h3>
-            <nav className={`${poppins.className} flex flex-col space-y-3`}>
-              <a href="#services" className="hover:text-yellow-400 transition-colors">Our Expert Services</a>
-              <a href="#campaigns" className="hover:text-yellow-400 transition-colors">Campaign Spotlight</a>
-              <a href="#creators" className="hover:text-yellow-400 transition-colors">Our Creator Family</a>
-              <a href="#clients" className="hover:text-yellow-400 transition-colors">Our Clients</a>
-              <a href="#collaborations" className="hover:text-yellow-400 transition-colors">Our Collaborations</a>
-            </nav>
-          </div>
-
-          {/* Policies */}
-          <div>
-            <h3 className={`${neueMachina.className} text-xl mb-4`}>Policies</h3>
-            <nav className={`${poppins.className} flex flex-col space-y-3`}>
-              <a href="#" className="hover:text-yellow-400 transition-colors">Privacy Policy</a>
-              {/* Add more policy links if needed */}
-            </nav>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="w-full bg-[#FFB800] py-4">
-          <div className="max-w-7xl mx-auto px-4 flex justify-center items-center text-black text-sm text-center">
-            <span className={`${poppins.className}`}>Copyright © 2024 Brands@affix.com</span>
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </ScrollAnimation>
 
       <Modal open={showForm} onClose={() => setShowForm(false)}>
         <ContactForm />
