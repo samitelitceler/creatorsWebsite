@@ -9,17 +9,17 @@ const neueMachina = localFont({
   src: [
     {
       path: '../public/fonts/NeueMachina-Light.otf',
-      weight: '300',
+      weight: '500',
       style: 'normal',
     },
     {
       path: '../public/fonts/NeueMachina-Regular.otf',
-      weight: '400',
+      weight: '500',
       style: 'normal',
     },
     {
       path: '../public/fonts/NeueMachina-InktrapUltrabold.otf',
-      weight: '700',
+      weight: '500',
       style: 'normal',
     },
   ],
