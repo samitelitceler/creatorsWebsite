@@ -1,44 +1,50 @@
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
-html {
-    scroll-behavior: smooth;
+
+/* Lenis smooth scroll setup */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Basic scroll animation for the marquee text */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  html, body {
-    overflow-x: hidden;
+  100% {
+    transform: translateX(-50%);
   }
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .animate-scroll {
-    display: inline-block;
-    animation: scroll 30s linear infinite; /* Slower scroll */
-    padding-right: 4rem; /* Space between repeats */
-  }
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .animate-fadeInUp {
-    animation: fadeInUp 0.5s ease-out forwards;
-  }
+}
+
+.animate-scroll {
+  display: inline-block;
+  animation: scroll 30s linear infinite;
+  padding-right: 4rem;
+}
+
+/* Hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -74,7 +74,6 @@ export default function Navbar() {
 
 
 
-
           {/* Mobile Menu Icon */}
           <div className="lg:hidden">
             {isMenuOpen ? (
@@ -117,7 +116,10 @@ export default function Navbar() {
           </nav>
 
           {/* CTA Button */}
-          <Button className="flex items-center gap-2 rounded-full bg-black text-white border border-black px-8 py-4 font-bold text-lg transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105 w-full mt-8 shadow-lg">
+          <Button 
+            onClick={() => setShowForm(true)}
+            className="flex items-center gap-2 rounded-full bg-black text-white border border-black px-8 py-4 font-bold text-lg transition-all duration-300 hover:bg-yellow-400 hover:text-black hover:scale-105 w-full mt-8 shadow-lg"
+          >
             <span>Enquire Now</span>
             <ArrowRight />
           </Button>
