@@ -77,7 +77,7 @@ const Navbar = memo(() => {
 
             <button 
               onClick={handleFormOpen} 
-              className="subheading ml-4 cursor-pointer flex items-center gap-2 h-10 px-5 rounded-md bg-black text-white font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap"
+              className="subheading ml-4 cursor-pointer flex items-center gap-2 h-10 px-5 rounded-full bg-black text-white font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap"
             >
               Enquire Now <ArrowRight className="w-4 h-4" />
             </button>
