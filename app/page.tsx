@@ -833,7 +833,7 @@ export default function CreatorsSection() {
 
                {/* Clients Logo Grid */}
 
-               <div className="relative w-full flex items-center">
+               <div className="relative w-full flex items-center overflow-hidden px-4 scroll-section">
                  <motion.div
                    className="flex space-x-5 md:space-x-10 min-w-max"
                    animate={{ x: ["0%", "-30%"] }}
@@ -842,6 +842,7 @@ export default function CreatorsSection() {
                      duration: 30,
                      ease: "linear",
                    }}
+                   style={{ willChange: 'transform' }}
                  >
 
 
@@ -911,7 +912,7 @@ export default function CreatorsSection() {
             </h2>
 
             {/* Collaboration Logos Grid */}
-            <div className="relative w-full flex items-center overflow-hidden">
+            <div className="relative w-full flex items-center overflow-hidden px-4 scroll-section">
               <motion.div
                 className="flex space-x-4 sm:space-x-8 md:space-x-12 min-w-max"
                 animate={{ x: ["0%", "-30%"] }}
@@ -920,6 +921,7 @@ export default function CreatorsSection() {
                   duration: 30,
                   ease: "linear",
                 }}
+                style={{ willChange: 'transform' }}
               >
                 {collaborations.map((collab, index) => (
                   <div
@@ -980,7 +982,7 @@ export default function CreatorsSection() {
             </div>
           </div>
           {/* Gradient Subheading */}
-          <h3 className={`${neueMachina.className} text-3xl md:text-5xl font-bold text-center mb-8`} style={{
+          <h3 className={`${neueMachina.className} text-xl sm:text-3xl md:text-5xl font-bold text-center mb-8 px-4`} style={{
             background: "linear-gradient(90deg, #6DDBEB 0%, #F86681 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
@@ -993,19 +995,20 @@ export default function CreatorsSection() {
             }}>Creators family</span>
           </h3>
           {/* Big Gradient Pill */}
-          <div className="flex justify-center w-full mt-10">
+          <div className="flex justify-center w-full mt-10 px-4">
             <a
               href="mailto:hiring@joincreators.in"
-              className="flex items-center gap-4 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-10 py-5 font-bold text-2xl md:text-3xl"
+              className="flex items-center gap-2 sm:gap-4 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105 rounded-full px-4 sm:px-10 py-3 sm:py-5 font-bold text-lg sm:text-2xl md:text-3xl break-all sm:break-normal"
               style={{
                 background: "linear-gradient(90deg, #FF4F70 0%, #EA90A1 100%)",
                 color: "black",
                 fontFamily: 'Poppins, sans-serif'
               }}
             >
-              hiring@joincreators.in
-              <span className="bg-black text-white rounded-full p-3 ml-2 flex items-center justify-center">
-                <svg width="28" height="28" fill="none"><path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="#fff" /></svg>
+              <span className="hidden sm:inline">hiring@joincreators.in</span>
+              <span className="sm:hidden">hiring@joincreators.in</span>
+              <span className="bg-black text-white rounded-full p-2 sm:p-3 ml-1 sm:ml-2 flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" className="sm:w-7 sm:h-7" fill="none"><path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="#fff" /></svg>
               </span>
             </a>
           </div>

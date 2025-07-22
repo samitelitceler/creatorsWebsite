@@ -15,6 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  width: 100%;
 }
 
 /* Optimize animations for performance */
@@ -47,6 +48,21 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+/* Prevent horizontal scroll without interfering with Lenis */
+.lenis.lenis-smooth {
+  overflow-x: hidden;
+}
+
+/* Optimize scrolling performance */
+.lenis.lenis-smooth * {
+  will-change: auto;
+}
+
+/* Smooth transitions for better performance */
+.lenis.lenis-smooth .scroll-section {
+  will-change: transform;
 }
 
 /* Basic scroll animation for the marquee text */
