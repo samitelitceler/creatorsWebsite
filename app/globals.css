@@ -66,28 +66,28 @@
   font-family: var(--font-body);
   font-size: var(--text-lg);
   line-height: var(--leading-relaxed);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .body-medium {
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: var(--leading-normal);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .body-small {
   font-family: var(--font-body);
   font-size: var(--text-sm);
   line-height: var(--leading-normal);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .caption {
   font-family: var(--font-body);
   font-size: var(--text-xs);
   line-height: var(--leading-normal);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* Responsive Typography */
