@@ -944,7 +944,7 @@ export default function CreatorsSection() {
       </ScrollAnimation>
       <ScrollAnimation>
         <section
-          className="w-full bg-black py-16 px-4 flex flex-col items-center justify-center min-h-[85vh]"
+          className="w-full bg-black py-16 px-4 flex flex-col items-center justify-center"
           style={{
             backgroundImage: 'url("/images/iconsbgnew.svg")',
             backgroundRepeat: 'repeat',
@@ -952,7 +952,7 @@ export default function CreatorsSection() {
             backgroundPosition: 'center',
           }}
         >
-          <h2 className="heading-2 text-white text-center mb-10">
+          <h2 className="heading-1 text-white text-center mb-10">
             Let&apos;s Connect
           </h2>
           {/* Pills Row 1 */}
