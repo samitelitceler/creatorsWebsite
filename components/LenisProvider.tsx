@@ -1,16 +1,17 @@
 "use client";
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, memo } from 'react';
 import Lenis from 'lenis';
 
 interface LenisProviderProps {
   children: React.ReactNode;
 }
 
-export default function LenisProvider({ children }: LenisProviderProps) {
+const LenisProvider = memo(({ children }: LenisProviderProps) => {
   const lenisRef = useRef<Lenis | null>(null);
+  const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
-    // Initialize Lenis
+    // Initialize Lenis with optimized settings
     lenisRef.current = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -20,7 +21,7 @@ export default function LenisProvider({ children }: LenisProviderProps) {
       wheelMultiplier: 1,
       touchMultiplier: 2,
       infinite: false,
-      autoRaf: true,
+      autoRaf: false, // We'll handle RAF manually for better control
       lerp: 0.1,
       syncTouch: false,
       syncTouchLerp: 0.075,
@@ -34,15 +35,19 @@ export default function LenisProvider({ children }: LenisProviderProps) {
       allowNestedScroll: false,
     });
 
-    // RAF loop
-    function raf(time: number) {
+    // Optimized RAF loop
+    const raf = (time: number) => {
       lenisRef.current?.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+      rafRef.current = requestAnimationFrame(raf);
+    };
+    
+    rafRef.current = requestAnimationFrame(raf);
 
-    // Cleanup
+    // Cleanup function
     return () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
       if (lenisRef.current) {
         lenisRef.current.destroy();
       }
@@ -50,4 +55,8 @@ export default function LenisProvider({ children }: LenisProviderProps) {
   }, []);
 
   return <>{children}</>;
-} 
+});
+
+LenisProvider.displayName = 'LenisProvider';
+
+export default LenisProvider; 

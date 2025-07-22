@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Navbar from "../components/navbar/Navbar";
 import localFont from 'next/font/local'
@@ -12,6 +12,7 @@ import ScrollAnimation from "../components/ScrollAnimation";
 import React from "react";
 import Modal from "@/components/Modal";
 import ContactForm from "../components/Contactform";
+import usePerformance from "../hooks/usePerformance";
 
 const neueMachina = localFont({
   src: '../public/fonts/NeueMachina-InktrapUltrabold.otf'
@@ -24,12 +25,21 @@ const poppins = Poppins({
 
 
 export default function CreatorsSection() {
+  // Performance monitoring
+  usePerformance();
+  
   const [brands, setBrands] = useState(0);
   const [campaigns, setCampaigns] = useState(0);
   const [creators, setCreators] = useState(0);
   const [roi, setRoi] = useState(0);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [showForm, setShowForm] = useState(false);
+
+  // Memoized handlers
+  const handleFormOpen = useCallback(() => setShowForm(true), []);
+  const handleFormClose = useCallback(() => setShowForm(false), []);
+  const handleHoverEnter = useCallback((idx: number) => setHoveredIdx(idx), []);
+  const handleHoverLeave = useCallback(() => setHoveredIdx(null), []);
 
 
   const creatorsDetails = [
@@ -278,7 +288,7 @@ export default function CreatorsSection() {
                 with <span className="text-yellow-400">Creators</span>.
               </h1>
             </div>
-            <button onClick={() => setShowForm(true)} className={`${neueMachina.className} mt-6 flex items-center gap-2 h-12 px-7 rounded-md bg-black text-white text-lg font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
+            <button onClick={handleFormOpen} className={`${neueMachina.className} mt-6 flex items-center gap-2 h-12 px-7 rounded-md bg-black text-white text-lg font-medium border border-black hover:scale-105 transition-all duration-300 hover:bg-yellow-400 hover:text-black border-b-2 border-r-2 border-b-[#FDD300] border-r-[#FDD300] whitespace-nowrap`}>
               Explore Now<ArrowRight className="w-5 h-5" />
             </button>
           </motion.div>
@@ -546,7 +556,7 @@ export default function CreatorsSection() {
                       {service.title}
                     </h3>
                     <p className="text-black text-sm font-normal md:text-base mb-4">{service.description}</p>
-                    <button onClick={() => setShowForm(true)} className={`${neueMachina.className} bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105`}>
+                    <button onClick={handleFormOpen} className={`${neueMachina.className} bg-black text-white px-6 py-3 flex rounded-md items-center justify-center gap-2 transition-transform duration-300 hover:bg-white hover:text-black hover:scale-105`}>
                       Enquire Now <span className="text-xl">→</span>
                     </button>
                   </div>
@@ -567,7 +577,7 @@ export default function CreatorsSection() {
           </h2>
 
           {/* Button */}
-          <button  onClick={() => setShowForm(true)} className={`${neueMachina.className} bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 text-xl sm:text-3xl flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105`}>
+          <button  onClick={handleFormOpen} className={`${neueMachina.className} bg-black text-white cursor-pointer w-full sm:w-80 px-4 py-4 text-xl sm:text-3xl flex items-center gap-2 justify-center relative transition-all duration-300 hover:bg-white hover:text-black hover:scale-105`}>
             Register Here
             <Image
               src="/images/cursorImage.png"
@@ -738,8 +748,8 @@ export default function CreatorsSection() {
                     <div
                       key={idx}
                       className="flex flex-col items-center min-w-[260px] md:min-w-0"
-                      onMouseEnter={() => setHoveredIdx(idx)}
-                      onMouseLeave={() => setHoveredIdx(null)}
+                      onMouseEnter={() => handleHoverEnter(idx)}
+                      onMouseLeave={handleHoverLeave}
                     >
                       <div className="relative w-full flex justify-center group">
                         {/* Wavy BG: hidden by default, appears on hover */}
@@ -1080,7 +1090,7 @@ export default function CreatorsSection() {
         </footer>
       </ScrollAnimation>
 
-      <Modal open={showForm} onClose={() => setShowForm(false)}>
+      <Modal open={showForm} onClose={handleFormClose}>
         <ContactForm />
       </Modal>
 
