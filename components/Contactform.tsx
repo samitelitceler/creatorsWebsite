@@ -39,66 +39,66 @@ const ContactForm = memo(() => {
       <div className="absolute bottom-[-30px] left-[-50px] w-28 h-28 bg-red-400 rounded-full opacity-40 z-0" />
       {/* Title and Subtitle */}
       <div className="flex flex-col gap-1 mb-2 z-10 relative">
-        <h3 className="text-2xl font-bold text-black">Contact Information</h3>
-        <span className="text-base text-black">Connect with us</span>
+        <h3 className="heading-3 text-black">Contact Information</h3>
+        <span className="body-medium text-black">Connect with us</span>
       </div>
       {/* Horizontal Contact Info Bar */}
       <div className="flex flex-row items-center justify-between gap-4 mb-2 z-10 relative">
         <div className="flex items-center gap-2 text-black">
           <Phone className="w-5 h-5" />
-          <span className="font-medium text-xs">+919089768401</span>
+          <span className="caption font-medium">+919089768401</span>
         </div>
         <div className="flex items-center gap-2 text-black">
           <Mail className="w-5 h-5" />
-          <span className="font-medium text-xs">Brands@affix.com</span>
+          <span className="caption font-medium">Brands@affix.com</span>
         </div>
         <div className="flex items-center gap-2 text-black">
           <MapPin className="w-5 h-5" />
-          <span className="font-medium text-xs">Hyderabad</span>
+          <span className="caption font-medium">Hyderabad</span>
         </div>
       </div>
       {/* Form Fields in White Box */}
       <div className="bg-white rounded-lg p-6 shadow-md z-10 relative">
         <form className="flex flex-col" onSubmit={handleSubmit}>
-          <label className="font-semibold">First Name</label>
+          <label className="body-medium font-semibold">First Name</label>
           <input
-            className="border border-gray-30 text-black rounded-md px-4 py-2 bg-white"
+            className="border border-gray-30 text-black rounded-md px-4 py-2 bg-white body-medium"
             placeholder="Your First Name"
             value={firstName}
             onChange={e => setFirstName(e.target.value)}
             required
           />
 
-          <label className="font-semibold">Last Name</label>
+          <label className="body-medium font-semibold">Last Name</label>
           <input
-            className="border border-gray-300 text-black rounded-md px-4 py-2 bg-white"
+            className="border border-gray-300 text-black rounded-md px-4 py-2 bg-white body-medium"
             placeholder="Your Last Name"
             value={lastName}
             onChange={e => setLastName(e.target.value)}
             required
           />
 
-          <label className="font-semibold">Email</label>
+          <label className="body-medium font-semibold">Email</label>
           <input
-            className="border border-gray-300 text-black rounded-md px-4 py-2 bg-white"
+            className="border border-gray-300 text-black rounded-md px-4 py-2 bg-white body-medium"
             placeholder="Your Email"
             value={email}
             onChange={e => setEmail(e.target.value)}
             required
           />
 
-          <label className="font-semibold">Phone Number</label>
+          <label className="body-medium font-semibold">Phone Number</label>
           <input
-            className="border border-gray-300 text-black rounded-md px-4 py-2 bg-white"
+            className="border border-gray-300 text-black rounded-md px-4 py-2 bg-white body-medium"
             placeholder="Your Phone Number"
             value={phone}
             onChange={e => setPhone(e.target.value)}
             required
           />
 
-          <label className="font-semibold">Message</label>
+          <label className="body-medium font-semibold">Message</label>
           <textarea
-            className="border border-gray-300 text-black rounded-md px-4 py-2 bg-white"
+            className="border border-gray-300 text-black rounded-md px-4 py-2 bg-white body-medium"
             placeholder="Write your message..."
             value={description}
             onChange={e => setDescription(e.target.value)}
